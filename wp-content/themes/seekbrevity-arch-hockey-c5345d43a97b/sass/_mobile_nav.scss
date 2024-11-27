@@ -1,0 +1,193 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Mobile Navigation Styles
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Mobile Nav Trigger
+2.0 - Default Sidr Styles
+3.0 - Mobile Navigation
+4.0 - Mobile Search
+5.0 - Mobile Social
+*/
+
+
+//1.0 - Mobile Nav Trigger
+body#body {
+	left: 0 !important;
+	@include bp(vertPh) { overflow-x: hidden; }
+}
+
+
+#mobile-nav {
+	&.burger {
+		@include burger($white);
+		float: right;
+		height: 4em;
+		width: 5em;
+		.mobile-navigation-open & {
+		  span {
+		    background: transparent !important;
+				&:before { 
+					@include transform(rotate(45deg) translate(5px, 6px));
+				}
+				&:after { 
+					@include transform(rotate(-45deg) translate(5px, -6px)); 
+				}
+		  }
+		}
+	}
+}
+
+
+//2.0 - Default Sidr Styles
+.sidr {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: none;
+  overflow-y: auto;
+  /* Theme Settings */
+  font-family: $body;
+  font-size: 15px;
+  background: #333333;
+  color: white;
+}
+.sidr.right {
+  left: auto;
+  right: -260px;
+}
+.sidr.left {
+  left: -260px;
+  right: auto;
+}
+
+
+//3.0 - Mobile Navigation
+#mobile-navigation.sidr {
+	background: $black;
+	@include bp(tablet) { 
+		@include box-sizing();
+		padding: 0 20px; 
+	}
+	#mobile-logo {
+		@include border-radius(2px);
+		display: block;
+		margin: 20px 10px 10px;
+		padding: 10px 0 5px;
+		text-align: center;
+		@include transition(background);
+		svg {
+			display: inline-block;
+			height: 5em;
+			width: auto;
+			path, polygon { fill: lighten($white, 5%); }
+		}
+		&:hover {
+			background: darken($black, 10%);
+			svg path, svg polygon { fill: $white; }
+		}
+	}
+	ul.menu {
+		border-bottom: 1px $secondary-2 ;
+		list-style: none;
+		margin: 20px 0;
+		padding: 0;
+		li {
+			font-size: 1.1rem;
+			@include bp(vertPh) { font-size: .9rem; }
+			a { 
+				@include border-radius(2px);
+				color: $white;
+				display: block;
+				font-size: 1em;
+				line-height: 1.5em;
+				margin: 0 10px;
+				padding: 10px 15px 6px; 
+				text-transform: uppercase;
+				@include transition(background);
+				&:hover{
+					background: darken($black, 10%);
+					text-decoration:none;  
+				}
+			}
+			ul.sub-menu {
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					font-size: .9rem;
+					@include bp(vertPh) { font-size: .8rem; }
+					a {
+						display: block;
+						padding: 8px 45px;
+						@include bp(vertPh) { padding: 8px 30px;  }
+					}
+					ul.sub-menu {
+						display: none;
+						a {
+							display: block;
+							padding: 8px 60px;
+							@include bp(vertPh) { padding: 8px 40px;  }
+						}
+					}
+				}
+			}
+			&:hover ul.sub-menu { 
+				display: block;
+				li:hover ul.sub-menu {  
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+//4.0 - Mobile Search
+#mobile-search {
+	@include box-sizing();
+	float: left;
+	padding: 0 1em;
+	width: 100%;
+	.tb-searchform {
+		border-bottom: solid $white 1px;
+		width: 100%;
+		input[type="text"] {  
+			@include box-sizing();
+			background: transparent;
+			color: $white;
+			width: calc(100% - 3em);
+		}
+	}
+}
+
+
+//5.0 - Mobile Social 
+#mobile-social {
+	float: left;
+	margin: 1.5em 0 3em;
+	text-align: center;
+	width: 100%;
+	li {
+		a {
+			color: $white;
+			display: inline-block;
+			height: 2em;
+			font-size: 1.25em;
+			line-height: 2em;
+			width: 1.25em;
+		}
+	}
+}
+

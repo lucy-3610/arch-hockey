@@ -1,0 +1,288 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All form elements
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - General Forms Elements
+1.1 - Search Forms
+2.0 - Gravity Forms
+2.1 - Gravity Error
+2.2 - Gravity Confirmation
+*/
+
+
+
+/*
+CSS Styles writen with Sass
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+02/16/2016
+
+All form elements
+@package Thunder_Bolt
+
+TABLE OF CONTENTS:
+1.0 - General Forms Elements
+1.1 - Search Forms
+2.0 - Gravity Forms
+2.1 - Gravity Error
+2.2 - Gravity Confirmation
+*/
+
+//1.0 - General Forms Elements
+#page{
+	.gform_wrapper .button,
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="url"],
+	input[type="search"],
+	select,
+	textarea,
+	textarea.textarea.medium {
+		border: 1px solid $black;
+		@include border-radius(0);
+		@include box-sizing();
+		background: transparent;
+		color: $black;
+		font-size: 100%; /* Corrects font size not being inherited in all browsers */
+		margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+		vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+		*vertical-align: middle; /* Improves appearance and consistency in IE6/IE7 */
+		-webkit-appearance: none;
+		height: 3em;
+		line-height: 3em;
+		padding: 0 .5em ;
+		outline: none;
+	}
+	.gform_wrapper .button {
+		background: $black;
+		color: $white;
+	}
+}
+
+textarea,
+textarea.textarea.medium { 
+	height: 10em !important;
+	padding: 1em !important;
+	line-height: 1.2em !important;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+.ginput_container_select,
+.gfield_time_ampm {
+	position: relative;
+	&::after {
+		content: "\f107";
+		display: block;
+		font-family: FontAwesome;
+		height: 3em;
+		line-height: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		width: 3em;
+		z-index: 9;
+	}
+}
+
+
+input.button,
+input.gform_button  {
+	background: $secondary-2;
+	cursor: pointer;
+	color: $white;
+	display: inline-block !important;
+	line-height: 1.5em;
+	padding: 0 em(40px) !important;
+	@include transition(background);
+	text-transform: uppercase;
+	&:hover {
+		background: darken($secondary-2, 10%);
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+//1.1 - Search Forms
+
+
+//2.0 - Gravity Forms
+#page {
+	.gform_wrapper {
+		.gform_body {
+			.gfield  {
+				margin: 0 0 20px;
+				&.gsection.empty,
+				&.gform_column {
+					display: none !important;
+				}
+				.ginput_container {
+					margin: 0;
+					max-width: none;
+					width: 100%;
+					input[type="email"],
+					input[type="number"],
+					input[type="password"],
+					input[type="tel"],
+					input[type="text"],
+					input[type="search"],
+					input[type="url"],
+					select,
+					textarea,{
+						@include box-sizing();
+						max-width: none;
+						width: 100%;
+					}
+					select[multiple]{
+						height: 10em;
+						padding: 0.5em;
+					}
+					&.gfield_date_day, 
+					&.gfield_date_month, 
+					&.gfield_date_year, 
+					&.gfield_time_hour, 
+					&.gfield_time_minute,
+					&.gfield_time_ampm {
+				    display: inline-block;
+				    float: left;
+				    vertical-align: top;
+				    width: 6em;
+				    input[type="text"] {
+					    text-align: center;
+				    }
+				    select {
+					    max-width: none;
+					    width: 100% !important;
+				    }
+					}
+					.ginput_full { 
+						input[type="email"],
+						input[type="number"],
+						input[type="password"],
+						input[type="tel"],
+						input[type="text"],
+						input[type="url"] { 
+							width: 100% !important; 
+						}
+					}
+					.ginput_container_fileupload {
+						&:before {
+					    -moz-osx-font-smoothing: grayscale;
+					    color: #ffffff;
+					    content: "";
+					    display: inline-block;
+					    font-family: FontAwesome;
+					    font-feature-settings: normal;
+					    font-kerning: auto;
+					    font-language-override: normal;
+					    font-size: inherit;
+					    font-size-adjust: none;
+					    font-stretch: normal;
+					    font-style: normal;
+					    font-synthesis: weight style;
+					    font-variant: normal;
+					    font-weight: normal;
+					    left: 0;
+					    line-height: 1;
+					    opacity: 1;
+					    position: absolute;
+					    text-indent: 0.64286em;
+					    text-rendering: auto;
+					    top: 0.78571em;
+					  }
+					}
+				}
+				.ginput_complex .ginput_left, 
+				.ginput_complex .ginput_right {
+					width: 49.2% !important;
+				}
+			}
+			.gform_column_three {
+				.gfield {
+					clear: none;
+					display: inline-block;
+					float: left;
+					width: calc(33.2% - 13px);
+					margin-right: 20px;
+					&:nth-last-child(2) {
+						margin-right: 0;
+					}
+				}
+			}
+			.gform_column_two {
+				.gfield {
+					clear: none;
+					display: inline-block;
+					float: left;
+					width: calc(49.9% - 10px);
+					margin-right: 20px;
+					&:nth-last-child(2) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+	.gform_footer {
+		.gform_button {
+			border: none;
+		}
+	}	
+}
+
+
+
+//2.1 - Gravity Error
+.gform_wrapper {
+	div.validation_error {
+		border: 1px solid #790000 !important;
+		background: #ffdfe0 !important;
+		width: 100% !important;
+		text-align: center;
+	}
+	li.gfield_error {
+		background: none !important; 
+		border: none !important;
+		width: inherit !important;
+		input, textarea { background: #ffdfe0 !important; width: inherit !important; }
+		div.gfield_description,
+		.ginput_container { 
+			margin: 0 !important;			
+		}
+		::-webkit-input-placeholder { color: red; }
+		:-moz-placeholder { color: red; }
+		::-moz-placeholder { color: red; }
+		:-ms-input-placeholder { color: red; }
+	}
+	.gform_column_three { 
+		li.gfield_error { width: calc(33.2% - 13px) !important; }
+	}
+}
+
+//2.2 - Gravity Confirmation
+
+#page {
+	.gform_confirmation_wrapper   {
+		background: $black;
+		border: 1px solid $secondary-1;
+		color: $white;
+		margin-bottom: em(20px);
+		padding: em(20px) em(30px);
+		text-align: center;
+	}
+}

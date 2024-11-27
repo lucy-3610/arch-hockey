@@ -1,0 +1,90 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Content elements on pages, posts, archives & search results
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Content
+	1.1 - Header Content
+		1.1.2 - Graphic Header
+	1.2 - Entry Content
+2.0 - Pages
+3.0 - Posts
+4.0 - Blog & Archives
+5.0 - Search
+*/
+
+
+//1.0 - Content
+#template-wrapper {
+	padding: 0;
+}
+
+//1.1 - Header Content
+.page-header-wrapper {
+	background: $secondary-2;
+	background-size: cover;
+	color: $font-color-light;
+	@include gradient-overlay(top, $black, .5);
+	@include overlay($black, .25);
+	padding: em(500px) 0 em(100px);
+	text-align: center;
+	@include bp(tablet) { padding: em(450px) 0 em(80px);  }
+	@include bp(allPh) { padding: em(140px) 0 em(40px); }
+	.title {
+		font-size: em(48px);
+		font-weight: $bold;
+		letter-spacing: 1px;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		@include bp(allPh) { font-size: em(32px); }
+	}
+	.sub-title {
+		letter-spacing: 3px;
+		font-weight: $bolder;
+		margin-bottom: 0;
+		text-transform: uppercase;
+	}
+	.dates{
+		font-size: em(24px);
+		font-style: italic;
+		letter-spacing: 2px;
+		@include bp(allPh) { font-size: em(18px); }
+	}
+	.breadcrumbs {
+		a { color: $font-color-light; }
+	}
+}
+
+.page-header-container {
+	position: relative;
+	z-index: 2;
+}
+
+//1.2 - Entry Content
+
+#content-wrapper {
+	padding: em(60px) 0;
+}
+
+
+//2.0 - Pages
+
+
+//3.0 - Posts
+
+
+//4.0 - Blog & Archives
+
+
+//5.0 - Search
+
+
+
+
+	

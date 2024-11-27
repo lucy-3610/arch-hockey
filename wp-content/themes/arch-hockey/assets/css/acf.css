@@ -1,0 +1,105 @@
+/* Padding */
+
+/* Top */
+.pt-25 {
+    padding-top: 25px !important;
+}
+
+.pt-50 {
+    padding-top: 50px !important;
+}
+
+.pt-100 {
+    padding-top: 100px !important;
+}
+
+/* Bottom */
+.pb-25 {
+    padding-bottom: 25px !important;
+}
+
+.pb-50 {
+    padding-bottom: 50px !important;
+}
+
+.pb-100 {
+    padding-bottom: 100px !important;
+}
+
+
+/* Publish / Update Button */
+@media screen and (min-width: 991px) {
+    #post-body.columns-2 #postbox-container-1 {
+        position: fixed;
+        right: 20px;
+        margin-right: 0;
+        float: none;
+    }
+}
+
+
+/* Navigation */
+.nav .acf-row {
+    display: inline-table;
+    width: 100%;
+    border-top: 10px solid #cc0017;
+}
+
+.nav .acf-row .acf-row {
+    border-color: #737577;
+}
+
+
+/* Cards */
+.cards .acf-row {
+    display: inline-table;
+    width: 100%;
+    border-top: 10px solid #cc0017;
+}
+
+.acf-button.button-primary {
+    font-family: 'futura-pt-bold', sans-serif;
+    font-weight: 700;
+    font-size: 0.813em;
+    /* 13px */
+    letter-spacing: 0.06em;
+    line-height: 16px;
+    color: #fff;
+    background: #cc0017;
+    border: 1px solid #cc0017;
+    border-radius: 0;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+}
+
+.acf-button.button-primary:hover,
+.acf-button.button-primary:focus,
+.acf-button.button-primary:active {
+    background: #979797;
+    border: 1px solid #979797;
+}
+
+
+/* Input Fields */
+.acf-field input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    opacity: 0.7;
+}
+
+.acf-field input::-moz-placeholder {
+    /* Firefox 19+ */
+    opacity: 0.7;
+}
+
+.acf-field input:-ms-input-placeholder {
+    /* IE 10+ */
+    opacity: 0.7;
+}
+
+.acf-field input:-moz-placeholder {
+    /* Firefox 18- */
+    opacity: 0.7;
+}

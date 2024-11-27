@@ -1,0 +1,339 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All Sass variables and site wide mix-ins
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Media Queries
+2.0 - Colors 
+	2.0 - Brand Colors
+	2.1 - Social Colors 
+	2.2 - Colors Utilities
+3.0 - Fonts
+	3.1 - Font Colors
+	3.2 - Font Utilities
+4.0 - Borders
+5.0 - Transitions & Transfroms
+6.0 - Shapes
+7.0 - Centering
+8.0 - Clear Fix
+*/
+
+
+//1.0 - Media Queries
+@mixin bp($point) {
+  
+  $bp-widescreen: "(min-width: 1510px)";
+  $bp-tablet: "(min-width: 768px) and (max-width: 959px)";
+  $bp-allPh: "(max-width: 767px)";
+  $bp-horzPh: "(min-width: 480px) and (max-width: 767px)";
+  $bp-vertPh: "(max-width: 479px)";
+
+  @if $point == widescreen {
+    @media #{$bp-widescreen} { @content; }
+  }
+  @else if $point == tablet{
+    @media #{$bp-tablet} { @content; }
+  }
+  @else if $point == allPh {
+    @media #{$bp-allPh}  { @content; }
+  }
+  @else if $point == horzPh {
+    @media #{$bp-horzPh}  { @content; }
+  }
+   @else if $point == vertPh {
+    @media #{$bp-vertPh}  { @content; }
+  }
+ @else {
+	  @media #{$point} { @content; }
+  }
+}
+
+//2.0 - Colors  
+$white: #ffffff;
+$black: #000000;
+
+//2.1 - Primary Colors
+$primary-1: #c1272d;
+$primary-2: #640d0d;
+
+//2.2 - Secondary Colors
+$secondary-1: #e9eaeb;
+$secondary-2: #808080;
+
+//2.3 - Module Color Scale
+$mod-white: $white;
+$mod-light: $secondary-1;
+$mod-medium: $primary-1;
+$mod-dark: $black;
+
+//2.4 - Social Colors 
+$facebook: #3a5885;
+$twitter: #44bae3;
+$instagram: #d4ad6e;
+$pinterest: #b72027;
+
+
+//2.2 - Colors Utilities
+@mixin bg-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin opacity($value:1){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+@mixin overlay($color:$white, $opcity:0.5, $position:relative){
+	position: $position;
+	&:before {
+		content: "";
+		background: $color;
+		@include opacity($opcity);
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		pointer-events: none;
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+@mixin gradient-overlay ( $side:left,  $color:$black, $opacity:.65, $position:relative ) {
+	position: $position;
+	&:after {
+		@if $side == left{
+    	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */
+			background: -moz-linear-gradient(left,  rgba($color, $opacity) 0%, rgba($color,0) 75%, rgba($color,0) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba($color, $opacity) 0%,rgba($color,0) 75%,rgba($color,0) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba($color, $opacity) 0%,rgba($color,0) 75%,rgba($color,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+	  }
+	  @else if $side == right{
+	  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */
+			background: -moz-linear-gradient(left,  rgba($color,0) 0%, rgba($color,0) 25%, rgba($color, $opacity) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba($color,0) 0%,rgba($color,0) 25%,rgba($color, $opacity) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba($color,0) 0%,rgba($color,0) 25%,rgba($color, $opacity) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+  	}
+  	@else if $side == top{
+	  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */
+			background: -moz-linear-gradient(top,  rgba($color, $opacity) 0%, rgba($color,0) 75%, rgba($color,0) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba($color, $opacity) 0%,rgba($color,0) 75%,rgba($color,0) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba($color, $opacity) 0%,rgba($color,0) 75%,rgba($color,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,  Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+  	}
+  	@else if $side == bottom{
+	  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */
+			background: -moz-linear-gradient(top,  rgba($color,0) 0%, rgba($color,0) 25%, rgba($color, $opacity) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba($color,0) 0%,rgba($color,0) 25%,rgba($color, $opacity) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba($color,0) 0%,rgba($color,0) 25%,rgba($color, $opacity) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+  	}
+		bottom: 0;
+		content: '';
+		display: block;
+		left: 0;
+		position: absolute;
+		pointer-events: none;
+		right: 0;
+		top: 0;
+		z-index: 1;
+	}
+}
+
+@mixin gradient ($startColor:$white , $endColor:#eee) {
+	background-color: $startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+	background: -webkit-linear-gradient(top, $startColor, $endColor);
+	background: -moz-linear-gradient(top, $startColor, $endColor);
+	background: -ms-linear-gradient(top, $startColor, $endColor);
+	background: -o-linear-gradient(top, $startColor, $endColor);
+}
+
+@mixin horizontal-gradient ($startColor: #eee, $endColor: white) {
+ 	background-color: $startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+	background-image: -moz-linear-gradient(left, $startColor, $endColor);
+	background-image: -ms-linear-gradient(left, $startColor, $endColor);
+	background-image: -o-linear-gradient(left, $startColor, $endColor);
+}
+
+
+//3.0 - Fonts
+$body: sans-serif;
+$headline: sans-serif;
+$accent: sans-serif;
+
+$light: 100;
+$thin: 300;
+$regular: 400;
+$semi: 600;
+$bold: 700;
+$bolder: 900;
+
+$base-font-size: 16px;
+
+//3.1 Font Colors
+$font-color-default: $black;
+$font-color-light: $white;
+$font-color-dark: $primary-2;
+$font-color-accent: $primary-1;
+
+//3.2 Font Utilities
+@function em($target, $context: $base-font-size) {
+    @return ($target / $context) * 1em;
+}
+
+@mixin font-smoothing($smoothing:antialiased) { 
+	-webkit-font-smoothing: $smoothing;
+	-moz-font-smoothing: $smoothing;
+	-ms-font-smoothing: $smoothing;
+	font-smoothing: $smoothing;
+}
+
+
+//4.0 Borders 
+@mixin border-radius($radius) { 
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius; 
+	-ms-border-radius: $radius; 
+	border-radius: $radius; 
+	
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+@mixin box-sizing($sizing:border-box) {
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing; 
+	-ms-box-sizing: $sizing; 
+	box-sizing: $sizing;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+
+//5.0 Transitions 
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	-o-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($property:all,$duration:.2s,$timing:linear,$delay:0s) { 
+	-webkit-transition: $property $duration $timing $delay; 
+	-moz-transition: $property $duration $timing $delay; 
+	-ms-transition: $property $duration $timing $delay; 
+	transition: $property $duration $timing $delay;
+}
+
+
+//6.0 Shapes
+@mixin close($size:20px,$color:$black,$thickness:1px,$position:relative) {
+	display: inline-block;
+	height: $size;
+	position: $position;
+	text-indent: -9999px;
+	width: $size;
+	&:before,
+	&:after {
+		border-left: $thickness solid $color;
+		content: '';
+		display: block;
+		height:$size;
+		left: 50%;
+    position: absolute;
+    top: 50%;
+		@include transform(translate(-50%, -50%) rotate(45deg));
+	}
+	&:after {
+		@include transform(translate(-50%, -50%) rotate(-45deg));
+	}	 
+}
+
+@mixin burger( $color:$grey,$thickness:2px,$width:25px,$position:relative ) {  
+  cursor: pointer;
+  position: $position;
+  span {
+	  background: $color;
+	  display: block;
+	  height: $thickness;
+		left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;
+		@include transform(translate(-50%,-50%));
+		width: $width;
+    &:before, &:after {
+	    background: $color;
+	    content: '';
+      height: $thickness;
+      position: absolute;
+      -webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+      width: $width;
+    }
+    &:before { top: -8px; }
+    &:after { top: 8px; }
+  }
+	&.active {
+	  span {
+	    background: transparent;
+			&:before { 
+				@include transform(rotate(45deg) translate(5px, 6px));
+			}
+			&:after { 
+				@include transform(rotate(-45deg) translate(5px, -6px)); 
+			}
+	  }
+	}
+}
+
+//7.0 - Centering
+
+@mixin absoluteCenter() {
+	left: 50%; 
+	position: absolute;
+	top: 50%;
+	@include transform(translate(-50%, -50%));
+}
+
+@mixin unCenter() {
+	left: auto; 
+	position: relative;
+	top: auto;
+	@include transform(translate(0, 0));
+}
+
+
+//8.0 Clear Fix
+@mixin clearfix { &:after { content:""; display:table; clear:both; } }

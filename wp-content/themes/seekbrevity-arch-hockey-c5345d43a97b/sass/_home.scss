@@ -1,0 +1,303 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the homepage
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Home Feature
+2.0 - Upcoming Games
+3.0 - Current Standings
+4.0 - Home POW
+*/
+
+
+//1.0 - Home Feature
+#home-feature-wrapper {
+	@include gradient-overlay(top, $black, .65);
+	padding: 0;
+	.slide-wrapper.wrapper {
+		background-position: center center;
+		background-size: cover;
+		min-height: 800px;
+		@include bp(tablet) { min-height: 600px; }
+		@include bp(allPh) { min-height: 0; }
+	}
+}
+
+
+
+//2.0 - Upcoming Games
+#home-upcoming-games-wrapper {
+	background: $primary-1;
+	padding: 0;
+	h2 { 
+		color: $font-color-light;
+		font-size: em(32px);
+		font-weight: $light;
+		letter-spacing: 2px;
+		margin: .35em 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+		@include bp(allPh) {  
+			font-size: em(24px);
+		}
+	}
+	.upcoming-game { 
+		background: $primary-2;
+		border-top: 1px solid $primary-1;
+		color: $font-color-light;
+		display: block;
+		float: left;
+		font-size: em(14px);
+		line-height: 2em;
+		padding: em(20px) 0;
+		width: 100%;
+		.session-division {
+			display: block;
+			font-size: em(12px);
+			font-weight: $bolder;
+			letter-spacing: 1px;
+			text-align: center;
+			text-transform: uppercase;
+			width: 15%;
+			@include bp(allPh) { width: 100%; }
+		}
+		.match {
+			display: block;
+			text-align: center;
+			width: 30%;
+			@include bp(allPh) { width: 100%; }
+			> div {
+				font-size: em(24px);
+				font-weight: $light;
+				display: inline-block;
+				&.verses {
+					font-weight: $bolder;
+					margin: 0 .25em;
+				}
+			}
+		}
+		.game_day {
+			display: block;
+			text-align: center;
+			width: 25%;
+			@include bp(allPh) { width: 100%; }
+		}
+		.rink {
+			display: block;
+			text-align: center;
+			width: 15%;
+			@include bp(allPh) { width: 100%; }
+		}
+		.view-full-schedule {
+			display: block;
+			text-align: center;
+			width: 15%;
+			@include bp(allPh) { width: 100%; }
+			a {
+				background: lighten($primary-2, 10%);
+				box-shadow: 0 0 0 8px lighten($primary-2, 10%);
+				color: $white;
+				@include bp(allPh) { 
+					display: block; 
+					margin: em(30px) 0 em(-10px);
+					width: 100%; 
+				}
+			}
+		}
+		.session-over {
+			font-size: em(24px);
+			font-style: italic;
+			font-weight: $light;
+			display: block;
+			text-align: center;
+			width: 70%;
+			@include bp(allPh) { 
+				font-size: em(24px);
+				width: 100%; 
+			}
+		}
+	}
+}
+
+
+//3.0 - Home Intro 
+.home #content-wrapper {
+	h2 {
+		color: $font-color-accent;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: em(28px);
+		margin-bottom: 1em;
+	}
+	.intro_image {
+		display: block;
+		margin-bottom: em(30px);
+	}
+	h3 {
+		color: $font-color-default;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: em(24px);
+		margin-bottom: 1em;
+	}
+
+}
+//3.0 - Current Standings
+
+#home-current-standings-wrapper {
+	.home-current_standings {
+		.league-table {
+			th, td {
+				width: 8%;
+			}
+			.team_name {
+				text-align: left;
+				padding: 0 1em;
+				width: 44%;
+			}
+		}
+	}
+}
+
+
+//4.0 - Home POW
+#home-pow-wrapper {
+	background: $black;
+	padding: em(80px) 0 em(100px);
+	@include bp(allPh) { padding: em(40px) 0 em(60px); }
+	h2 {
+		color: $font-color-light;
+		font-size: em(32px);
+		font-weight: $light;
+		letter-spacing: 2px;
+		margin: .35em 0;
+		text-transform: uppercase;
+		width: 100%;
+		@include bp(allPh) {  
+			font-size: em(24px);
+			text-align: center;
+		}
+	}
+	.pow_slide {
+		background: $secondary-1;
+		@include border-radius(3px);
+		float: left;
+		margin: em(10px);
+		overflow: hidden;
+		.pow-img { display: block; } 
+		.pow-meta {
+			background: $primary-1;
+			color: $font-color-light;
+			font-size: em(14px);
+			font-style: italic;
+			padding: em(10px);
+			text-align: center;
+			span {
+				display: inline-block;
+				letter-spacing: 1px;
+				a { 
+					color: $font-color-light; 
+					&:hover {
+						text-decoration: underline;
+					}
+				} 
+			}
+		}
+		.pow-details {	
+			padding: em(5px) 0 em(10px);
+			float: left;
+			width: 100%;
+			.pow-number {
+				float: left;
+				font-size: em(42px);
+				font-weight: 900;
+				text-align: center;
+				width: 25%;
+			}
+			.pow-name-team {
+				float: left;
+				width: 75%;
+				.pow-name {
+					font-size: em(16px);
+					font-weight: 800;
+					margin-top: .65em;
+				}
+				.pow-team {
+					font-size: em(14px);
+					font-weight: 500;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
+
+
+//5.0 - Home Champs
+
+#home-champs-wrapper {
+	background: $light;
+	padding: em(80px) 0 em(100px);
+	@include bp(allPh) { padding: em(40px) 0 em(60px); }
+	h2 {
+		color: $font-color-accent;
+		font-size: em(32px);
+		font-weight: $light;
+		letter-spacing: 2px;
+		margin: .35em 0;
+		text-transform: uppercase;
+		width: 100%;
+		@include bp(allPh) {  
+			font-size: em(24px);
+			text-align: center;
+		}
+	}
+	.champs_slide {
+		background: $secondary-1;
+		@include border-radius(3px);
+		float: left;
+		margin: em(10px);
+		overflow: hidden;
+		width: 30.333%;
+		.champ-img { display: block; } 
+		.champ-details {	
+			padding: em(15px);
+			.champ-name {
+				font-size: em(18px);
+				font-weight: 900;
+			}
+			.champ-meta {
+				font-size: em(14px);
+				font-style: italic;
+				a { 
+					color: $font-color-default; 
+					&:hover { text-decoration: underline; }
+				}
+			}
+		}
+	}
+}
+
+#home-champs-wrapper,
+#home-pow-wrapper {
+	.slick-arrow {
+		background: $primary-1;
+		left: -5%;
+		@include bp(widescreen) { left: -7.5%; }
+		@include bp(allPh) { left: -2.5%; }
+	}
+	.slick-arrow.slick-next {
+		background: $primary-1;
+		left: auto;
+		right: -5%;
+		@include bp(widescreen) { left: auto; right: -7.5%; }
+		@include bp(allPh) { left: auto; right: -2.5%; }
+	}
+}

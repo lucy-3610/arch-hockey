@@ -1,0 +1,128 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Standings Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Standings Single
+	1.1 - Standings List
+2.0 - Standings Index
+*/
+
+
+//1.0 - Standings Single
+
+.league-table,
+.standings-table,
+.player-table,
+.goalie-table
+ {
+	border: 1px solid $black;
+	@include border-radius(3px);
+	th {
+		background: $black;
+		color: $font-color-light;
+		padding: em(10px) 0;
+		font-size: .85em;
+	}
+	td { 
+		text-align: center;
+		padding: .5em 0;
+		//border-bottom: 1px solid $black;
+		font-size: .85em;
+	}
+	th, td {
+		width: 8%;
+	}
+	tr {
+		&:nth-child(odd) {
+			background: #eee;
+		}
+	}
+	.team_name {
+		text-align: left;
+		padding: 0 1em;
+		width: 44%;
+	}
+	th.stat,
+	td.stat,
+	th.descript,
+	td.descript {
+		font-size: .85em;
+	} 
+	th.stat,
+	td.stat {
+		width: 2em;
+	}
+	th.descript,
+	td.descript {
+		width: 7em;
+		text-align: left;
+	}
+}
+
+
+//2.0 - Standings Index
+.standings-archive-post,
+.stats-archive-post {
+	background: $secondary-1;
+	@include border-radius(3px);
+	float: left;
+	margin: em(40px) 2%;
+	overflow: hidden;
+	width: 46%;
+	@include bp(allPh) {  
+		margin: em(20px) 0;
+		width: 100%;
+	}
+	.index-thumb-feature {
+		background: $secondary-2;
+		display: block;
+		img {
+			display: block;
+		}
+	}
+	.post-header {
+		padding: em(30px) 0;
+		text-align: center;
+		.post-sub-title {
+			letter-spacing: 3px;
+			font-weight: $bolder;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		.post-title {
+			font-weight: $bold;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		h4 {
+			font-style: italic;
+			letter-spacing: 2px;
+		}
+ 	}
+ 	.current-leader {
+	 	margin: 0 0 em(40px) 0;
+	 	text-align: center;
+	 	span {
+		 	font-style: italic;
+		 	font-weight: 600;
+	 	}
+ 	}
+	.button {
+		letter-spacing: 1px;
+		padding: em(20px) 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+	}
+}
+
+
+
+//3.0 - Section Name Here

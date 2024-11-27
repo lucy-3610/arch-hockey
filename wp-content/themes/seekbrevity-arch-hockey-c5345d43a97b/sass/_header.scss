@@ -1,0 +1,366 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of the site-wide header & navigation
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Message Bar
+2.0 - Masthead
+	2.1 - Sticky Header
+3.0 - Utility Navigation
+	3.1 - Header Sponsors
+	3.2 - Header Logo
+	3.3 - Header Social
+4.0 - Main Navigatoin
+*/
+
+
+//1.0 - Message Bar
+#header-message-bar {
+	background: $primary-1;
+	color: $font-color-light;
+	float: none;
+	font-family: $headline;
+	font-size: .9em;
+	min-width: 300px;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	.message-bar-container.container {
+		padding: 12px 0;
+		@include bp(allPh) { 
+			min-width: 80%; 
+			width: 80%;
+		}
+		a {
+			color: $font-color-light;
+			font-weight: $bold;
+		}
+	}
+	.close {
+		@include close(20px,$white,1px,absolute); 
+		right: em(10px);
+		top: 50%;
+		@include transform(translateY(-50%));
+		&:hover {
+			@include close(20px,$white,2px,absolute); 
+		}
+	}
+	&.hide {
+		height: 0 !important;
+	}
+}
+
+	
+//2.0 - Masthead
+#header-wrapper {
+	padding-bottom: 0;
+	position: absolute;
+	z-index: 9;
+	@include bp(allPh) { 
+		background: $black;
+		padding: 0; 
+	}
+	#masthead {
+		@include bp(allPh) {  
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	.sticky-header & {
+		background: $black;
+		box-shadow: 0 0 3px 3px rgba($black, .15);
+		left: 0;
+		padding: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+}
+
+
+//3.0 - Utility Navigation
+
+
+//	3.1 - Header Sponsors
+#header-sponsors {
+	.header-sponsor {
+		display: block;
+		img {
+			display: block;
+			max-height: em(50px);
+			float: left;
+		}
+	}
+	.sticky-header & {
+		display: none !important;
+	}
+}
+
+
+//	3.2 - Header Logo
+#header-logo {
+	text-align: center;
+	margin-bottom: em(20px);
+	.sticky-header & { 
+		float: left;
+		position: relative;
+		width: auto !important;
+		margin-bottom: 0;
+		@include bp(allPh) {  
+			width: 60% !important;
+		}
+	}
+	a { display: block; }
+	svg { 
+		display: inline-block;
+		height: 15em; 
+		margin: .5em 0 0; 
+		width: auto;
+	}
+	.sticky-header & {
+		svg { 
+			height: 4em;
+			@include bp(allPh) { height: 3em;  }
+		}
+	}
+	@include bp(allPh) {  
+		height: 3em;
+		line-height: 3em;
+		text-align: left;
+		width: 60%;
+		position: relative;
+		svg { 
+			height: 3em;
+			margin: .5em 0 .5em 1em; 
+		}
+		span {
+			@include absoluteCenter();
+			color: $white;
+			font-weight: $bold;
+			font-size: em(18px);
+			left: 50%;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			top: 70%;
+		}
+	}
+}
+
+
+//3.2 - Header Social
+#header-social {
+	.social-nav {
+		float: right;
+		margin: 0 1em;
+		li {
+			a { 
+				color: $font-color-light;
+				display: inline-block;
+				font-size: 2em;
+				height: 2em;
+				line-height: 2em;
+				margin: 0 .5em;
+				text-align: center;
+				width: 1em;
+				@include transition(color);
+				&:hover {
+					color: $font-color-accent;
+				}
+			}
+		}
+	}
+	.sticky-header & {
+		display: none !important;
+	}
+}
+
+
+//4.0 - Main Navigatoin
+#main-navigation {
+	float: left;
+	width: 100%;
+	@include bg-opacity($black, .65);
+	.sticky-header & {
+		clear: none !important;
+		float: right;
+		width: auto !important;
+	}
+	@include bp(allPh) { 
+		margin-bottom: 0; 
+		width: 50%;
+	}
+	#primary-navigation { 
+		margin: 0; 
+		.sticky-header & {
+			clear: none !important;
+			float: right;
+			width: auto !important;
+		}
+	}
+}
+
+#menu-main-navigation {
+	@include box-sizing();
+	float: left;
+	font-family: $body; 
+	font-weight: 900;
+	letter-spacing: .5px;
+	list-style: none;
+	margin: 0;
+	padding: 0 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	> li.menu-item {
+		display: inline-block;
+		position: relative;
+		a {
+			color: $font-color-light;
+			display: inline-block;
+			letter-spacing: 1px;
+			padding: 1.25em em(20px) 1.25em;
+			position: relative;
+			text-decoration: none !important;
+			text-transform: uppercase;
+			.sticky-header & {
+				padding: 1.85em em(20px) 1.85em;
+			}
+		}
+		&.current-menu-item > a:after,
+		&:hover > a:after {
+			background: $primary-1;
+			bottom: 0;
+			content: '';
+			height: 3px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+	}
+	.search-active & {
+		@include opacity(0);
+	}
+}
+
+#menu-main-navigation {
+	.sub-menu {
+		background: $primary-1;
+		display: none;
+		list-style: none;
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		width: em(260px);
+		z-index: 999;
+		> li.menu-item {
+			display: block;
+			position: relative;
+			&:hover {
+				background: darken($primary-1, 10%);
+			}
+			> a {
+				@include box-sizing();
+				color: $font-color-light;
+				display: block;
+				font-size: 0.9em;
+				font-weight: 900;
+				height: auto;
+				line-height: 1.5em;
+				padding: em(10px) em(20px);
+				overflow: hidden;
+				text-align: left;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 100%;
+			}
+		}
+	}
+	> li.menu-item:hover > .sub-menu{
+		display: block;
+	}
+}
+
+#menu-main-navigation {
+	ul.sub-menu {
+		ul.sub-menu {
+			display: none;
+			left: 100%;
+			top: 0;
+		}
+		> li:hover {
+			> ul.sub-menu {
+				display: block;
+			}
+		}
+	}
+}
+
+
+
+
+#header-search {
+	float: right;
+  padding: .7em .7em .7em 0;
+	position: relative;
+	.sticky-header & {
+		padding: 1.25em 1em 1em 0 !important;
+	}
+	.header-search-trigger {
+		color: $font-color-light;
+		height: 2.5em;
+		line-height: 2.5em;
+		width: 2.5em;
+		text-align: center;
+		.fa-search { display: inline-block; }
+		.fa-times { display: none; }
+	}
+	.tb-searchform {
+		height: calc(2.5em);
+		position: absolute;
+		right: 100%;
+		top: .7em;
+		width: 0;
+		z-index: 9;
+		@include transition(width);
+		.sticky-header & {
+			top: 1.25em;
+		}
+		input[type="text"] {
+			background: $white;
+			border: 0 none;
+			@include border-radius( 3px 0 0 3px);
+			height: 2.5em;
+			line-height: 2.5em;
+			padding: 0;
+			width: 100%;
+		}
+		.tb-searchsubmit,
+		.fa-search {
+			display: none !important;
+		}
+	}
+	.search-active & {
+		.header-search-trigger {
+			border: 1px solid $white;
+			@include border-radius( 0 3px 3px 0);
+			.fa-search { display: none; }
+			.fa-times { display: inline-block; }
+		}
+		.tb-searchform { 
+			background: $white;
+			@include border-radius(3px 0 0 3px);
+			border: 1px solid $white;
+			width: em(540px);
+			@include bp('(max-width: 1110px)') { width: em(330px); }
+			input[type="text"] { padding: 0 .5em; }
+		}
+	}
+}

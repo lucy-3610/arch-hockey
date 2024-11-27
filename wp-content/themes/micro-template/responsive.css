@@ -1,0 +1,155 @@
+/* ======== RESPONSIVE CSS ========= */
+
+
+/* ===================================================
+		MIN WIDTH 
+=================================================== */
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1600px) {}
+
+@media screen and (min-width: 1900px) {}
+
+@media screen and (min-width: 2000px) {}
+
+@media screen and (min-width: 2200px) {}
+
+@media screen and (min-width: 2700px) {}
+
+
+/* ------------------------------ 
+	768px SMALL
+------------------------------ */
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block;
+    }
+
+    .show-mobile {
+        display: none;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 750px;
+        margin: 6.75rem auto;
+    }
+}
+
+
+/* ===================================================
+		MIN - MAX WIDTH 
+=================================================== */
+/* ------------------------------ 
+	992px - 1199px LARGE
+------------------------------ */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* ------------------------------ 
+	768px - 991px MEDIUM
+------------------------------ */
+@media (min-width: 641px) and (max-width: 991px) {}
+
+
+/* ===================================================
+		MAX WIDTH 
+=================================================== */
+@media screen and (max-width: 1199px) {
+    .navbar-expand-sm {
+        flex-flow: column nowrap !important;
+    }
+
+    .gform_button,
+    button {
+        margin: 0;
+    }
+
+    .recent-champions img {
+        height: 193px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    .navbar {
+        justify-content: end;
+        padding: 1rem 0;
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-color: white;
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border-radius: 0.25rem;
+        width: 60px;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='rgba(37, 53, 70, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .gform_confirmation_message {
+        margin-bottom: 0;
+    }
+
+    .recent-champions img {
+        height: 217px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .recent-champions img {
+        height: 157px;
+    }
+}
+
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 600px) {
+
+    /* Reset for Mobile Admin bar */
+    body {
+        position: initial;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    h2,
+    .h2 {
+        font-size: 2.5rem;
+    }
+
+    .gform_button {
+        width: 100%;
+    }
+
+    .recent-champions img {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {}
+
+@media screen and (max-width: 450px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 350px) {}
+
+@media screen and (max-width: 300px) {}

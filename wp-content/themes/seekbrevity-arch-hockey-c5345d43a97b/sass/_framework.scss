@@ -1,0 +1,174 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Responsive grid framwork for all page layouts
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Screen Sizes 
+2.0 - Floats
+3.0 - Grid Elements
+*/
+
+
+//1.0 - Screen Sizes
+.desktop { display: none !important; }
+.mobile { display: inherit !important; }
+
+@media (min-width: 768px) {	  
+	.desktop { display: block !important; }
+	.mobile { display: none !important; }
+}
+
+//2.0 - Floats
+.right { float: right !important; }
+.left { float: left !important; }
+.both { clear: both !important; }
+
+
+//2.0 - Grid Elements
+.wrapper { 
+	float: left; 
+	padding: em(20px) 0;
+	width: 100%;   
+}
+
+.container { 
+  @include box-sizing;
+  margin: 0 auto;
+  max-width: 1248px;
+  width: 90%;
+  min-width: 300px;
+  
+  .column { 
+    @include box-sizing;
+    float: left;
+    margin-bottom:  em(20px);
+    margin-left: 0.6665%;
+    margin-right: 0.6665%;
+    @include bp(allPh) { 
+	    margin-left: 0; 
+	    margin-right: 0; 
+	}
+    width: 100%;
+  }
+  
+  .row{
+    float: left;
+    margin-bottom: 0px; 
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+
+    .column { 
+        margin-bottom: 0px; 
+        &:first-child { margin-left: 0;}
+        &:last-child { margin-right: 0;}
+     }
+    
+    .row { margin-bottom:  em(20px); }
+
+    // 16 column Grid
+    .column.one { width: 5%; }
+    .column.two { width: 11.333%; }
+    .column.three { width: 17.666%; }
+    .column.four { width: 23.999%; }
+    .column.five { width: 30.333%; }
+    .column.six { width: 36.666%; }
+    .column.seven { width: 42.999%; }
+    .column.eight { width: 49.333%; }
+    .column.nine { width: 55.666%; }
+    .column.ten { width: 61.999%; }
+    .column.eleven { width: 68.333%; }
+    .column.twelve { width: 74.666%; }
+    .column.thirteen { width: 80.999%; }
+    .column.fourteen { width: 87.333%; }
+    .column.fifteen { width: 93.666%; }
+    .column.sixteen { width: 100%; }
+
+    // 16 column Grid - offsets
+    .column.offset-one { margin-left: 6.333%; }
+    .column.offset-two { margin-left: 12.666%; }
+    .column.offset-three { margin-left: 18.999%; }
+    .column.offset-four { margin-left: 25.222%; }
+    .column.offset-five { margin-left: 31.666%; }
+    .column.offset-six { margin-left: 37.999%; }
+    .column.offset-seven { margin-left: 44.222%; }
+    .column.offset-eight { margin-left: 50.666%; }
+    .column.offset-nine { margin-left: 56.999%; }
+    .column.offset-ten { margin-left: 63.222%; }
+    .column.offset-eleven { margin-left: 69.666%; }
+    .column.offset-twelve { margin-left: 75.999%; }
+    .column.offset-thirteen { margin-left: 82.222%; }
+    .column.offset-fourteen { margin-left: 88.666%; }
+    .column.offset-fifteen { margin-left: 94.999%; }
+    .column.offset-sixteen { margin-left: 100%; }
+    
+    // 16 column Grid - RIGHT offsets
+    .right.column.offset-one { margin: 0 6.333% 0 0; }
+    .right.column.offset-two { margin: 0 12.666% 0 0; }
+    .right.column.offset-three { margin: 0 18.999% 0 0; }
+    .right.column.offset-four { margin: 0 25.222% 0 0; }
+    .right.column.offset-five { margin: 0 31.666% 0 0; }
+    .right.column.offset-six { margin: 0 37.999% 0 0; }
+    .right.column.offset-seven { margin: 0 44.222% 0 0; }
+    .right.column.offset-eight { margin: 0 50.666% 0 0; }
+    .right.column.offset-nine { margin: 0 56.999% 0 0; }
+    .right.column.offset-ten { margin: 0 63.222% 0 0; }
+    .right.column.offset-eleven { margin: 0 69.666% 0 0; }
+    .right.column.offset-twelve { margin: 0 75.999% 0 0; }
+    .right.column.offset-thirteen { margin: 0 82.222% 0 0; }
+    .right.column.offset-fourteen { margin: 0 88.666% 0 0; }
+    .right.column.offset-fifteen { margin: 0 94.999% 0 0; }
+    .right.column.offset-sixteen { margin: 0 100% 0 0; }
+
+	// 2 column Grid 
+    .column.half { width: 49.333%; }
+    // 2 column Grid - offsetts
+    .column.offset-half { margin-left: 50.666%; }
+
+
+    // 3 column Grid 
+    .column.one-third { width: 32.444%; }
+    .column.two-thirds { width: 66.222%; }
+    // 3 column Grid - offsetts
+    .column.offset-one-third { margin-left: 33.777%; }
+    .column.offset-two-thirds { margin-left: 67.555%; }
+    
+    
+    // 4 column Grid 
+    .column.one-fourth { width: 23.999%; }
+    .column.two-fourths { width: 49.333%; }
+    .column.three-fourths { width: 74.666%; }
+    // 4 column Grid - offsetts
+    .column.offset-one-fourth { margin-left: 25.222%; }
+    .column.offset-two-fourths { margin-left: 50.666%; }
+    .column.offset-three-fourths { margin-left: 75.999%; }
+
+
+    // 5 column Grid 
+    .column.one-fifth { width: 18.999%; }
+    .column.two-fifths { width: 39.222%; }
+    .column.three-fifths { width: 59.446%; }
+    .column.four-fifths { width: 79.661%; }
+    // 5 column Grid - offsetts
+    .column.offset-one-fifth { margin-left: 20.222%; }
+    .column.offset-two-fifths { margin-left: 40.555%; }
+    .column.offset-three-fifths { margin-left: 60.779%; }
+    .column.offset-four-fifths { margin-left: 80.994%; }
+  } 
+
+}
+
+//Container & Row Clear-fix 
+.container:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both; 
+}

@@ -1,0 +1,162 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Slick Slider Styles
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Default Slick Slider Styles
+2.0 - Custom Slick Slider Styles
+	2.1 - Nav Arrows
+*/
+
+
+//1.0 - Default Slick Slider Styles
+.slick-slider {
+  display: block;
+  @include box-sizing();
+  position: relative;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.slick-list {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.slick-list:focus { outline: none; }
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+	display: block;
+	left: 0;
+	position: relative;
+	top: 0;    
+}
+.slick-track:before,
+.slick-track:after {
+    content: '';
+		display: table;
+}
+.slick-track:after { clear: both; }
+.slick-loading .slick-track { visibility: hidden; }
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide { float: right; }
+.slick-slide img { display: block; }
+.slick-slide.slick-loading img { display: none; }
+.slick-slide.dragging img { pointer-events: none; }
+.slick-initialized .slick-slide { display: block; }
+.slick-loading .slick-slide { visibility: hidden; }
+.slick-vertical .slick-slide {
+    border: 1px solid transparent;
+    display: block;
+    height: auto;
+}
+.slick-arrow.slick-hidden { display: none; }
+
+
+//2.0 - Custom Slick Slider Styles
+
+
+//2.1 - Nav Arrows
+.slick-arrow {
+	background: none;
+	border: none;
+	@include border-radius(50%);
+	box-shadow: none;
+	color: transparent;
+	cursor: pointer;
+	height: em(60px);
+	left: 2.5%;
+	outline: none;
+	position: absolute;
+	top: 50%;
+	width: em(60px);
+	z-index: 9;
+	@include transform(translateY(-50%));
+	@include transition(background);
+	@include bp(allPh) {  
+		font-size: .75em;
+	}
+	&:before {
+		@include absoluteCenter();
+		color: $white;
+		font-family: 'FontAwesome';
+		content: "\f104";
+		font-size: em(36px);
+		left: 47%;
+		 .dark-nav & { color: $primary-2; }
+	}
+	&:hover { 
+  	  background: $primary-1;
+  	  &:before { color: $white !important; }
+  }
+	&.slick-next {
+		left: auto;
+		right: 2.5%;
+		@include transform(scaleX(-1) translateY(-50%));
+	}
+}
+
+//2.2 - Nav Dots
+.slick-dots {
+	position: absolute;
+	list-style: none;
+	left: 50%;
+	bottom: 7.5%;
+	margin: 0;
+	@include transform(translateX(-50%));
+	li {
+		background: none;
+		border: 2px $white solid;
+		@include border-radius(50%);
+		cursor: pointer;
+		display: inline-block;
+		height: .75em;
+		margin: 0 .5em 0 0;
+		text-indent: -9999px;
+		width: .75em;
+		.dark-nav & { border: 2px $primary-2 solid; }
+		&.slick-active { 
+			background: $white; 
+			@include transform(scale(.9));
+			.dark-nav & { background: $primary-2; }
+		}
+	}
+}
+
+
+
+
+
+
+

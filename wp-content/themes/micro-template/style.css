@@ -1,0 +1,608 @@
+/*
+ Theme Name:   Change Me
+ Theme URI:    https://wordpress.org/themes/twentyninteen/
+ Description:  Custom theme built for Change Me
+ Author:       
+ Template:     twentynineteen
+ Version:      1.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  change-me
+*/
+
+
+
+
+/* ==================================== */
+
+
+/* ======== TABLE OF CONTENTS =========
+	1. TYPOGRAPHY
+	2. GLOBAL
+	3. MAIN CONTENT
+    4. FORM STYLING
+    5. PRIVACY POLICY
+/* ==================================== */
+
+@font-face {
+    font-family: "EurostileBold";
+    src: url("/wp-content/themes/micro-template/assets/fonts/fonnts.com-Eurostile_Bold.otf") format("otf");
+}
+
+:root {
+    --primary: rgb(37 53 70);
+    --primary-light: rgb(37 53 70 / 0.8);
+    --secondary: #e7502f;
+    --secondary-light: rgb(231 80 47 / 0.9);
+    --tertiary: #979FA6;
+    --tertiary-light: rgb(151 159 166 / 0.2);
+}
+
+/* ------------------------------ 
+    1. Start Typography
+------------------------------ */
+body {
+    font-family: "EurostileBold", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.btn,
+button {
+    margin: 0;
+}
+
+h1,
+h2 {
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+h1,
+.h1 {
+    font-family: adelle, serif;
+    font-size: 116px;
+    font-weight: 800;
+}
+
+h2,
+.h2 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+h3,
+.h3 {
+    font-size: 2.5rem;
+    line-height: 0.8;
+}
+
+h4,
+.h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+h5,
+.h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+h6,
+.h6 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+a,
+.anchor-theme {
+    transition: none;
+    letter-spacing: 0.03em;
+    color: #030A8C;
+    border: none;
+    background: none;
+}
+
+a:hover,
+a:focus,
+.anchor-theme:hover,
+.anchor-theme:focus {
+    font-style: normal !important;
+}
+
+.social-links a {
+    height: 28px;
+    width: 28px;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 28px;
+    color: var(--primary) !important;
+    border: none;
+    border-radius: 28px;
+    padding: 10px;
+}
+
+footer .social-links a {
+    color: white !important;
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.nav-link {
+    padding: 0 0.5rem;
+}
+
+.nav-link span {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------------ 
+    1. End Typography
+------------------------------ */
+
+
+
+
+/* ------------------------------ 
+    2. Start Global
+------------------------------ */
+@-ms-viewport {
+    width: device-width;
+}
+
+html {
+    font-size: 16px;
+    margin-top: 0 !important;
+}
+
+body {
+    font-family: museo-sans, sans-serif;
+    font-size: 16px;
+    /* Adjust this on mobile to globally change P-tags :NOT H-tags) */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+
+.sans-serif {
+    font-family: museo-sans, sans-serif;
+}
+
+.serif {
+    font-family: adelle, serif;
+}
+
+.ls-100 {
+    letter-spacing: 0.1em;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-primary {
+    color: var(--primary);
+}
+
+.bg-theme-primary {
+    background: var(--primary);
+}
+
+.color-secondary {
+    color: var(--secondary);
+}
+
+.bg-theme-secondary {
+    background: var(--secondary);
+}
+
+.bg-tertiary-hover:focus,
+.bg-tertiary-hover:hover {
+    background: var(--tertiary);
+    text-decoration: none;
+}
+
+.bg-tertiary-light {
+    background: var(--tertiary-light);
+}
+
+.white {
+    color: white !important;
+}
+
+.bg-white {
+    background: white;
+}
+
+.desktop {
+    display: block !important;
+}
+
+.mobile {
+    display: none !important;
+}
+
+.fw-400 {
+    font-weight: 400;
+    /* Regular */
+}
+
+.fw-700 {
+    font-weight: 700;
+    /* Bold */
+}
+
+.italic {
+    font-style: italic;
+}
+
+.normal {
+    font-style: normal;
+}
+
+.super {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+section {
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+.gform_button,
+button {
+    font-family: adelle, serif;
+    font-weight: 700;
+    color: white;
+    line-height: 1.5;
+    border: none;
+    border-radius: 50px;
+    margin-left: 12px;
+    padding: 5px 18px;
+}
+
+button:hover,
+button:focus {
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16); */
+}
+
+button:active {
+    background-color: #C10912;
+}
+
+/* DELETE ME */
+html #wpadminbar {
+    display: none !important;
+}
+
+/* ------------------------------ 
+    2. End Global
+------------------------------ */
+
+
+
+
+/* ------------------------------ 
+    3. Start Main Content
+------------------------------ */
+header {
+    position: relative;
+    z-index: 3;
+}
+
+.toast,
+.toast-header {
+    width: 100%;
+    max-width: none;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.close {
+    color: white;
+    opacity: 1;
+}
+
+.close svg {
+    width: 1.5rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+    color: var(--primary);
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar a:focus,
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    width: 75px;
+}
+
+nav .current-menu-item a {
+    color: var(--secondary) !important;
+}
+
+.container-fluid {
+    max-width: 1350px;
+}
+
+.splash {
+    background: url("/") no-repeat top center;
+    background-size: cover;
+}
+
+.slick-dotted.slick-slider {
+    overflow: hidden;
+    margin: 0;
+}
+
+.recent-champions .slide {
+    margin: 0.625em;
+}
+
+.slick-dots {
+    bottom: -3px;
+}
+
+.recent-champions .slick-dots {
+    position: relative;
+}
+
+.slick-dots button:focus,
+.slick-dots button:hover {
+    font-style: normal;
+}
+
+.slick-dots li button:before {
+    font-size: 16px;
+}
+
+.slick-dots li button:focus:before,
+.slick-dots li button:hover:before,
+.slick-dots li.slick-active button:before {
+    color: var(--secondary);
+}
+
+.slick-arrow,
+.slick-arrow:focus,
+.slick-arrow:hover {
+    background: var(--secondary);
+}
+
+.slick-arrow:before {
+    font-size: 40px;
+    opacity: 1;
+    color: #ffffff;
+    font-family: 'FontAwesome';
+    content: "\f104";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px; */
+}
+
+.slick-arrow.slick-next:before {
+    content: "\f105";
+}
+
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+}
+
+.slick-prev {
+    left: -62px;
+}
+
+.slick-next {
+    right: -52px;
+}
+
+/* ------------------------------ 
+    3. End Main Content
+------------------------------ */
+
+
+
+
+/* ------------------------------ 
+    4. Start Form Styling
+------------------------------ */
+
+input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--white);
+}
+
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--white);
+}
+
+input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--white);
+}
+
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--white);
+}
+
+.gform_wrapper.gravity-theme .ginput_complex {
+    flex-flow: column wrap !important;
+}
+
+.gfield:nth-child(2),
+.gfield:nth-child(3),
+.ginput_container,
+.name_first input,
+.name_last input {
+    margin: 0 !important;
+}
+
+.ginput_container_email input {
+    width: 100% !important;
+}
+
+.name_first input,
+.name_last input,
+.ginput_container input {
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px !important;
+}
+
+form {
+    position: relative;
+}
+
+.gform_footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gform_button {
+    margin: 0 !important;
+}
+
+/* ------------------------------ 
+    4. End Form Styling
+------------------------------ */
+
+
+
+
+/* ------------------------------ 
+    5. Start Privacy Policy
+------------------------------ */
+.page-template-page-privacypolicy header {
+    display: none;
+}
+
+.word-break {
+    word-break: break-word;
+}
+
+/* ------------------------------ 
+    5. End Privacy Policy
+------------------------------ */
+#home-upcoming-games-wrapper {
+    background: var(--secondary);
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 610px; */
+}
+
+/* .hero-slider {
+    height: 610px;
+    overflow: hidden;
+} */
+
+#output-home-schedule .container:hover,
+#output-home-standings tbody tr:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#output-home-schedule .container:not(:last-child),
+#output-home-standings tr:not(:last-child) {
+    border-bottom: 1px solid var(--primary);
+}
+
+.btn-primary {
+    width: fit-content;
+    background: var(--primary);
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.league-table th,
+.standings-table th,
+.player-table th,
+.goalie-table th,
+.league-table td,
+.standings-table td,
+.player-table td,
+.goalie-table td {
+    text-align: center;
+    padding: .5em 0;
+}
+
+.league-table tr:nth-child(even),
+.standings-table tr:nth-child(even),
+.player-table tr:nth-child(even),
+.goalie-table tr:nth-child(even) {
+    background: var(--tertiary-light);
+}
+
+#home-current-standings-wrapper .home-current_standings .league-table th,
+#home-current-standings-wrapper .home-current_standings .league-table td {
+    width: 6%;
+}
+
+#home-current-standings-wrapper .home-current_standings .league-table th.descript,
+#home-current-standings-wrapper .home-current_standings .league-table td.descript {
+    width: 16%;
+    text-align: left;
+}
+
+.recent-champions img {
+    height: 172px;
+    object-fit: cover;
+    object-position: center;
+}

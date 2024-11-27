@@ -1,0 +1,434 @@
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide {
+    height: 710px;
+    padding-bottom: 2em;
+}
+
+
+.circle {
+    position: relative;
+    display: block;
+    margin: 2em 0;
+    border-radius: 50%;
+    color: #222;
+    text-align: center;
+}
+
+.circle p {
+    font-family: "Futura PT";
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: 0.03em;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: .5em;
+}
+
+.circle:after {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    /* background-color: #ddd; */
+    content: "";
+}
+
+.circle__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__content {
+    display: table-cell;
+    padding: 2em;
+    vertical-align: middle;
+}
+
+
+
+
+
+.slick-dots {
+    position: absolute !important;
+    display: block;
+    width: 550px !important;
+    position: absolute;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    z-index: 1;
+    margin: 0 auto;
+    bottom: 1.5em !important;
+    left: 0;
+    right: 0;
+}
+
+.slick-dots li {
+    margin: 0 1px !important;
+}
+
+.slick-dots li button {
+    display: block;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid white !important;
+    text-indent: -9999px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: white !important;
+    /* border: none !important; */
+}
+
+.slick-dots li button:before {
+    width: 10px !important;
+    height: 10px !important;
+
+}
+
+.slick-slider {
+    margin-bottom: 0px !important;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-img {
+    width: 100%;
+    height: 850px;
+    padding-bottom: 2em;
+}
+
+.hero .circle p {
+    line-height: 20px;
+}
+
+.img-carsousel .img-slide {
+    height: 214px !important;
+}
+
+.img-carsousel .img-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+marquee {
+    /* padding: 1em 0; */
+    border-top: 5px solid #005677;
+    border-bottom: 5px solid #005677;
+    background-color: #E8E8E8;
+}
+
+marquee h2 {
+    width: auto;
+    font-family: 'futura-pt', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    line-height: 20px;
+    text-align: center;
+    color: #005677;
+    margin-right: 2em;
+}
+
+.instagram-feed h2 {
+    font-family: 'futura-pt', sans-serif;
+    font-weight: 400 !important;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    line-height: 30px;
+    color: #005677;
+}
+
+.hovering-bookyour-visit {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 999999;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.login p {
+    font-family: 'futura-pt', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    line-height: 20px;
+    text-align: center;
+    color: #005677;
+    text-transform: uppercase;
+}
+
+
+.login .login-box {
+    color: #FFF;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 20px 20px 0;
+    margin: 100px 0 50px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.login-box p {
+    margin-top: 10px;
+}
+
+.login-box div input::placeholder {
+    font-family: 'futura-pt', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    line-height: 36px;
+    text-align: left;
+    color: #737577;
+    text-transform: capitalize;
+}
+
+.login-box input#gform_submit_button_0,
+.virtual-class-library button {
+    /* background: ; */
+    text-transform: uppercase;
+    transform: translateY(50%);
+    border-radius: 0px;
+    border: 0;
+    padding: 10px 30px;
+    max-width: 255px;
+    width: 100%;
+    font-family: 'futura-pt', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    height: 57px;
+}
+
+.virtual-class-library .video-section .image img {
+    max-width: 150px;
+}
+
+.virtual-class-library .gfield_label {
+    display: none !important;
+}
+
+.virtual-class-library div#field_0_3,
+.virtual-class-library .gform_heading {
+    display: none !important;
+}
+
+.virtual-class-library div#gform_fields_login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.virtual-class-library form#gform_0 {
+    width: 100%;
+}
+
+.virtual-class-library input#input_1 {
+    width: 100% !important;
+}
+
+.virtual-class-library input#input_2 {
+    width: 100% !important;
+}
+
+.virtual-class-library .gform_wrapper.gravity-theme .gfield {
+
+    width: 100% !important;
+}
+
+.virtual-class-library nav.gf_login_links {
+    display: none !important;
+}
+
+.virtual-class-library .gform_wrapper.gravity-theme .gform_footer {
+    display: block;
+    position: relative;
+    top: 2em;
+}
+
+.virtual-class-library .gform_footer.top_label {
+    margin-top: -3em !important;
+}
+
+/* .hovering-bookyour-visit-carsousel {
+    position: absolute;
+    right: 10%;
+    bottom: 2em;
+}
+
+.fixed-button-carsousel {
+    position: fixed;
+    right: 10%;
+    top: 50%;
+    transform: translate(0, 0);
+    z-index: 99999;
+
+}
+
+.hovering-bookyour-visit-hero {
+    position: absolute;
+    right: 10%;
+    bottom: 0em;
+}
+
+.fixed-button-hero {
+    position: fixed;
+    right: 16.3%;
+    top: 53%;
+    transform: translate(0, 0);
+    z-index: 99999;
+
+} */
+
+.todaysDay {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    line-height: 16px;
+    text-align: center;
+    color: #fff;
+    background: #005677;
+    padding: 15px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+
+.tabs {
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tab {
+    width: 50%;
+    text-align: center;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-transform: uppercase;
+    transition: 0.25s all;
+    cursor: pointer;
+
+}
+
+.tab {
+    font-family: "Futura PT";
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 36px;
+    text-align: center;
+    color: #005677;
+    text-transform: uppercase;
+}
+
+.tabs a {
+
+    color: #005677 !important;
+}
+
+.class-tab-selector {
+    border-left: 4px solid #005677;
+    border-right: 4px solid #005677;
+}
+
+.active {
+    background: #005677;
+    color: #FFF;
+}
+
+.tab:hover {
+    background: #005677;
+    color: #FFF !important;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+@media (max-width: 640px) {
+    .virtual-class-library div#gform_fields_login {
+        flex-direction: column;
+    }
+
+    .virtual-class-library .hero-img img {
+        object-position: 33%;
+    }
+
+    .virtual-class-library .login {
+        height: 324px;
+    }
+
+    /* .hovering-bookyour-visit-carsousel {
+
+        right: 0%;
+        transform: translate(0, -50%);
+        bottom: 6em;
+
+    }
+
+
+    .fixed-button-carsousel {
+        position: fixed;
+        right: 0;
+        top: 49%;
+        transform: translate(0, 0);
+        z-index: 99999;
+
+    }
+
+    .hovering-bookyour-visit-hero {
+        right: 0%;
+        transform: translate(0, -50%);
+        bottom: 0em;
+
+    }
+
+
+    .fixed-button-hero {
+        position: fixed;
+        right: 0;
+        top: 60%;
+        transform: translate(0, 0);
+        z-index: 99999;
+
+    } */
+}

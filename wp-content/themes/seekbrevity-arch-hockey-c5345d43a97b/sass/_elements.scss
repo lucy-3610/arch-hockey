@@ -1,0 +1,74 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Reusable Theme Elements
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Seach Form
+2.0 - Social Nav
+3.0 - Social Share
+*/
+
+//1.0 - Seach Form
+.tb-searchform {
+	float: left;
+	height: 3em;
+	position: relative;
+	width: 100%;
+	input { 
+		float: left; 
+		width: calc(100% - 3em);
+	}
+	.tb-searchsubmit {
+		-webkit-appearance: none;
+		background: $black;
+		border: 0;
+		cursor: pointer;
+		float: left;
+		height: 3em;
+		text-indent: -9999px;
+		width: 3em;
+	}
+	i {
+		color: $white;
+		display: block;
+		font-size: 1.25em;
+		height: 2.375em;
+		line-height: 2.375em;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		width: 2.375em;
+	}
+}
+
+//2.0 - Social Nav
+.social-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li { 
+		display: inline; 
+		margin: 0 .25em;
+	}
+}
+
+
+//3.0 - Social Share
+.social-share {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li { 
+		display: inline; 
+		margin: 0 .25em;
+		a { cursor: pointer; }
+	}
+}

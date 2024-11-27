@@ -1,0 +1,79 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Gallery Module
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Gallery Base
+2.0 - Gallery Colors
+*/
+
+
+//1.0 - Gallery Base
+.module-gallery-wrapper {
+	padding: 0;
+	.gallery { 
+		@include box-sizing();
+		float: left;
+		padding: 5px !important;
+		width: 100%;
+		.grid-block { 
+		  height: 220px;
+		  width: 24%;
+		  float: left;
+		  margin: .5%;
+		  display: inline-block;
+		  &.wide { width: 49%; }
+		  &.tall { height: 360px; }
+		  &.med { height: 220px; width:33%; }
+		  &.large { height: 452.5px; width:65%; }
+		  @include bp(widescreen) { 
+		    height: 260px;
+		     &.tall { height: 420px; }
+		     &.med { height: 294px;  }
+		     &.large { height: 605px; }
+		  }
+		  @include bp(tablet) { 
+		    height: 180px;
+		    &.tall { height: 280px; }
+		    &.med { height: 196px;  }
+		    &.large { height: 400px; }
+		  }
+		  @include bp(allPh) {
+		      width: 100%;
+		      height: 300px;
+		      margin: 0 0 5px;
+		    &.tall, &.med, &.large, &.wide  { 
+		      width: 100%;
+		      height: 300px;
+		      float: left !important;
+		      margin: 0 0 5px; 
+		    }
+		  }
+		  a { 
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: block; 
+				height: 100%;
+				position: relative; 			
+			}
+		}
+	}
+}
+
+
+//2.0 - Gallery Colors
+.module-gallery-wrapper {
+	&.color-scheme-white { background-color: $mod-white; }
+	&.color-scheme-light { background-color: $mod-light; }
+	&.color-scheme-medium { background-color: $mod-medium; }
+	&.color-scheme-dark { background-color: $mod-dark; }
+}
+
+

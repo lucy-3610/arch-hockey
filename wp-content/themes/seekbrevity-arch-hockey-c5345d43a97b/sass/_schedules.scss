@@ -1,0 +1,140 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Schedule Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Schedule Single
+	1.1 - Schedule List
+2.0 - Schedule Index
+*/
+
+
+//1.0 - Schedule Single
+.schedule_matches {
+	@include border-radius(3px);
+	border: 1px solid $black;
+	float: left;
+	width: 100%;
+	.schedule_header {
+		background: $black;
+		color: $font-color-light;
+		float: left;
+		font-size: em(14px);
+		font-weight: $bold;
+		height: em(60px);
+		letter-spacing: 1px;
+		line-height: em(60px); 
+		text-align: center;
+		text-transform: uppercase;
+		&.home_team_header,
+		&.away_team_header {
+			width: 40%;
+		}
+		&.time_place_header {
+			width: 20%;
+		}
+	}
+	.match {
+		border-top: 1px solid $black;
+		float: left;
+		position: relative;
+		width: 100%;
+		@include bp(allPh) {  
+			font-size: 12px;
+		}
+		&:first-child { border: none 0; }
+		.team {
+			width: 40%;
+			.team_name {
+				float: left;
+				height: 6em;
+				font-weight: $bold;
+				line-height: 6em;
+				text-align: center;
+				text-transform: uppercase;
+				width: 70%;
+			}
+			.team_score {
+				float: left;
+				font-size: 1.5em;
+				font-weight: $bold;
+				height: 4em;
+				line-height: 4em;
+				text-align: center;
+				width: 30%;
+			}
+		}
+		.time_local {
+			@include absoluteCenter();
+			text-align: center;
+			width: 20%;
+		}
+		&.winner-hometeam {
+			.home_team { @include gradient-overlay(left, green, .5); }
+			.away_team { @include gradient-overlay(right, $primary-1, .5); }
+		}
+		&.winner-awayteam {
+			.away_team { @include gradient-overlay(right, green, .5); }
+			.home_team { @include gradient-overlay(left, $primary-1, .5); }
+		}
+	}
+}
+
+
+
+//2.0 - Schedule Index
+.schedule-archive-post {
+	background: $secondary-1;
+	@include border-radius(3px);
+	float: left;
+	margin: em(40px) 2%;
+	overflow: hidden;
+	width: 46%;
+	@include bp(allPh) {  
+		margin: em(20px) 0;
+		width: 100%;
+	}
+	.index-thumb-feature {
+		background: $secondary-2;
+		display: block;
+		img {
+			display: block;
+		}
+	}
+	.post-header {
+		padding: em(30px) 0;
+		text-align: center;
+		.post-sub-title {
+			letter-spacing: 3px;
+			font-weight: $bolder;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		.post-title {
+			font-weight: $bold;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		h4 {
+			font-style: italic;
+			letter-spacing: 2px;
+		}
+ 	}
+	.button {
+		letter-spacing: 1px;
+		padding: em(20px) 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+	}
+}
+
+
+
+//3.0 - Section Name Here

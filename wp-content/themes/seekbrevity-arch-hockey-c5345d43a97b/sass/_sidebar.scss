@@ -1,0 +1,108 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of site-wide sidebar section & Widgets.
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Sidebar
+2.0 - Widgets
+2.1 - Sidebar Nav
+2.2 - Sidebar Callouts 
+*/
+
+
+//1.0 - Sidebar
+#content-sidebar {
+	margin-bottom: 2em;
+	position: relative;
+	z-index: 4;
+	@include bp(allPh) {  
+		margin: 0 0 2em;
+	}
+}
+
+//2.0 - Widgets
+
+.widget {
+	@include box-sizing();
+	float: left;
+	width: 100%;	
+}
+
+.widget-search {
+	background: darken($white, 5%);
+	@include box-sizing();
+	padding: .5em 0 .5em .5em;
+	.tb-searchform input[type="text"] {
+		border: 0 none !important;
+		color: $secondary-2 !important;
+		font-family: $headline;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+	.tb-searchform input.tb-searchsubmit[type="submit"] {
+		background: darken($white, 5%) !important;
+		border: 0 none !important;
+	}
+	.tb-searchform i { color: $secondary-2 !important; }
+}
+
+//2.1 - Sidebar Nav
+.sidebar-nav {
+	background: darken($white, 10%);
+	padding: 8%;
+	h3.widget-title {
+		color: $secondary-2;
+		font-family: $body;
+		font-weight: 300;
+		letter-spacing: 1px;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		a {
+			display: block;
+			padding: em(10px);
+			&:hover {
+				background: $secondary-1;
+				text-decoration: none;
+			}
+		}
+	}
+	ul {
+		list-style: none;
+		margin: em(10px) 0;
+		padding: 0;
+		li a {
+			color: $secondary-2;
+			display: block;
+			font-weight: 700;
+			letter-spacing: 1px;
+			padding: em(5px) em(10px);
+			text-transform: uppercase;
+			&:hover {
+				background: darken($white, 15%);
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+//2.2 - Sidebar Callouts 
+.sidebar-cta {
+	float: left;
+	margin: 5px 0 0 ;
+	width: 100%;
+	.sb_cta_image,
+	.sb_cta_image img {
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+	.sidebar-cta-content {
+		padding: 10%;
+	}
+}

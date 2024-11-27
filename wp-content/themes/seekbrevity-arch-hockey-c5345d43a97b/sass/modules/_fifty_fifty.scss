@@ -1,0 +1,183 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - 50/50
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - 50/50 Base
+2.0 - 50/50 Block Placement
+3.0 - 50/50 Color Shceme
+*/
+
+
+//1.0 - 50/50 Base
+.module-fifty-fifty-wrapper {
+	background-size: cover;
+	padding: 0;
+	.module-fifty-fifty-container {
+		max-width: none;
+		position: relative;
+		width: 100%;
+		.fifty-fifty {
+			background-size: cover;
+			width: 50%;
+			z-index: 2;
+			@include bp(allPh) { width: 100%; }
+		}
+		.fifty-fifty-text {
+			@include box-sizing();
+			padding: 8%;
+			.fifty-fifty-content {
+				position: relative;
+				z-index: 2;
+				h2 { }
+				p { }
+			}
+		}
+		.fifty-fifty-img,
+		.fifty-fifty-video {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			bottom: 0;
+			position: absolute !important;
+			top: 0;
+			.video-link {
+				bottom: 0;
+				color: $font-color-light;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 2;
+				&:hover {
+					color: $font-color-accent;
+				}
+				i {
+					left: 50%;
+					font-size: 5em;
+					position: absolute;
+					top: 50%;
+					@include transform(translate(-50%, -50%));
+				}
+			}
+			@include bp(allPh) { 
+				bottom: auto !important;
+				left: auto !important;
+				position: relative !important;
+				height: em(400px);
+				right: auto !important;
+				top: auto !important;
+			}
+		}
+		.fifty-fifty-media:nth-of-type(2) { 
+			bottom: auto;
+			left: auto;
+			padding-top: 40%;
+			position: relative !important;
+			right: auto;
+			top: auto;	
+			@include bp(allPh) { 
+				border-left: 0 none;
+				height: em(360px); 
+				padding: 0;
+			}
+			@include bp(horzPh) {  
+				height: em(420px);
+			}
+		}
+	}
+}
+
+//2.0 - 50/50 Block Placement
+.module-fifty-fifty-wrapper {
+	&.block-placemment-left-right { 
+		.module-fifty-fifty-container {
+			div.fifty-fifty-text:first-child { float: left; }
+			div.fifty-fifty-text:last-child { float: right; }
+			figure.fifty-fifty-media:first-child {
+				left: 0;
+				float: left;
+			}
+			figure.fifty-fifty-media:last-child {
+				float: right;
+				left: auto;
+				right: 0;
+			}
+		}	
+	}
+	&.block-placemment-right-left {
+		.module-fifty-fifty-container {
+			div.fifty-fifty-text:first-child { float: right; }
+			div.fifty-fifty-text:last-child { float: left; }
+			figure.fifty-fifty-media:first-child {
+				float: right;
+				left: auto;
+				right: 0;
+			}
+			figure.fifty-fifty-media:last-child {
+				left: 0;
+				float: left;
+			}
+		}	
+	}
+}
+
+
+//3.0 - 50/50 Color Shceme
+.module-fifty-fifty-wrapper { 
+	&.module-color-scheme-white,
+	.block-color-scheme-white {
+		background-color: $mod-white;
+		color: $font-color-default;
+		@include overlay($mod-white, .5);
+		a.button {
+			background-color: $mod-medium;
+			&:hover {
+				background-color: darken($mod-medium, 10%);
+			}
+		}
+	}
+	&.module-color-scheme-light,
+	.block-color-scheme-light {
+		background-color: $mod-light;
+		color: $font-color-dark;
+		@include overlay($mod-light, .5);
+		a.button {
+			background-color: $mod-medium;
+			&:hover {
+				background-color: darken($mod-medium, 10%);
+			}
+		}
+	}
+	&.module-color-scheme-medium,
+	.block-color-scheme-medium {
+		background-color: $mod-medium;
+		color: $font-color-light;
+		@include overlay($mod-medium, .5);
+		a.button {
+			background-color: $mod-dark;
+			&:hover {
+				background-color: darken($mod-dark, 10%);
+			}
+		}
+	}
+	&.module-color-scheme-dark,
+	.block-color-scheme-dark {
+		background-color: $mod-dark;
+		color: $font-color-light;
+		@include overlay($mod-dark, .5);
+		a.button {
+			background-color: $mod-medium;
+			&:hover {
+				background-color: darken($mod-medium, 10%);
+			}
+		}
+	}
+}
+

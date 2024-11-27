@@ -1,0 +1,2155 @@
+@charset "UTF-8";
+/*!
+Theme Name: Arch Hockey	
+Theme URI: http://seekbrevity.com/
+Author: Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+Description: This is a custom theme designed for Arch Hockey, built on the Thunder Bolt 2 framework, developed and maintained by Brevity. 
+Version: 1.0
+Text Domain: Thunder_Bolt_2
+Domain Path: /languages/
+
+Thunder_Bolt_2 is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Brevity 2016 CSS Framework is based on Skeleton V1.2, http://www.getskeleton.com Copyright 2011, Dave Gamache
+
+Resetting and responsive column styles have been helped along thanks to the fine work of
+Eric Meyer - CSS Resets v2.0, http://meyerweb.com/eric/tools/css/reset/index.html Copyright 2011
+Dave Gamache - Skeleton V2.0.4, http://www.getskeleton.com Copyright 2014
+*/
+/* RESET --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Rest CSS - Courtesy of Eric Meyer Reset
+http://meyerweb.com/eric/tools/css/reset/
+
+CSS Resets 
+@package Thunder_Bolt_2
+Updated Version: 1.0
+*/
+/* line 15, sass/_resets.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 36, sass/_resets.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* line 40, sass/_resets.scss */
+body { line-height: 1; }
+
+/* line 43, sass/_resets.scss */
+ol, ul { list-style: none; }
+
+/* line 46, sass/_resets.scss */
+blockquote, q { quotes: none; }
+
+/* line 49, sass/_resets.scss */
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to define visible focus styles! 
+:focus {
+	outline: ?????;
+} */
+/* remember to highlight inserts somehow! */
+/* line 61, sass/_resets.scss */
+ins { text-decoration: none; }
+
+/* line 64, sass/_resets.scss */
+del { text-decoration: line-through; }
+
+/* line 68, sass/_resets.scss */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* GLOBAL VARS --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All Sass variables and site wide mix-ins
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Media Queries
+2.0 - Colors 
+	2.0 - Brand Colors
+	2.1 - Social Colors 
+	2.2 - Colors Utilities
+3.0 - Fonts
+	3.1 - Font Colors
+	3.2 - Font Utilities
+4.0 - Borders
+5.0 - Transitions & Transfroms
+6.0 - Shapes
+7.0 - Centering
+8.0 - Clear Fix
+*/
+/* GLOBAL STYLES --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Responsive grid framwork for all page layouts
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Screen Sizes 
+2.0 - Floats
+3.0 - Grid Elements
+*/
+/* line 19, sass/_framework.scss */
+.desktop { display: none !important; }
+
+/* line 20, sass/_framework.scss */
+.mobile { display: inherit !important; }
+
+@media (min-width: 768px) { /* line 23, sass/_framework.scss */
+  .desktop { display: block !important; }
+  /* line 24, sass/_framework.scss */
+  .mobile { display: none !important; } }
+/* line 28, sass/_framework.scss */
+.right { float: right !important; }
+
+/* line 29, sass/_framework.scss */
+.left { float: left !important; }
+
+/* line 30, sass/_framework.scss */
+.both { clear: both !important; }
+
+/* line 34, sass/_framework.scss */
+.wrapper { float: left; padding: 1.25em 0; width: 100%; }
+
+/* line 40, sass/_framework.scss */
+.container { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; margin: 0 auto; max-width: 1248px; width: 90%; min-width: 300px; }
+/* line 47, sass/_framework.scss */
+.container .column { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; margin-bottom: 1.25em; margin-left: 0.6665%; margin-right: 0.6665%; width: 100%; }
+@media (max-width: 767px) { /* line 47, sass/_framework.scss */
+  .container .column { margin-left: 0; margin-right: 0; } }
+/* line 60, sass/_framework.scss */
+.container .row { float: left; margin-bottom: 0px; width: 100%; }
+@media (min-width: 768px) { /* line 68, sass/_framework.scss */
+  .container .column { margin-bottom: 0px; }
+  /* line 70, sass/_framework.scss */
+  .container .column:first-child { margin-left: 0; }
+  /* line 71, sass/_framework.scss */
+  .container .column:last-child { margin-right: 0; }
+  /* line 74, sass/_framework.scss */
+  .container .row { margin-bottom: 1.25em; }
+  /* line 77, sass/_framework.scss */
+  .container .column.one { width: 5%; }
+  /* line 78, sass/_framework.scss */
+  .container .column.two { width: 11.333%; }
+  /* line 79, sass/_framework.scss */
+  .container .column.three { width: 17.666%; }
+  /* line 80, sass/_framework.scss */
+  .container .column.four { width: 23.999%; }
+  /* line 81, sass/_framework.scss */
+  .container .column.five { width: 30.333%; }
+  /* line 82, sass/_framework.scss */
+  .container .column.six { width: 36.666%; }
+  /* line 83, sass/_framework.scss */
+  .container .column.seven { width: 42.999%; }
+  /* line 84, sass/_framework.scss */
+  .container .column.eight { width: 49.333%; }
+  /* line 85, sass/_framework.scss */
+  .container .column.nine { width: 55.666%; }
+  /* line 86, sass/_framework.scss */
+  .container .column.ten { width: 61.999%; }
+  /* line 87, sass/_framework.scss */
+  .container .column.eleven { width: 68.333%; }
+  /* line 88, sass/_framework.scss */
+  .container .column.twelve { width: 74.666%; }
+  /* line 89, sass/_framework.scss */
+  .container .column.thirteen { width: 80.999%; }
+  /* line 90, sass/_framework.scss */
+  .container .column.fourteen { width: 87.333%; }
+  /* line 91, sass/_framework.scss */
+  .container .column.fifteen { width: 93.666%; }
+  /* line 92, sass/_framework.scss */
+  .container .column.sixteen { width: 100%; }
+  /* line 95, sass/_framework.scss */
+  .container .column.offset-one { margin-left: 6.333%; }
+  /* line 96, sass/_framework.scss */
+  .container .column.offset-two { margin-left: 12.666%; }
+  /* line 97, sass/_framework.scss */
+  .container .column.offset-three { margin-left: 18.999%; }
+  /* line 98, sass/_framework.scss */
+  .container .column.offset-four { margin-left: 25.222%; }
+  /* line 99, sass/_framework.scss */
+  .container .column.offset-five { margin-left: 31.666%; }
+  /* line 100, sass/_framework.scss */
+  .container .column.offset-six { margin-left: 37.999%; }
+  /* line 101, sass/_framework.scss */
+  .container .column.offset-seven { margin-left: 44.222%; }
+  /* line 102, sass/_framework.scss */
+  .container .column.offset-eight { margin-left: 50.666%; }
+  /* line 103, sass/_framework.scss */
+  .container .column.offset-nine { margin-left: 56.999%; }
+  /* line 104, sass/_framework.scss */
+  .container .column.offset-ten { margin-left: 63.222%; }
+  /* line 105, sass/_framework.scss */
+  .container .column.offset-eleven { margin-left: 69.666%; }
+  /* line 106, sass/_framework.scss */
+  .container .column.offset-twelve { margin-left: 75.999%; }
+  /* line 107, sass/_framework.scss */
+  .container .column.offset-thirteen { margin-left: 82.222%; }
+  /* line 108, sass/_framework.scss */
+  .container .column.offset-fourteen { margin-left: 88.666%; }
+  /* line 109, sass/_framework.scss */
+  .container .column.offset-fifteen { margin-left: 94.999%; }
+  /* line 110, sass/_framework.scss */
+  .container .column.offset-sixteen { margin-left: 100%; }
+  /* line 113, sass/_framework.scss */
+  .container .right.column.offset-one { margin: 0 6.333% 0 0; }
+  /* line 114, sass/_framework.scss */
+  .container .right.column.offset-two { margin: 0 12.666% 0 0; }
+  /* line 115, sass/_framework.scss */
+  .container .right.column.offset-three { margin: 0 18.999% 0 0; }
+  /* line 116, sass/_framework.scss */
+  .container .right.column.offset-four { margin: 0 25.222% 0 0; }
+  /* line 117, sass/_framework.scss */
+  .container .right.column.offset-five { margin: 0 31.666% 0 0; }
+  /* line 118, sass/_framework.scss */
+  .container .right.column.offset-six { margin: 0 37.999% 0 0; }
+  /* line 119, sass/_framework.scss */
+  .container .right.column.offset-seven { margin: 0 44.222% 0 0; }
+  /* line 120, sass/_framework.scss */
+  .container .right.column.offset-eight { margin: 0 50.666% 0 0; }
+  /* line 121, sass/_framework.scss */
+  .container .right.column.offset-nine { margin: 0 56.999% 0 0; }
+  /* line 122, sass/_framework.scss */
+  .container .right.column.offset-ten { margin: 0 63.222% 0 0; }
+  /* line 123, sass/_framework.scss */
+  .container .right.column.offset-eleven { margin: 0 69.666% 0 0; }
+  /* line 124, sass/_framework.scss */
+  .container .right.column.offset-twelve { margin: 0 75.999% 0 0; }
+  /* line 125, sass/_framework.scss */
+  .container .right.column.offset-thirteen { margin: 0 82.222% 0 0; }
+  /* line 126, sass/_framework.scss */
+  .container .right.column.offset-fourteen { margin: 0 88.666% 0 0; }
+  /* line 127, sass/_framework.scss */
+  .container .right.column.offset-fifteen { margin: 0 94.999% 0 0; }
+  /* line 128, sass/_framework.scss */
+  .container .right.column.offset-sixteen { margin: 0 100% 0 0; }
+  /* line 131, sass/_framework.scss */
+  .container .column.half { width: 49.333%; }
+  /* line 133, sass/_framework.scss */
+  .container .column.offset-half { margin-left: 50.666%; }
+  /* line 137, sass/_framework.scss */
+  .container .column.one-third { width: 32.444%; }
+  /* line 138, sass/_framework.scss */
+  .container .column.two-thirds { width: 66.222%; }
+  /* line 140, sass/_framework.scss */
+  .container .column.offset-one-third { margin-left: 33.777%; }
+  /* line 141, sass/_framework.scss */
+  .container .column.offset-two-thirds { margin-left: 67.555%; }
+  /* line 145, sass/_framework.scss */
+  .container .column.one-fourth { width: 23.999%; }
+  /* line 146, sass/_framework.scss */
+  .container .column.two-fourths { width: 49.333%; }
+  /* line 147, sass/_framework.scss */
+  .container .column.three-fourths { width: 74.666%; }
+  /* line 149, sass/_framework.scss */
+  .container .column.offset-one-fourth { margin-left: 25.222%; }
+  /* line 150, sass/_framework.scss */
+  .container .column.offset-two-fourths { margin-left: 50.666%; }
+  /* line 151, sass/_framework.scss */
+  .container .column.offset-three-fourths { margin-left: 75.999%; }
+  /* line 155, sass/_framework.scss */
+  .container .column.one-fifth { width: 18.999%; }
+  /* line 156, sass/_framework.scss */
+  .container .column.two-fifths { width: 39.222%; }
+  /* line 157, sass/_framework.scss */
+  .container .column.three-fifths { width: 59.446%; }
+  /* line 158, sass/_framework.scss */
+  .container .column.four-fifths { width: 79.661%; }
+  /* line 160, sass/_framework.scss */
+  .container .column.offset-one-fifth { margin-left: 20.222%; }
+  /* line 161, sass/_framework.scss */
+  .container .column.offset-two-fifths { margin-left: 40.555%; }
+  /* line 162, sass/_framework.scss */
+  .container .column.offset-three-fifths { margin-left: 60.779%; }
+  /* line 163, sass/_framework.scss */
+  .container .column.offset-four-fifths { margin-left: 80.994%; } }
+
+/* line 169, sass/_framework.scss */
+.container:after, .row:after { content: ""; display: table; clear: both; }
+
+/*
+Thunder Bolt 2 -  Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Global UI and UX elements that remain consistent across the entire site.
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Typography
+2.0 - Links
+	2.1 - Buttons
+3.0 - Elements
+4.0 - Accessibility
+5.0 - Alignments
+6.0 - Clearings
+7.0 - Media
+*/
+/* line 23, sass/_base.scss */
+#body { background: #000000; }
+
+/* line 24, sass/_base.scss */
+#template-wrapper { background: #ffffff; }
+
+/* line 27, sass/_base.scss */
+body, button, input, select, textarea, #page { color: #000000; font-family: sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; font-smoothing: antialiased; line-height: 1.5; }
+@media (min-width: 1510px) { /* line 27, sass/_base.scss */
+  body, button, input, select, textarea, #page { font-size: 16px; } }
+@media (min-width: 768px) and (max-width: 959px) { /* line 27, sass/_base.scss */
+  body, button, input, select, textarea, #page { font-size: 12px; } }
+@media (min-width: 480px) and (max-width: 767px) { /* line 27, sass/_base.scss */
+  body, button, input, select, textarea, #page { font-size: 14px; } }
+@media (max-width: 479px) { /* line 27, sass/_base.scss */
+  body, button, input, select, textarea, #page { font-size: 12px; } }
+
+/* line 43, sass/_base.scss */
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif; clear: both; margin: 0 0 0.67em 0; }
+
+/* line 48, sass/_base.scss */
+h1 { font-size: 2.625em; }
+
+/* line 49, sass/_base.scss */
+h2 { font-size: 2.25em; }
+
+/* line 50, sass/_base.scss */
+h3 { font-size: 1.75em; }
+
+/* line 51, sass/_base.scss */
+h4 { font-size: 1.5em; }
+
+/* line 52, sass/_base.scss */
+h5 { font-size: 1.3125em; }
+
+/* line 53, sass/_base.scss */
+h6 { font-size: 1.125em; }
+
+/* line 54, sass/_base.scss */
+p { margin-bottom: 1.5em; }
+
+/* line 57, sass/_base.scss */
+b, strong { font-weight: bold; }
+
+/* line 60, sass/_base.scss */
+dfn, cite, em, i { font-style: italic; }
+
+/* line 63, sass/_base.scss */
+blockquote { margin: 0 1.5em; }
+
+/* line 66, sass/_base.scss */
+address { margin: 0 0 1.5em; }
+
+/* line 69, sass/_base.scss */
+pre { background: #eee; font-family: sans-serif; font-size: 15px; font-size: 1.5rem; line-height: 1.6; margin-bottom: 1.6em; max-width: 100%; overflow: auto; padding: 1.6em; }
+
+/* line 80, sass/_base.scss */
+code, kbd, tt, var { font: 15px sans-serif; }
+
+/* line 83, sass/_base.scss */
+abbr, acronym { border-bottom: 1px dotted #666; cursor: help; }
+
+/* line 87, sass/_base.scss */
+mark, ins { background: #fff9c0; text-decoration: none; }
+
+/* line 91, sass/_base.scss */
+sup, sub { font-size: 75%; height: 0; line-height: 0; position: relative; vertical-align: baseline; }
+
+/* line 99, sass/_base.scss */
+sup { bottom: 1ex; }
+
+/* line 102, sass/_base.scss */
+sub { top: .5ex; }
+
+/* line 105, sass/_base.scss */
+small { font-size: 75%; }
+
+/* line 108, sass/_base.scss */
+big { font-size: 125%; }
+
+/* line 114, sass/_base.scss */
+a { color: #c1272d; text-decoration: none; }
+
+/* line 122, sass/_base.scss */
+a.button, span.button { background: #c1272d; color: #ffffff; display: inline-block; line-height: 1.5em; padding: 0.625em 1.25em; -webkit-transition: background 0.2s linear 0s; -moz-transition: background 0.2s linear 0s; -ms-transition: background 0.2s linear 0s; transition: background 0.2s linear 0s; }
+/* line 130, sass/_base.scss */
+a.button:hover, span.button:hover { background: #811a1e; }
+
+/* line 137, sass/_base.scss */
+hr { background-color: #ccc; border: 0; height: 1px; margin-bottom: 1.5em; }
+
+/* line 143, sass/_base.scss */
+ul, ol { margin: 0; }
+
+/* line 146, sass/_base.scss */
+ul { list-style: disc; }
+
+/* line 149, sass/_base.scss */
+ol { list-style: decimal; }
+
+/* line 152, sass/_base.scss */
+li > ul, li > ol { margin-bottom: 0; margin-left: 1.5em; }
+
+/* line 157, sass/_base.scss */
+dt { font-weight: bold; }
+
+/* line 160, sass/_base.scss */
+dd { margin: 0 1.5em 1.5em; }
+
+/* line 163, sass/_base.scss */
+img { height: auto; /* Make sure images are scaled correctly. */ max-width: 100%; /* Adhere to container width. */ }
+
+/* line 167, sass/_base.scss */
+figure { margin: 0; }
+
+/* line 170, sass/_base.scss */
+table { margin: 0 0 1.5em; width: 100%; }
+
+/* line 174, sass/_base.scss */
+th { font-weight: bold; }
+
+/* Text meant only for screen readers */
+/* line 181, sass/_base.scss */
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; }
+
+/* line 185, sass/_base.scss */
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #21759b; display: block; font-size: 14px; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; /* Above WP toolbar */ }
+
+/* line 207, sass/_base.scss */
+.alignleft { display: inline; float: left; margin-right: 1.5em; }
+
+/* line 212, sass/_base.scss */
+.alignright { display: inline; float: right; margin-left: 1.5em; }
+
+/* line 217, sass/_base.scss */
+.aligncenter { clear: both; display: block; margin: 0 auto; }
+
+/* line 224, sass/_base.scss */
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after { content: ''; display: table; }
+
+/* line 239, sass/_base.scss */
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after { clear: both; }
+
+/* line 250, sass/_base.scss */
+.page-content img.wp-smiley, .entry-content img.wp-smiley, .comment-content img.wp-smiley { border: none; margin-bottom: 0; margin-top: 0; padding: 0; }
+
+/* line 258, sass/_base.scss */
+.wp-caption { border: 1px solid #ccc; margin-bottom: 1.5em; max-width: 100%; }
+
+/* line 263, sass/_base.scss */
+.wp-caption img[class*="wp-image-"] { display: block; margin: 1.2% auto 0; max-width: 98%; }
+
+/* line 268, sass/_base.scss */
+.wp-caption-text { text-align: center; }
+
+/* line 271, sass/_base.scss */
+.wp-caption .wp-caption-text { margin: 0.8075em 0; }
+
+/* line 274, sass/_base.scss */
+.site-main .gallery { margin-bottom: 1.5em; }
+
+/* line 279, sass/_base.scss */
+.site-main .gallery a img { border: none; height: auto; max-width: 90%; }
+
+/* line 284, sass/_base.scss */
+.site-main .gallery dd, .site-main .gallery figcaption { margin: 0; }
+
+/* Make sure embeds and iframes fit their containers */
+/* line 293, sass/_base.scss */
+embed, iframe, object { max-width: 100%; }
+
+/* FRAME --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of the site-wide header & navigation
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Message Bar
+2.0 - Masthead
+	2.1 - Sticky Header
+3.0 - Utility Navigation
+	3.1 - Header Sponsors
+	3.2 - Header Logo
+	3.3 - Header Social
+4.0 - Main Navigatoin
+*/
+/* line 24, sass/_header.scss */
+#header-message-bar { background: #c1272d; color: #ffffff; float: none; font-family: sans-serif; font-size: .9em; min-width: 300px; padding: 0; position: relative; overflow: hidden; text-align: center; }
+/* line 35, sass/_header.scss */
+#header-message-bar .message-bar-container.container { padding: 12px 0; }
+@media (max-width: 767px) { /* line 35, sass/_header.scss */
+  #header-message-bar .message-bar-container.container { min-width: 80%; width: 80%; } }
+/* line 41, sass/_header.scss */
+#header-message-bar .message-bar-container.container a { color: #ffffff; font-weight: 700; }
+/* line 46, sass/_header.scss */
+#header-message-bar .close { display: inline-block; height: 20px; position: absolute; text-indent: -9999px; width: 20px; right: 0.625em; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+/* line 262, sass/_global.scss */
+#header-message-bar .close:before, #header-message-bar .close:after { border-left: 1px solid #ffffff; content: ''; display: block; height: 20px; left: 50%; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%) rotate(45deg); -moz-transform: translate(-50%, -50%) rotate(45deg); -ms-transform: translate(-50%, -50%) rotate(45deg); -o-transform: translate(-50%, -50%) rotate(45deg); transform: translate(-50%, -50%) rotate(45deg); }
+/* line 273, sass/_global.scss */
+#header-message-bar .close:after { -webkit-transform: translate(-50%, -50%) rotate(-45deg); -moz-transform: translate(-50%, -50%) rotate(-45deg); -ms-transform: translate(-50%, -50%) rotate(-45deg); -o-transform: translate(-50%, -50%) rotate(-45deg); transform: translate(-50%, -50%) rotate(-45deg); }
+/* line 51, sass/_header.scss */
+#header-message-bar .close:hover { display: inline-block; height: 20px; position: absolute; text-indent: -9999px; width: 20px; }
+/* line 262, sass/_global.scss */
+#header-message-bar .close:hover:before, #header-message-bar .close:hover:after { border-left: 2px solid #ffffff; content: ''; display: block; height: 20px; left: 50%; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%) rotate(45deg); -moz-transform: translate(-50%, -50%) rotate(45deg); -ms-transform: translate(-50%, -50%) rotate(45deg); -o-transform: translate(-50%, -50%) rotate(45deg); transform: translate(-50%, -50%) rotate(45deg); }
+/* line 273, sass/_global.scss */
+#header-message-bar .close:hover:after { -webkit-transform: translate(-50%, -50%) rotate(-45deg); -moz-transform: translate(-50%, -50%) rotate(-45deg); -ms-transform: translate(-50%, -50%) rotate(-45deg); -o-transform: translate(-50%, -50%) rotate(-45deg); transform: translate(-50%, -50%) rotate(-45deg); }
+/* line 55, sass/_header.scss */
+#header-message-bar.hide { height: 0 !important; }
+
+/* line 62, sass/_header.scss */
+#header-wrapper { padding-bottom: 0; position: absolute; z-index: 9; }
+@media (max-width: 767px) { /* line 62, sass/_header.scss */
+  #header-wrapper { background: #000000; padding: 0; } }
+@media (max-width: 767px) { /* line 70, sass/_header.scss */
+  #header-wrapper #masthead { max-width: 100%; width: 100%; } }
+/* line 76, sass/_header.scss */
+.sticky-header #header-wrapper { background: #000000; box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.15); left: 0; padding: 0; position: fixed; top: 0; width: 100%; z-index: 999; }
+
+/* line 94, sass/_header.scss */
+#header-sponsors .header-sponsor { display: block; }
+/* line 96, sass/_header.scss */
+#header-sponsors .header-sponsor img { display: block; max-height: 3.125em; float: left; }
+/* line 102, sass/_header.scss */
+.sticky-header #header-sponsors { display: none !important; }
+
+/* line 109, sass/_header.scss */
+#header-logo { text-align: center; margin-bottom: 1.25em; }
+/* line 112, sass/_header.scss */
+.sticky-header #header-logo { float: left; position: relative; width: auto !important; margin-bottom: 0; }
+@media (max-width: 767px) { /* line 112, sass/_header.scss */
+  .sticky-header #header-logo { width: 60% !important; } }
+/* line 121, sass/_header.scss */
+#header-logo a { display: block; }
+/* line 122, sass/_header.scss */
+#header-logo svg { display: inline-block; height: 15em; margin: .5em 0 0; width: auto; }
+/* line 129, sass/_header.scss */
+.sticky-header #header-logo svg { height: 4em; }
+@media (max-width: 767px) { /* line 129, sass/_header.scss */
+  .sticky-header #header-logo svg { height: 3em; } }
+@media (max-width: 767px) { /* line 109, sass/_header.scss */
+  #header-logo { height: 3em; line-height: 3em; text-align: left; width: 60%; position: relative; }
+  /* line 140, sass/_header.scss */
+  #header-logo svg { height: 3em; margin: .5em 0 .5em 1em; }
+  /* line 144, sass/_header.scss */
+  #header-logo span { left: 50%; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); color: #ffffff; font-weight: 700; font-size: 1.125em; left: 50%; letter-spacing: 1px; text-transform: uppercase; top: 70%; } }
+
+/* line 160, sass/_header.scss */
+#header-social .social-nav { float: right; margin: 0 1em; }
+/* line 164, sass/_header.scss */
+#header-social .social-nav li a { color: #ffffff; display: inline-block; font-size: 2em; height: 2em; line-height: 2em; margin: 0 .5em; text-align: center; width: 1em; -webkit-transition: color 0.2s linear 0s; -moz-transition: color 0.2s linear 0s; -ms-transition: color 0.2s linear 0s; transition: color 0.2s linear 0s; }
+/* line 174, sass/_header.scss */
+#header-social .social-nav li a:hover { color: #c1272d; }
+/* line 180, sass/_header.scss */
+.sticky-header #header-social { display: none !important; }
+
+/* line 187, sass/_header.scss */
+#main-navigation { float: left; width: 100%; background: #000000; /* The Fallback */ background: rgba(0, 0, 0, 0.65); }
+/* line 191, sass/_header.scss */
+.sticky-header #main-navigation { clear: none !important; float: right; width: auto !important; }
+@media (max-width: 767px) { /* line 187, sass/_header.scss */
+  #main-navigation { margin-bottom: 0; width: 50%; } }
+/* line 200, sass/_header.scss */
+#main-navigation #primary-navigation { margin: 0; }
+/* line 202, sass/_header.scss */
+.sticky-header #main-navigation #primary-navigation { clear: none !important; float: right; width: auto !important; }
+
+/* line 210, sass/_header.scss */
+#menu-main-navigation { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; font-family: sans-serif; font-weight: 900; letter-spacing: .5px; list-style: none; margin: 0; padding: 0 1.5em; text-align: center; text-transform: uppercase; width: 100%; }
+/* line 222, sass/_header.scss */
+#menu-main-navigation > li.menu-item { display: inline-block; position: relative; }
+/* line 225, sass/_header.scss */
+#menu-main-navigation > li.menu-item a { color: #ffffff; display: inline-block; letter-spacing: 1px; padding: 1.25em 1.25em 1.25em; position: relative; text-decoration: none !important; text-transform: uppercase; }
+/* line 233, sass/_header.scss */
+.sticky-header #menu-main-navigation > li.menu-item a { padding: 1.85em 1.25em 1.85em; }
+/* line 237, sass/_header.scss */
+#menu-main-navigation > li.menu-item.current-menu-item > a:after, #menu-main-navigation > li.menu-item:hover > a:after { background: #c1272d; bottom: 0; content: ''; height: 3px; left: 0; position: absolute; width: 100%; }
+/* line 248, sass/_header.scss */
+.search-active #menu-main-navigation { opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); }
+
+/* line 254, sass/_header.scss */
+#menu-main-navigation .sub-menu { background: #c1272d; display: none; list-style: none; position: absolute; margin: 0; padding: 0; width: 16.25em; z-index: 999; }
+/* line 263, sass/_header.scss */
+#menu-main-navigation .sub-menu > li.menu-item { display: block; position: relative; }
+/* line 266, sass/_header.scss */
+#menu-main-navigation .sub-menu > li.menu-item:hover { background: #971e23; }
+/* line 269, sass/_header.scss */
+#menu-main-navigation .sub-menu > li.menu-item > a { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; color: #ffffff; display: block; font-size: 0.9em; font-weight: 900; height: auto; line-height: 1.5em; padding: 0.625em 1.25em; overflow: hidden; text-align: left; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+/* line 286, sass/_header.scss */
+#menu-main-navigation > li.menu-item:hover > .sub-menu { display: block; }
+
+/* line 293, sass/_header.scss */
+#menu-main-navigation ul.sub-menu ul.sub-menu { display: none; left: 100%; top: 0; }
+/* line 299, sass/_header.scss */
+#menu-main-navigation ul.sub-menu > li:hover > ul.sub-menu { display: block; }
+
+/* line 309, sass/_header.scss */
+#header-search { float: right; padding: .7em .7em .7em 0; position: relative; }
+/* line 313, sass/_header.scss */
+.sticky-header #header-search { padding: 1.25em 1em 1em 0 !important; }
+/* line 316, sass/_header.scss */
+#header-search .header-search-trigger { color: #ffffff; height: 2.5em; line-height: 2.5em; width: 2.5em; text-align: center; }
+/* line 322, sass/_header.scss */
+#header-search .header-search-trigger .fa-search { display: inline-block; }
+/* line 323, sass/_header.scss */
+#header-search .header-search-trigger .fa-times { display: none; }
+/* line 325, sass/_header.scss */
+#header-search .tb-searchform { height: calc(2.5em); position: absolute; right: 100%; top: .7em; width: 0; z-index: 9; -webkit-transition: width 0.2s linear 0s; -moz-transition: width 0.2s linear 0s; -ms-transition: width 0.2s linear 0s; transition: width 0.2s linear 0s; }
+/* line 333, sass/_header.scss */
+.sticky-header #header-search .tb-searchform { top: 1.25em; }
+/* line 336, sass/_header.scss */
+#header-search .tb-searchform input[type="text"] { background: #ffffff; border: 0 none; -webkit-border-radius: 3px 0 0 3px; -moz-border-radius: 3px 0 0 3px; -ms-border-radius: 3px 0 0 3px; border-radius: 3px 0 0 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; height: 2.5em; line-height: 2.5em; padding: 0; width: 100%; }
+/* line 345, sass/_header.scss */
+#header-search .tb-searchform .tb-searchsubmit, #header-search .tb-searchform .fa-search { display: none !important; }
+/* line 351, sass/_header.scss */
+.search-active #header-search .header-search-trigger { border: 1px solid #ffffff; -webkit-border-radius: 0 3px 3px 0; -moz-border-radius: 0 3px 3px 0; -ms-border-radius: 0 3px 3px 0; border-radius: 0 3px 3px 0; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; }
+/* line 354, sass/_header.scss */
+.search-active #header-search .header-search-trigger .fa-search { display: none; }
+/* line 355, sass/_header.scss */
+.search-active #header-search .header-search-trigger .fa-times { display: inline-block; }
+/* line 357, sass/_header.scss */
+.search-active #header-search .tb-searchform { background: #ffffff; -webkit-border-radius: 3px 0 0 3px; -moz-border-radius: 3px 0 0 3px; -ms-border-radius: 3px 0 0 3px; border-radius: 3px 0 0 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #ffffff; width: 33.75em; }
+@media (max-width: 1110px) { /* line 357, sass/_header.scss */
+  .search-active #header-search .tb-searchform { width: 20.625em; } }
+/* line 363, sass/_header.scss */
+.search-active #header-search .tb-searchform input[type="text"] { padding: 0 .5em; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of the site-wide footer
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Footer
+2.0 - Subfooter
+	2.1 - Copyright
+	2.1 - Site-Credit
+3.0 - Sitemap 
+*/
+/* line 21, sass/_footer.scss */
+#footer-wrapper { background: #e9eaeb; }
+
+/* line 27, sass/_footer.scss */
+#sub-footer-wrapper { background: #000000; }
+/* line 29, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer { color: #ffffff; }
+/* line 31, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer a { color: #ffffff; }
+/* line 32, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer #legal_links { display: inline-block; list-style: none; margin: 0; }
+@media (max-width: 767px) { /* line 32, sass/_footer.scss */
+  #sub-footer-wrapper #sub-footer #legal_links { display: block; margin: 0.625em; } }
+/* line 40, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer #legal_links li { border-left: 1px solid #ffffff; display: inline-block; margin-left: 0.3125em; padding-left: 0.625em; }
+@media (max-width: 767px) { /* line 46, sass/_footer.scss */
+  #sub-footer-wrapper #sub-footer #legal_links li:first-child { border: none; } }
+/* line 52, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer #site-credit { text-align: right; }
+/* line 55, sass/_footer.scss */
+#sub-footer-wrapper #sub-footer #copyright, #sub-footer-wrapper #sub-footer #site-credit { font-size: 1em; }
+@media (max-width: 767px) { /* line 55, sass/_footer.scss */
+  #sub-footer-wrapper #sub-footer #copyright, #sub-footer-wrapper #sub-footer #site-credit { text-align: center; margin-bottom: 0.3125em; } }
+
+/* line 68, sass/_footer.scss */
+#sitemap-wrapper { background: #000000; height: 0; overflow: hidden; padding: 0; }
+/* line 73, sass/_footer.scss */
+#sitemap-wrapper #sitemap { padding: 3.75em 0 1.25em; }
+/* line 75, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; padding: 0 1.25em; margin-bottom: 2.5em; width: 33.333%; }
+/* line 81, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column a { color: #ffffff; letter-spacing: 2px; text-transform: uppercase; }
+/* line 85, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column a:hover { color: #c1272d; }
+/* line 87, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column h5 { font-size: 1em; font-weight: 700; }
+/* line 91, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column .sm-links { font-weight: 600; margin-bottom: 0.5em; }
+/* line 94, sass/_footer.scss */
+#sitemap-wrapper #sitemap .sitemap-column .sm-links a { font-size: 0.8125em; line-height: 1em; }
+/* line 100, sass/_footer.scss */
+#sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column { width: 25%; }
+/* line 101, sass/_footer.scss */
+#sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column { width: 20%; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 102, sass/_footer.scss */
+  #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column, #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column, #sitemap-wrapper #sitemap .sitemap-column { width: 33.333%; }
+  /* line 107, sass/_footer.scss */
+  #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column:nth-child(4), #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column:nth-child(4), #sitemap-wrapper #sitemap .sitemap-column:nth-child(4) { clear: both; } }
+@media (min-width: 480px) and (max-width: 767px) { /* line 102, sass/_footer.scss */
+  #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column, #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column, #sitemap-wrapper #sitemap .sitemap-column { width: 50%; }
+  /* line 111, sass/_footer.scss */
+  #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column:nth-child(3), #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column:nth-child(5), #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column:nth-child(3), #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column:nth-child(5), #sitemap-wrapper #sitemap .sitemap-column:nth-child(3), #sitemap-wrapper #sitemap .sitemap-column:nth-child(5) { clear: both; } }
+@media (max-width: 479px) { /* line 102, sass/_footer.scss */
+  #sitemap-wrapper #sitemap.sm-cols-5 .sitemap-column, #sitemap-wrapper #sitemap.sm-cols-4 .sitemap-column, #sitemap-wrapper #sitemap .sitemap-column { width: 100%; } }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of site-wide sidebar section & Widgets.
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Sidebar
+2.0 - Widgets
+2.1 - Sidebar Nav
+2.2 - Sidebar Callouts 
+*/
+/* line 20, sass/_sidebar.scss */
+#content-sidebar { margin-bottom: 2em; position: relative; z-index: 4; }
+@media (max-width: 767px) { /* line 20, sass/_sidebar.scss */
+  #content-sidebar { margin: 0 0 2em; } }
+
+/* line 31, sass/_sidebar.scss */
+.widget { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; width: 100%; }
+
+/* line 37, sass/_sidebar.scss */
+.widget-search { background: #f2f2f2; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: .5em 0 .5em .5em; }
+/* line 41, sass/_sidebar.scss */
+.widget-search .tb-searchform input[type="text"] { border: 0 none !important; color: #808080 !important; font-family: sans-serif; font-weight: 700; letter-spacing: 1px; }
+/* line 48, sass/_sidebar.scss */
+.widget-search .tb-searchform input.tb-searchsubmit[type="submit"] { background: #f2f2f2 !important; border: 0 none !important; }
+/* line 52, sass/_sidebar.scss */
+.widget-search .tb-searchform i { color: #808080 !important; }
+
+/* line 56, sass/_sidebar.scss */
+.sidebar-nav { background: #e6e6e6; padding: 8%; }
+/* line 59, sass/_sidebar.scss */
+.sidebar-nav h3.widget-title { color: #808080; font-family: sans-serif; font-weight: 300; letter-spacing: 1px; margin-bottom: 0; text-transform: uppercase; }
+/* line 66, sass/_sidebar.scss */
+.sidebar-nav h3.widget-title a { display: block; padding: 0.625em; }
+/* line 69, sass/_sidebar.scss */
+.sidebar-nav h3.widget-title a:hover { background: #e9eaeb; text-decoration: none; }
+/* line 75, sass/_sidebar.scss */
+.sidebar-nav ul { list-style: none; margin: 0.625em 0; padding: 0; }
+/* line 79, sass/_sidebar.scss */
+.sidebar-nav ul li a { color: #808080; display: block; font-weight: 700; letter-spacing: 1px; padding: 0.3125em 0.625em; text-transform: uppercase; }
+/* line 86, sass/_sidebar.scss */
+.sidebar-nav ul li a:hover { background: #d9d9d9; text-decoration: none; }
+
+/* line 95, sass/_sidebar.scss */
+.sidebar-cta { float: left; margin: 5px 0 0; width: 100%; }
+/* line 99, sass/_sidebar.scss */
+.sidebar-cta .sb_cta_image, .sidebar-cta .sb_cta_image img { display: block; height: auto; width: 100%; }
+/* line 105, sass/_sidebar.scss */
+.sidebar-cta .sidebar-cta-content { padding: 10%; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Content elements on pages, posts, archives & search results
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Content
+	1.1 - Header Content
+		1.1.2 - Graphic Header
+	1.2 - Entry Content
+2.0 - Pages
+3.0 - Posts
+4.0 - Blog & Archives
+5.0 - Search
+*/
+/* line 24, sass/_content.scss */
+#template-wrapper { padding: 0; }
+
+/* line 29, sass/_content.scss */
+.page-header-wrapper { background: #808080; background-size: cover; color: #ffffff; position: relative; position: relative; padding: 31.25em 0 6.25em; text-align: center; }
+/* line 113, sass/_global.scss */
+.page-header-wrapper:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,  Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 97, sass/_global.scss */
+.page-header-wrapper:before { content: ""; background: #000000; opacity: 0.25; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; filter: alpha(opacity=25); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 29, sass/_content.scss */
+  .page-header-wrapper { padding: 28.125em 0 5em; } }
+@media (max-width: 767px) { /* line 29, sass/_content.scss */
+  .page-header-wrapper { padding: 8.75em 0 2.5em; } }
+/* line 39, sass/_content.scss */
+.page-header-wrapper .title { font-size: 3em; font-weight: 700; letter-spacing: 1px; margin-bottom: 0; text-transform: uppercase; }
+@media (max-width: 767px) { /* line 39, sass/_content.scss */
+  .page-header-wrapper .title { font-size: 2em; } }
+/* line 47, sass/_content.scss */
+.page-header-wrapper .sub-title { letter-spacing: 3px; font-weight: 900; margin-bottom: 0; text-transform: uppercase; }
+/* line 53, sass/_content.scss */
+.page-header-wrapper .dates { font-size: 1.5em; font-style: italic; letter-spacing: 2px; }
+@media (max-width: 767px) { /* line 53, sass/_content.scss */
+  .page-header-wrapper .dates { font-size: 1.125em; } }
+/* line 60, sass/_content.scss */
+.page-header-wrapper .breadcrumbs a { color: #ffffff; }
+
+/* line 64, sass/_content.scss */
+.page-header-container { position: relative; z-index: 2; }
+
+/* line 71, sass/_content.scss */
+#content-wrapper { padding: 3.75em 0; }
+
+/* PostTypes --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Schedule Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Schedule Single
+	1.1 - Schedule List
+2.0 - Schedule Index
+*/
+/* line 19, sass/_schedules.scss */
+.schedule_matches { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #000000; float: left; width: 100%; }
+/* line 24, sass/_schedules.scss */
+.schedule_matches .schedule_header { background: #000000; color: #ffffff; float: left; font-size: 0.875em; font-weight: 700; height: 3.75em; letter-spacing: 1px; line-height: 3.75em; text-align: center; text-transform: uppercase; }
+/* line 35, sass/_schedules.scss */
+.schedule_matches .schedule_header.home_team_header, .schedule_matches .schedule_header.away_team_header { width: 40%; }
+/* line 39, sass/_schedules.scss */
+.schedule_matches .schedule_header.time_place_header { width: 20%; }
+/* line 43, sass/_schedules.scss */
+.schedule_matches .match { border-top: 1px solid #000000; float: left; position: relative; width: 100%; }
+@media (max-width: 767px) { /* line 43, sass/_schedules.scss */
+  .schedule_matches .match { font-size: 12px; } }
+/* line 51, sass/_schedules.scss */
+.schedule_matches .match:first-child { border: none 0; }
+/* line 52, sass/_schedules.scss */
+.schedule_matches .match .team { width: 40%; }
+/* line 54, sass/_schedules.scss */
+.schedule_matches .match .team .team_name { float: left; height: 6em; font-weight: 700; line-height: 6em; text-align: center; text-transform: uppercase; width: 70%; }
+/* line 63, sass/_schedules.scss */
+.schedule_matches .match .team .team_score { float: left; font-size: 1.5em; font-weight: 700; height: 4em; line-height: 4em; text-align: center; width: 30%; }
+/* line 73, sass/_schedules.scss */
+.schedule_matches .match .time_local { left: 50%; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align: center; width: 20%; }
+/* line 79, sass/_schedules.scss */
+.schedule_matches .match.winner-hometeam .home_team { position: relative; }
+/* line 113, sass/_global.scss */
+.schedule_matches .match.winner-hometeam .home_team:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(0, 128, 0, 0.5) 0%, rgba(0, 128, 0, 0) 75%, rgba(0, 128, 0, 0) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(0, 128, 0, 0.5) 0%, rgba(0, 128, 0, 0) 75%, rgba(0, 128, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(0, 128, 0, 0.5) 0%, rgba(0, 128, 0, 0) 75%, rgba(0, 128, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 80, sass/_schedules.scss */
+.schedule_matches .match.winner-hometeam .away_team { position: relative; }
+/* line 113, sass/_global.scss */
+.schedule_matches .match.winner-hometeam .away_team:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.5) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.5) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 83, sass/_schedules.scss */
+.schedule_matches .match.winner-awayteam .away_team { position: relative; }
+/* line 113, sass/_global.scss */
+.schedule_matches .match.winner-awayteam .away_team:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, rgba(0, 128, 0, 0) 0%, rgba(0, 128, 0, 0) 25%, rgba(0, 128, 0, 0.5) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(0, 128, 0, 0) 0%, rgba(0, 128, 0, 0) 25%, rgba(0, 128, 0, 0.5) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(0, 128, 0, 0) 0%, rgba(0, 128, 0, 0) 25%, rgba(0, 128, 0, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 84, sass/_schedules.scss */
+.schedule_matches .match.winner-awayteam .home_team { position: relative; }
+/* line 113, sass/_global.scss */
+.schedule_matches .match.winner-awayteam .home_team:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(193, 39, 45, 0.5) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(193, 39, 45, 0.5) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(193, 39, 45, 0.5) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+
+/* line 92, sass/_schedules.scss */
+.schedule-archive-post { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 2.5em 2%; overflow: hidden; width: 46%; }
+@media (max-width: 767px) { /* line 92, sass/_schedules.scss */
+  .schedule-archive-post { margin: 1.25em 0; width: 100%; } }
+/* line 103, sass/_schedules.scss */
+.schedule-archive-post .index-thumb-feature { background: #808080; display: block; }
+/* line 106, sass/_schedules.scss */
+.schedule-archive-post .index-thumb-feature img { display: block; }
+/* line 110, sass/_schedules.scss */
+.schedule-archive-post .post-header { padding: 1.875em 0; text-align: center; }
+/* line 113, sass/_schedules.scss */
+.schedule-archive-post .post-header .post-sub-title { letter-spacing: 3px; font-weight: 900; margin-bottom: 0; text-transform: uppercase; }
+/* line 119, sass/_schedules.scss */
+.schedule-archive-post .post-header .post-title { font-weight: 700; margin-bottom: 0; text-transform: uppercase; }
+/* line 124, sass/_schedules.scss */
+.schedule-archive-post .post-header h4 { font-style: italic; letter-spacing: 2px; }
+/* line 129, sass/_schedules.scss */
+.schedule-archive-post .button { letter-spacing: 1px; padding: 1.25em 0; text-align: center; text-transform: uppercase; width: 100%; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Standings Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Standings Single
+	1.1 - Standings List
+2.0 - Standings Index
+*/
+/* line 20, sass/_standings.scss */
+.league-table, .standings-table, .player-table, .goalie-table { border: 1px solid #000000; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; }
+/* line 27, sass/_standings.scss */
+.league-table th, .standings-table th, .player-table th, .goalie-table th { background: #000000; color: #ffffff; padding: 0.625em 0; font-size: .85em; }
+/* line 33, sass/_standings.scss */
+.league-table td, .standings-table td, .player-table td, .goalie-table td { text-align: center; padding: .5em 0; font-size: .85em; }
+/* line 39, sass/_standings.scss */
+.league-table th, .league-table td, .standings-table th, .standings-table td, .player-table th, .player-table td, .goalie-table th, .goalie-table td { width: 8%; }
+/* line 43, sass/_standings.scss */
+.league-table tr:nth-child(odd), .standings-table tr:nth-child(odd), .player-table tr:nth-child(odd), .goalie-table tr:nth-child(odd) { background: #eee; }
+/* line 47, sass/_standings.scss */
+.league-table .team_name, .standings-table .team_name, .player-table .team_name, .goalie-table .team_name { text-align: left; padding: 0 1em; width: 44%; }
+/* line 52, sass/_standings.scss */
+.league-table th.stat, .league-table td.stat, .league-table th.descript, .league-table td.descript, .standings-table th.stat, .standings-table td.stat, .standings-table th.descript, .standings-table td.descript, .player-table th.stat, .player-table td.stat, .player-table th.descript, .player-table td.descript, .goalie-table th.stat, .goalie-table td.stat, .goalie-table th.descript, .goalie-table td.descript { font-size: .85em; }
+/* line 58, sass/_standings.scss */
+.league-table th.stat, .league-table td.stat, .standings-table th.stat, .standings-table td.stat, .player-table th.stat, .player-table td.stat, .goalie-table th.stat, .goalie-table td.stat { width: 2em; }
+/* line 62, sass/_standings.scss */
+.league-table th.descript, .league-table td.descript, .standings-table th.descript, .standings-table td.descript, .player-table th.descript, .player-table td.descript, .goalie-table th.descript, .goalie-table td.descript { width: 7em; text-align: left; }
+
+/* line 71, sass/_standings.scss */
+.standings-archive-post, .stats-archive-post { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 2.5em 2%; overflow: hidden; width: 46%; }
+@media (max-width: 767px) { /* line 71, sass/_standings.scss */
+  .standings-archive-post, .stats-archive-post { margin: 1.25em 0; width: 100%; } }
+/* line 83, sass/_standings.scss */
+.standings-archive-post .index-thumb-feature, .stats-archive-post .index-thumb-feature { background: #808080; display: block; }
+/* line 86, sass/_standings.scss */
+.standings-archive-post .index-thumb-feature img, .stats-archive-post .index-thumb-feature img { display: block; }
+/* line 90, sass/_standings.scss */
+.standings-archive-post .post-header, .stats-archive-post .post-header { padding: 1.875em 0; text-align: center; }
+/* line 93, sass/_standings.scss */
+.standings-archive-post .post-header .post-sub-title, .stats-archive-post .post-header .post-sub-title { letter-spacing: 3px; font-weight: 900; margin-bottom: 0; text-transform: uppercase; }
+/* line 99, sass/_standings.scss */
+.standings-archive-post .post-header .post-title, .stats-archive-post .post-header .post-title { font-weight: 700; margin-bottom: 0; text-transform: uppercase; }
+/* line 104, sass/_standings.scss */
+.standings-archive-post .post-header h4, .stats-archive-post .post-header h4 { font-style: italic; letter-spacing: 2px; }
+/* line 109, sass/_standings.scss */
+.standings-archive-post .current-leader, .stats-archive-post .current-leader { margin: 0 0 2.5em 0; text-align: center; }
+/* line 112, sass/_standings.scss */
+.standings-archive-post .current-leader span, .stats-archive-post .current-leader span { font-style: italic; font-weight: 600; }
+/* line 117, sass/_standings.scss */
+.standings-archive-post .button, .stats-archive-post .button { letter-spacing: 1px; padding: 1.25em 0; text-align: center; text-transform: uppercase; width: 100%; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the POW Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - POW Index
+*/
+/* line 18, sass/_pow.scss */
+.archive .pow-archive { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 2% 1.5%; overflow: hidden; width: 30.333%; }
+@media (min-width: 480px) and (max-width: 767px) { /* line 18, sass/_pow.scss */
+  .archive .pow-archive { margin: 3%; width: 44%; } }
+@media (max-width: 479px) { /* line 18, sass/_pow.scss */
+  .archive .pow-archive { margin: 3% 0; width: 100%; } }
+/* line 33, sass/_pow.scss */
+.archive .pow-archive .pow-img { display: block; }
+/* line 34, sass/_pow.scss */
+.archive .pow-archive .pow-meta { background: #c1272d; color: #ffffff; font-size: 0.875em; font-style: italic; padding: 0.625em; text-align: center; }
+/* line 41, sass/_pow.scss */
+.archive .pow-archive .pow-meta span { display: inline-block; letter-spacing: 1px; }
+/* line 44, sass/_pow.scss */
+.archive .pow-archive .pow-meta span a { color: #ffffff; }
+/* line 46, sass/_pow.scss */
+.archive .pow-archive .pow-meta span a:hover { text-decoration: underline; }
+/* line 52, sass/_pow.scss */
+.archive .pow-archive .pow-details { padding: 0.3125em 0 0.625em; float: left; width: 100%; }
+/* line 56, sass/_pow.scss */
+.archive .pow-archive .pow-details .pow-number { float: left; font-size: 2.625em; font-weight: 900; text-align: center; width: 25%; }
+/* line 63, sass/_pow.scss */
+.archive .pow-archive .pow-details .pow-name-team { float: left; width: 75%; }
+/* line 66, sass/_pow.scss */
+.archive .pow-archive .pow-details .pow-name-team .pow-name { font-size: 1em; font-weight: 800; margin-top: .65em; }
+/* line 71, sass/_pow.scss */
+.archive .pow-archive .pow-details .pow-name-team .pow-team { font-size: 0.875em; font-weight: 500; font-style: italic; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Champions Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Champs Index
+*/
+/* line 18, sass/_champs.scss */
+.archive .champ-archive { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 2% 1.5%; overflow: hidden; width: 30.333%; }
+@media (min-width: 480px) and (max-width: 767px) { /* line 18, sass/_champs.scss */
+  .archive .champ-archive { margin: 3%; width: 44%; } }
+@media (max-width: 479px) { /* line 18, sass/_champs.scss */
+  .archive .champ-archive { margin: 3% 0; width: 100%; } }
+/* line 33, sass/_champs.scss */
+.archive .champ-archive .champ-img { display: block; }
+/* line 34, sass/_champs.scss */
+.archive .champ-archive .champ-details { padding: 0.9375em; }
+/* line 36, sass/_champs.scss */
+.archive .champ-archive .champ-details .champ-name { font-size: 1.125em; font-weight: 900; }
+/* line 40, sass/_champs.scss */
+.archive .champ-archive .champ-details .champ-meta { font-size: 0.875em; font-style: italic; }
+/* line 43, sass/_champs.scss */
+.archive .champ-archive .champ-details .champ-meta a { color: #000000; }
+/* line 45, sass/_champs.scss */
+.archive .champ-archive .champ-details .champ-meta a:hover { text-decoration: underline; }
+
+/* PAGES --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the homepage
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Home Feature
+2.0 - Upcoming Games
+3.0 - Current Standings
+4.0 - Home POW
+*/
+/* line 20, sass/_home.scss */
+#home-feature-wrapper { position: relative; padding: 0; }
+/* line 113, sass/_global.scss */
+#home-feature-wrapper:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 75%, transparent 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, transparent 75%, transparent 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+,  Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 23, sass/_home.scss */
+#home-feature-wrapper .slide-wrapper.wrapper { background-position: center center; background-size: cover; min-height: 800px; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 23, sass/_home.scss */
+  #home-feature-wrapper .slide-wrapper.wrapper { min-height: 600px; } }
+@media (max-width: 767px) { /* line 23, sass/_home.scss */
+  #home-feature-wrapper .slide-wrapper.wrapper { min-height: 0; } }
+
+/* line 35, sass/_home.scss */
+#home-upcoming-games-wrapper { background: #c1272d; padding: 0; }
+/* line 38, sass/_home.scss */
+#home-upcoming-games-wrapper h2 { color: #ffffff; font-size: 2em; font-weight: 100; letter-spacing: 2px; margin: .35em 0; text-align: center; text-transform: uppercase; width: 100%; }
+@media (max-width: 767px) { /* line 38, sass/_home.scss */
+  #home-upcoming-games-wrapper h2 { font-size: 1.5em; } }
+/* line 51, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game { background: #640d0d; border-top: 1px solid #c1272d; color: #ffffff; display: block; float: left; font-size: 0.875em; line-height: 2em; padding: 1.25em 0; width: 100%; }
+/* line 61, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .session-division { display: block; font-size: 0.75em; font-weight: 900; letter-spacing: 1px; text-align: center; text-transform: uppercase; width: 15%; }
+@media (max-width: 767px) { /* line 61, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .session-division { width: 100%; } }
+/* line 71, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .match { display: block; text-align: center; width: 30%; }
+@media (max-width: 767px) { /* line 71, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .match { width: 100%; } }
+/* line 76, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .match > div { font-size: 1.5em; font-weight: 100; display: inline-block; }
+/* line 80, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .match > div.verses { font-weight: 900; margin: 0 .25em; }
+/* line 86, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .game_day { display: block; text-align: center; width: 25%; }
+@media (max-width: 767px) { /* line 86, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .game_day { width: 100%; } }
+/* line 92, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .rink { display: block; text-align: center; width: 15%; }
+@media (max-width: 767px) { /* line 92, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .rink { width: 100%; } }
+/* line 98, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .view-full-schedule { display: block; text-align: center; width: 15%; }
+@media (max-width: 767px) { /* line 98, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .view-full-schedule { width: 100%; } }
+/* line 103, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .view-full-schedule a { background: #911313; box-shadow: 0 0 0 8px #911313; color: #ffffff; }
+@media (max-width: 767px) { /* line 103, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .view-full-schedule a { display: block; margin: 1.875em 0 -0.625em; width: 100%; } }
+/* line 114, sass/_home.scss */
+#home-upcoming-games-wrapper .upcoming-game .session-over { font-size: 1.5em; font-style: italic; font-weight: 100; display: block; text-align: center; width: 70%; }
+@media (max-width: 767px) { /* line 114, sass/_home.scss */
+  #home-upcoming-games-wrapper .upcoming-game .session-over { font-size: 1.5em; width: 100%; } }
+
+/* line 132, sass/_home.scss */
+.home #content-wrapper h2 { color: #c1272d; letter-spacing: 1px; text-transform: uppercase; font-size: 1.75em; margin-bottom: 1em; }
+/* line 139, sass/_home.scss */
+.home #content-wrapper .intro_image { display: block; margin-bottom: 1.875em; }
+/* line 143, sass/_home.scss */
+.home #content-wrapper h3 { color: #000000; letter-spacing: 1px; text-transform: uppercase; font-size: 1.5em; margin-bottom: 1em; }
+
+/* line 157, sass/_home.scss */
+#home-current-standings-wrapper .home-current_standings .league-table th, #home-current-standings-wrapper .home-current_standings .league-table td { width: 8%; }
+/* line 160, sass/_home.scss */
+#home-current-standings-wrapper .home-current_standings .league-table .team_name { text-align: left; padding: 0 1em; width: 44%; }
+
+/* line 171, sass/_home.scss */
+#home-pow-wrapper { background: #000000; padding: 5em 0 6.25em; }
+@media (max-width: 767px) { /* line 171, sass/_home.scss */
+  #home-pow-wrapper { padding: 2.5em 0 3.75em; } }
+/* line 175, sass/_home.scss */
+#home-pow-wrapper h2 { color: #ffffff; font-size: 2em; font-weight: 100; letter-spacing: 2px; margin: .35em 0; text-transform: uppercase; width: 100%; }
+@media (max-width: 767px) { /* line 175, sass/_home.scss */
+  #home-pow-wrapper h2 { font-size: 1.5em; text-align: center; } }
+/* line 188, sass/_home.scss */
+#home-pow-wrapper .pow_slide { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 0.625em; overflow: hidden; }
+/* line 194, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-img { display: block; }
+/* line 195, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-meta { background: #c1272d; color: #ffffff; font-size: 0.875em; font-style: italic; padding: 0.625em; text-align: center; }
+/* line 202, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-meta span { display: inline-block; letter-spacing: 1px; }
+/* line 205, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-meta span a { color: #ffffff; }
+/* line 207, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-meta span a:hover { text-decoration: underline; }
+/* line 213, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-details { padding: 0.3125em 0 0.625em; float: left; width: 100%; }
+/* line 217, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-details .pow-number { float: left; font-size: 2.625em; font-weight: 900; text-align: center; width: 25%; }
+/* line 224, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-details .pow-name-team { float: left; width: 75%; }
+/* line 227, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-details .pow-name-team .pow-name { font-size: 1em; font-weight: 800; margin-top: .65em; }
+/* line 232, sass/_home.scss */
+#home-pow-wrapper .pow_slide .pow-details .pow-name-team .pow-team { font-size: 0.875em; font-weight: 500; font-style: italic; }
+
+/* line 245, sass/_home.scss */
+#home-champs-wrapper { background: 100; padding: 5em 0 6.25em; }
+@media (max-width: 767px) { /* line 245, sass/_home.scss */
+  #home-champs-wrapper { padding: 2.5em 0 3.75em; } }
+/* line 249, sass/_home.scss */
+#home-champs-wrapper h2 { color: #c1272d; font-size: 2em; font-weight: 100; letter-spacing: 2px; margin: .35em 0; text-transform: uppercase; width: 100%; }
+@media (max-width: 767px) { /* line 249, sass/_home.scss */
+  #home-champs-wrapper h2 { font-size: 1.5em; text-align: center; } }
+/* line 262, sass/_home.scss */
+#home-champs-wrapper .champs_slide { background: #e9eaeb; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; float: left; margin: 0.625em; overflow: hidden; width: 30.333%; }
+/* line 269, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-img { display: block; }
+/* line 270, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-details { padding: 0.9375em; }
+/* line 272, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-details .champ-name { font-size: 1.125em; font-weight: 900; }
+/* line 276, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-details .champ-meta { font-size: 0.875em; font-style: italic; }
+/* line 279, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-details .champ-meta a { color: #000000; }
+/* line 281, sass/_home.scss */
+#home-champs-wrapper .champs_slide .champ-details .champ-meta a:hover { text-decoration: underline; }
+
+/* line 290, sass/_home.scss */
+#home-champs-wrapper .slick-arrow, #home-pow-wrapper .slick-arrow { background: #c1272d; left: -5%; }
+@media (min-width: 1510px) { /* line 290, sass/_home.scss */
+  #home-champs-wrapper .slick-arrow, #home-pow-wrapper .slick-arrow { left: -7.5%; } }
+@media (max-width: 767px) { /* line 290, sass/_home.scss */
+  #home-champs-wrapper .slick-arrow, #home-pow-wrapper .slick-arrow { left: -2.5%; } }
+/* line 296, sass/_home.scss */
+#home-champs-wrapper .slick-arrow.slick-next, #home-pow-wrapper .slick-arrow.slick-next { background: #c1272d; left: auto; right: -5%; }
+@media (min-width: 1510px) { /* line 296, sass/_home.scss */
+  #home-champs-wrapper .slick-arrow.slick-next, #home-pow-wrapper .slick-arrow.slick-next { left: auto; right: -7.5%; } }
+@media (max-width: 767px) { /* line 296, sass/_home.scss */
+  #home-champs-wrapper .slick-arrow.slick-next, #home-pow-wrapper .slick-arrow.slick-next { left: auto; right: -2.5%; } }
+
+/* Modules --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Columns
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+
+1.0 - Columns Base  
+2.0 - Columns Color Schemes  
+*/
+/* line 18, sass/modules/_columns.scss */
+.module-columns-wrapper { padding: 2.5em 0; }
+@media (max-width: 767px) { /* line 18, sass/modules/_columns.scss */
+  .module-columns-wrapper { padding: 2.5em 0; } }
+/* line 21, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container { max-width: none; padding: 0 3%; width: 100%; }
+@media (max-width: 767px) { /* line 21, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container { padding: 0; } }
+/* line 28, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container h2.module-columns-title { margin: .75em 0 .5em; text-align: center; }
+@media (max-width: 767px) { /* line 28, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container h2.module-columns-title { font-size: 2.5em; padding: 0 5%; margin: 0 0 1.5em; } }
+/* line 37, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 3%; }
+@media (max-width: 767px) { /* line 37, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container .column { margin-bottom: 3.125em; padding: 0 7.5%; } }
+/* line 44, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column .column-img { display: block; margin-bottom: 1.5em; }
+/* line 47, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column .column-img img { display: block; }
+/* line 49, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column h3 { margin: 0 0 .35em; text-transform: uppercase; }
+/* line 53, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column p { margin: 1em 0 1.75em; }
+/* line 56, sass/modules/_columns.scss */
+.module-columns-wrapper .module-columns-container .column.cl4 { padding: 1.5%; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 56, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container .column.cl4 { margin: 0  0.25%; padding: 4%; width: 49%; }
+  /* line 63, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container .column.cl4:nth-child(odd) { clear: left; } }
+@media (max-width: 767px) { /* line 56, sass/modules/_columns.scss */
+  .module-columns-wrapper .module-columns-container .column.cl4 { padding: 0 7.5%; } }
+
+/* line 78, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-white { background-color: #ffffff; color: #000000; }
+/* line 81, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-white .column-hl, .module-columns-wrapper.color-scheme-white p a { color: #000000; }
+/* line 83, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-light { background-color: #e9eaeb; color: #640d0d; }
+/* line 86, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-light a.column-hl, .module-columns-wrapper.color-scheme-light p a { color: #640d0d; }
+/* line 88, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-medium { background-color: #c1272d; color: #ffffff; }
+/* line 91, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-medium .column-hl, .module-columns-wrapper.color-scheme-medium p a { color: #ffffff; }
+/* line 92, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-medium .button { background: #000000; }
+/* line 94, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-medium .button:hover { background: black; }
+/* line 99, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-dark { background-color: #000000; color: #ffffff; }
+/* line 102, sass/modules/_columns.scss */
+.module-columns-wrapper.color-scheme-dark .column-hl, .module-columns-wrapper.color-scheme-dark p a { color: #ffffff; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - 50/50
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - 50/50 Base
+2.0 - 50/50 Block Placement
+3.0 - 50/50 Color Shceme
+*/
+/* line 19, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper { background-size: cover; padding: 0; }
+/* line 22, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container { max-width: none; position: relative; width: 100%; }
+/* line 26, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty { background-size: cover; width: 50%; z-index: 2; }
+@media (max-width: 767px) { /* line 26, sass/modules/_fifty_fifty.scss */
+  .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty { width: 100%; } }
+/* line 32, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-text { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 8%; }
+/* line 35, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-text .fifty-fifty-content { position: relative; z-index: 2; }
+/* line 42, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-img, .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-video { background-position: center center; background-repeat: no-repeat; background-size: cover; bottom: 0; position: absolute !important; top: 0; }
+/* line 50, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-img .video-link, .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-video .video-link { bottom: 0; color: #ffffff; left: 0; position: absolute; right: 0; top: 0; z-index: 2; }
+/* line 58, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-img .video-link:hover, .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-video .video-link:hover { color: #c1272d; }
+/* line 61, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-img .video-link i, .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-video .video-link i { left: 50%; font-size: 5em; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+@media (max-width: 767px) { /* line 42, sass/modules/_fifty_fifty.scss */
+  .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-img, .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-video { bottom: auto !important; left: auto !important; position: relative !important; height: 25em; right: auto !important; top: auto !important; } }
+/* line 78, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-media:nth-of-type(2) { bottom: auto; left: auto; padding-top: 40%; position: relative !important; right: auto; top: auto; }
+@media (max-width: 767px) { /* line 78, sass/modules/_fifty_fifty.scss */
+  .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-media:nth-of-type(2) { border-left: 0 none; height: 22.5em; padding: 0; } }
+@media (min-width: 480px) and (max-width: 767px) { /* line 78, sass/modules/_fifty_fifty.scss */
+  .module-fifty-fifty-wrapper .module-fifty-fifty-container .fifty-fifty-media:nth-of-type(2) { height: 26.25em; } }
+
+/* line 101, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-left-right .module-fifty-fifty-container div.fifty-fifty-text:first-child { float: left; }
+/* line 102, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-left-right .module-fifty-fifty-container div.fifty-fifty-text:last-child { float: right; }
+/* line 103, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-left-right .module-fifty-fifty-container figure.fifty-fifty-media:first-child { left: 0; float: left; }
+/* line 107, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-left-right .module-fifty-fifty-container figure.fifty-fifty-media:last-child { float: right; left: auto; right: 0; }
+/* line 116, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-right-left .module-fifty-fifty-container div.fifty-fifty-text:first-child { float: right; }
+/* line 117, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-right-left .module-fifty-fifty-container div.fifty-fifty-text:last-child { float: left; }
+/* line 118, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-right-left .module-fifty-fifty-container figure.fifty-fifty-media:first-child { float: right; left: auto; right: 0; }
+/* line 123, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.block-placemment-right-left .module-fifty-fifty-container figure.fifty-fifty-media:last-child { left: 0; float: left; }
+
+/* line 134, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-white, .module-fifty-fifty-wrapper .block-color-scheme-white { background-color: #ffffff; color: #000000; position: relative; }
+/* line 97, sass/_global.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-white:before, .module-fifty-fifty-wrapper .block-color-scheme-white:before { content: ""; background: #ffffff; opacity: 0.5; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 139, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-white a.button, .module-fifty-fifty-wrapper .block-color-scheme-white a.button { background-color: #c1272d; }
+/* line 141, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-white a.button:hover, .module-fifty-fifty-wrapper .block-color-scheme-white a.button:hover { background-color: #971e23; }
+/* line 146, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-light, .module-fifty-fifty-wrapper .block-color-scheme-light { background-color: #e9eaeb; color: #640d0d; position: relative; }
+/* line 97, sass/_global.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-light:before, .module-fifty-fifty-wrapper .block-color-scheme-light:before { content: ""; background: #e9eaeb; opacity: 0.5; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 151, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-light a.button, .module-fifty-fifty-wrapper .block-color-scheme-light a.button { background-color: #c1272d; }
+/* line 153, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-light a.button:hover, .module-fifty-fifty-wrapper .block-color-scheme-light a.button:hover { background-color: #971e23; }
+/* line 158, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-medium, .module-fifty-fifty-wrapper .block-color-scheme-medium { background-color: #c1272d; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-medium:before, .module-fifty-fifty-wrapper .block-color-scheme-medium:before { content: ""; background: #c1272d; opacity: 0.5; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 163, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-medium a.button, .module-fifty-fifty-wrapper .block-color-scheme-medium a.button { background-color: #000000; }
+/* line 165, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-medium a.button:hover, .module-fifty-fifty-wrapper .block-color-scheme-medium a.button:hover { background-color: black; }
+/* line 170, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-dark, .module-fifty-fifty-wrapper .block-color-scheme-dark { background-color: #000000; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-dark:before, .module-fifty-fifty-wrapper .block-color-scheme-dark:before { content: ""; background: #000000; opacity: 0.5; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 175, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-dark a.button, .module-fifty-fifty-wrapper .block-color-scheme-dark a.button { background-color: #c1272d; }
+/* line 177, sass/modules/_fifty_fifty.scss */
+.module-fifty-fifty-wrapper.module-color-scheme-dark a.button:hover, .module-fifty-fifty-wrapper .block-color-scheme-dark a.button:hover { background-color: #971e23; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Full Width Module
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Full Width Base
+2.0 - Full Width Image
+3.0 - Full Width Video
+4.0 - Full Width Slider
+5.0 - Full Width Content
+6.0 - Full Width Color Schemes
+*/
+/* line 22, sass/modules/_full_width.scss */
+.module-full-wrapper { padding: 0; }
+
+/* line 29, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-img { position: relative; z-index: 2; }
+/* line 32, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-img img { display: block; height: auto; width: 100%; }
+
+/* line 43, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-video { background-position: center center; background-size: cover; padding-top: 40%; position: relative; }
+@media (max-width: 767px) { /* line 43, sass/modules/_full_width.scss */
+  .module-full-wrapper .full-width-video { min-height: 13.75em !important; } }
+/* line 51, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-video .video-link { color: #ffffff; left: 50%; outline: none; position: absolute; text-align: center; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; z-index: 9; }
+
+/* line 68, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-slider { overflow: hidden; position: relative; }
+/* line 71, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-slider .full-width-slide { background-position: center center; background-size: cover; color: #ffffff; position: relative; }
+/* line 76, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-slider .full-width-slide .full-width-slide-content { position: relative; z-index: 99; margin: 15% 5%; text-align: left; width: 50%; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 76, sass/modules/_full_width.scss */
+  .module-full-wrapper .full-width-slider .full-width-slide .full-width-slide-content { width: 60%; } }
+@media (max-width: 767px) { /* line 76, sass/modules/_full_width.scss */
+  .module-full-wrapper .full-width-slider .full-width-slide .full-width-slide-content { margin: 15% 5% 20% !important; text-align: center; width: 90% !important; } }
+/* line 89, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-slider .full-width-slide.slide-content-center .full-width-slide-content { margin: 15% 20%; text-align: center; width: 60%; }
+/* line 94, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-slider .full-width-slide.slide-content-right .full-width-slide-content { float: right; }
+
+/* line 104, sass/modules/_full_width.scss */
+.module-full-wrapper .full-width-content-container { padding: 8% 0 6%; position: relative; z-index: 2; }
+
+/* line 114, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-white, .module-full-wrapper .full-width-slider .slide-color-scheme-white { background-color: #ffffff; color: #000000; position: relative; }
+/* line 97, sass/_global.scss */
+.module-full-wrapper.color-scheme-white:before, .module-full-wrapper .full-width-slider .slide-color-scheme-white:before { content: ""; background: #ffffff; opacity: 0.45; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)"; filter: alpha(opacity=45); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 120, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-light, .module-full-wrapper .full-width-slider .slide-color-scheme-light { background-color: #e9eaeb; color: #640d0d; position: relative; }
+/* line 97, sass/_global.scss */
+.module-full-wrapper.color-scheme-light:before, .module-full-wrapper .full-width-slider .slide-color-scheme-light:before { content: ""; background: #e9eaeb; opacity: 0.45; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)"; filter: alpha(opacity=45); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 125, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-light .video-link .button, .module-full-wrapper .full-width-slider .slide-color-scheme-light .video-link .button { background: #000000; }
+/* line 127, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-light .video-link .button:hover, .module-full-wrapper .full-width-slider .slide-color-scheme-light .video-link .button:hover { background: black; }
+/* line 130, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-medium, .module-full-wrapper .full-width-slider .slide-color-scheme-medium { background-color: #c1272d; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.module-full-wrapper.color-scheme-medium:before, .module-full-wrapper .full-width-slider .slide-color-scheme-medium:before { content: ""; background: #c1272d; opacity: 0.45; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)"; filter: alpha(opacity=45); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 135, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-medium .full-width-slide-content .button, .module-full-wrapper.color-scheme-medium .video-link .button, .module-full-wrapper .full-width-slider .slide-color-scheme-medium .full-width-slide-content .button, .module-full-wrapper .full-width-slider .slide-color-scheme-medium .video-link .button { background: #000000; }
+/* line 138, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-medium .full-width-slide-content .button:hover, .module-full-wrapper.color-scheme-medium .video-link .button:hover, .module-full-wrapper .full-width-slider .slide-color-scheme-medium .full-width-slide-content .button:hover, .module-full-wrapper .full-width-slider .slide-color-scheme-medium .video-link .button:hover { background: black; }
+/* line 141, sass/modules/_full_width.scss */
+.module-full-wrapper.color-scheme-dark, .module-full-wrapper .full-width-slider .slide-color-scheme-dark { background-color: #000000; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.module-full-wrapper.color-scheme-dark:before, .module-full-wrapper .full-width-slider .slide-color-scheme-dark:before { content: ""; background: #000000; opacity: 0.45; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)"; filter: alpha(opacity=45); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Gallery Module
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Gallery Base
+2.0 - Gallery Colors
+*/
+/* line 18, sass/modules/_gallery.scss */
+.module-gallery-wrapper { padding: 0; }
+/* line 20, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; padding: 5px !important; width: 100%; }
+/* line 25, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block { height: 220px; width: 24%; float: left; margin: .5%; display: inline-block; }
+/* line 31, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block.wide { width: 49%; }
+/* line 32, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block.tall { height: 360px; }
+/* line 33, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block.med { height: 220px; width: 33%; }
+/* line 34, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block.large { height: 452.5px; width: 65%; }
+@media (min-width: 1510px) { /* line 25, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block { height: 260px; }
+  /* line 37, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.tall { height: 420px; }
+  /* line 38, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.med { height: 294px; }
+  /* line 39, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.large { height: 605px; } }
+@media (min-width: 768px) and (max-width: 959px) { /* line 25, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block { height: 180px; }
+  /* line 43, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.tall { height: 280px; }
+  /* line 44, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.med { height: 196px; }
+  /* line 45, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.large { height: 400px; } }
+@media (max-width: 767px) { /* line 25, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block { width: 100%; height: 300px; margin: 0 0 5px; }
+  /* line 51, sass/modules/_gallery.scss */
+  .module-gallery-wrapper .gallery .grid-block.tall, .module-gallery-wrapper .gallery .grid-block.med, .module-gallery-wrapper .gallery .grid-block.large, .module-gallery-wrapper .gallery .grid-block.wide { width: 100%; height: 300px; float: left !important; margin: 0 0 5px; } }
+/* line 58, sass/modules/_gallery.scss */
+.module-gallery-wrapper .gallery .grid-block a { background-position: center center; background-repeat: no-repeat; background-size: cover; display: block; height: 100%; position: relative; }
+
+/* line 73, sass/modules/_gallery.scss */
+.module-gallery-wrapper.color-scheme-white { background-color: #ffffff; }
+/* line 74, sass/modules/_gallery.scss */
+.module-gallery-wrapper.color-scheme-light { background-color: #e9eaeb; }
+/* line 75, sass/modules/_gallery.scss */
+.module-gallery-wrapper.color-scheme-medium { background-color: #c1272d; }
+/* line 76, sass/modules/_gallery.scss */
+.module-gallery-wrapper.color-scheme-dark { background-color: #000000; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Graphic Header
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Default Styles
+2.0 - Placement
+3.0 - Coloe Schemes
+	3.1 - White Styles
+	3.2 - Light Styles
+	3.3 - Medium Styles
+	3.4 - Dark Styles
+4.0 - Mobile Styles
+*/
+/* line 23, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper { background-position: center center; background-repeat: no-repeat; background-size: cover; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; color: #ffffff; padding: 31.25em 0 7.5em; }
+/* line 31, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.content-placement-center { text-align: center; }
+/* line 33, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.content-placement-center .graphic-header-content { margin-left: 25.222%; }
+/* line 36, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.content-placement-right .graphic-header-content { float: right; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 23, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper { padding: 28.125em 0 6.25em; } }
+@media (max-width: 767px) { /* line 23, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper { padding: 11.25em 1.25em 3.75em; } }
+/* line 42, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-white { background-color: #ffffff; color: #000000; position: relative; }
+/* line 97, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-white:before { content: ""; background: #ffffff; opacity: 0.25; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; filter: alpha(opacity=25); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 46, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-left { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-left:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 47, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-center { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-center:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 48, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-right { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-white.content-placement-right:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 51, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-light { background-color: #e9eaeb; color: #640d0d; position: relative; }
+/* line 97, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-light:before { content: ""; background: #e9eaeb; opacity: 0.25; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; filter: alpha(opacity=25); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 55, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-left { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-left:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(233, 234, 235, 0.65) 0%, rgba(233, 234, 235, 0) 75%, rgba(233, 234, 235, 0) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(233, 234, 235, 0.65) 0%, rgba(233, 234, 235, 0) 75%, rgba(233, 234, 235, 0) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(233, 234, 235, 0.65) 0%, rgba(233, 234, 235, 0) 75%, rgba(233, 234, 235, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 56, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-center { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-center:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 57, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-right { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-light.content-placement-right:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 60, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium { background-color: #c1272d; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-medium:before { content: ""; background: #c1272d; opacity: 0.25; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; filter: alpha(opacity=25); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 64, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-left { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-left:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(193, 39, 45, 0.65) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(193, 39, 45, 0.65) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(193, 39, 45, 0.65) 0%, rgba(193, 39, 45, 0) 75%, rgba(193, 39, 45, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 65, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-center { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-center:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 66, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-right { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-medium.content-placement-right:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 67, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium .button { background: #000000; }
+/* line 69, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-medium .button:hover { background: black; }
+/* line 75, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-dark { background-color: #000000; color: #ffffff; position: relative; }
+/* line 97, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-dark:before { content: ""; background: #000000; opacity: 0.25; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; filter: alpha(opacity=25); top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; position: absolute; z-index: 1; }
+/* line 79, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-left { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-left:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+75 */ background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, transparent 75%, transparent 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, transparent 75%, transparent 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 80, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-center { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-center:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+/* line 81, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-right { position: relative; }
+/* line 113, sass/_global.scss */
+.graphic-header-wrapper.color-scheme-dark.content-placement-right:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(left, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+@media (max-width: 767px) { /* line 85, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left, .graphic-header-wrapper.content-placement-center, .graphic-header-wrapper.content-placement-right { text-align: left; }
+  /* line 89, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-white, .graphic-header-wrapper.content-placement-center.color-scheme-white, .graphic-header-wrapper.content-placement-right.color-scheme-white { position: relative; }
+  /* line 113, sass/_global.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-white:after, .graphic-header-wrapper.content-placement-center.color-scheme-white:after, .graphic-header-wrapper.content-placement-right.color-scheme-white:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+  /* line 90, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-light, .graphic-header-wrapper.content-placement-center.color-scheme-light, .graphic-header-wrapper.content-placement-right.color-scheme-light { position: relative; }
+  /* line 113, sass/_global.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-light:after, .graphic-header-wrapper.content-placement-center.color-scheme-light:after, .graphic-header-wrapper.content-placement-right.color-scheme-light:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(233, 234, 235, 0) 0%, rgba(233, 234, 235, 0) 25%, rgba(233, 234, 235, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+  /* line 91, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-medium, .graphic-header-wrapper.content-placement-center.color-scheme-medium, .graphic-header-wrapper.content-placement-right.color-scheme-medium { position: relative; }
+  /* line 113, sass/_global.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-medium:after, .graphic-header-wrapper.content-placement-center.color-scheme-medium:after, .graphic-header-wrapper.content-placement-right.color-scheme-medium:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(193, 39, 45, 0) 0%, rgba(193, 39, 45, 0) 25%, rgba(193, 39, 45, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+  /* line 92, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-dark, .graphic-header-wrapper.content-placement-center.color-scheme-dark, .graphic-header-wrapper.content-placement-right.color-scheme-dark { position: relative; }
+  /* line 113, sass/_global.scss */
+  .graphic-header-wrapper.content-placement-left.color-scheme-dark:after, .graphic-header-wrapper.content-placement-center.color-scheme-dark:after, .graphic-header-wrapper.content-placement-right.color-scheme-dark:after { /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+25,0.65+100 */ background: -moz-linear-gradient(top, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */ bottom: 0; content: ''; display: block; left: 0; position: absolute; pointer-events: none; right: 0; top: 0; z-index: 1; }
+  /* line 93, sass/modules/_graphic_header.scss */
+  .graphic-header-wrapper.content-placement-left .graphic-header-content, .graphic-header-wrapper.content-placement-center .graphic-header-content, .graphic-header-wrapper.content-placement-right .graphic-header-content { left: left; margin-left: 0; } }
+/* line 99, sass/modules/_graphic_header.scss */
+.graphic-header-wrapper .graphic-header-container { position: relative; z-index: 2; }
+
+/* ElEMENTS --- */
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All form elements
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - General Forms Elements
+1.1 - Search Forms
+2.0 - Gravity Forms
+2.1 - Gravity Error
+2.2 - Gravity Confirmation
+*/
+/*
+CSS Styles writen with Sass
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+02/16/2016
+
+All form elements
+@package Thunder_Bolt
+
+TABLE OF CONTENTS:
+1.0 - General Forms Elements
+1.1 - Search Forms
+2.0 - Gravity Forms
+2.1 - Gravity Error
+2.2 - Gravity Confirmation
+*/
+/* line 40, sass/_forms.scss */
+#page .gform_wrapper .button, #page input[type="email"], #page input[type="number"], #page input[type="password"], #page input[type="tel"], #page input[type="text"], #page input[type="url"], #page input[type="search"], #page select, #page textarea, #page textarea.textarea.medium { border: 1px solid #000000; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; background: transparent; color: #000000; font-size: 100%; /* Corrects font size not being inherited in all browsers */ margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */ vertical-align: baseline; /* Improves appearance and consistency in all browsers */ *vertical-align: middle; /* Improves appearance and consistency in IE6/IE7 */ -webkit-appearance: none; height: 3em; line-height: 3em; padding: 0 0.5em; outline: none; }
+/* line 66, sass/_forms.scss */
+#page .gform_wrapper .button { background: #000000; color: #ffffff; }
+
+/* line 72, sass/_forms.scss */
+textarea, textarea.textarea.medium { height: 10em !important; padding: 1em !important; line-height: 1.2em !important; }
+
+/* line 79, sass/_forms.scss */
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+/* line 85, sass/_forms.scss */
+.ginput_container_select, .gfield_time_ampm { position: relative; }
+/* line 88, sass/_forms.scss */
+.ginput_container_select::after, .gfield_time_ampm::after { content: "\f107"; display: block; font-family: FontAwesome; height: 3em; line-height: 3em; position: absolute; right: 0; text-align: center; top: 0; width: 3em; z-index: 9; }
+
+/* line 104, sass/_forms.scss */
+input.button, input.gform_button { background: #808080; cursor: pointer; color: #ffffff; display: inline-block !important; line-height: 1.5em; padding: 0 2.5em !important; -webkit-transition: background 0.2s linear 0s; -moz-transition: background 0.2s linear 0s; -ms-transition: background 0.2s linear 0s; transition: background 0.2s linear 0s; text-transform: uppercase; }
+/* line 114, sass/_forms.scss */
+input.button:hover, input.gform_button:hover { background: #676767; color: #ffffff; text-decoration: none; }
+
+/* line 128, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield { margin: 0 0 20px; }
+/* line 130, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield.gsection.empty, #page .gform_wrapper .gform_body .gfield.gform_column { display: none !important; }
+/* line 134, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container { margin: 0; max-width: none; width: 100%; }
+/* line 138, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container input[type="email"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="number"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="password"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="tel"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="search"], #page .gform_wrapper .gform_body .gfield .ginput_container input[type="url"], #page .gform_wrapper .gform_body .gfield .ginput_container select, #page .gform_wrapper .gform_body .gfield .ginput_container textarea { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; max-width: none; width: 100%; }
+/* line 151, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container select[multiple] { height: 10em; padding: 0.5em; }
+/* line 155, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_day, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_month, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_year, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_hour, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_minute, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_ampm { display: inline-block; float: left; vertical-align: top; width: 6em; }
+/* line 165, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_day input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_month input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_year input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_hour input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_minute input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_ampm input[type="text"] { text-align: center; }
+/* line 168, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_day select, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_month select, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_date_year select, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_hour select, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_minute select, #page .gform_wrapper .gform_body .gfield .ginput_container.gfield_time_ampm select { max-width: none; width: 100% !important; }
+/* line 174, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="email"], #page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="number"], #page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="password"], #page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="tel"], #page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="text"], #page .gform_wrapper .gform_body .gfield .ginput_container .ginput_full input[type="url"] { width: 100% !important; }
+/* line 184, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_container .ginput_container_fileupload:before { -moz-osx-font-smoothing: grayscale; color: #ffffff; content: ""; display: inline-block; font-family: FontAwesome; font-feature-settings: normal; font-kerning: auto; font-language-override: normal; font-size: inherit; font-size-adjust: none; font-stretch: normal; font-style: normal; font-synthesis: weight style; font-variant: normal; font-weight: normal; left: 0; line-height: 1; opacity: 1; position: absolute; text-indent: 0.64286em; text-rendering: auto; top: 0.78571em; }
+/* line 210, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gfield .ginput_complex .ginput_left, #page .gform_wrapper .gform_body .gfield .ginput_complex .ginput_right { width: 49.2% !important; }
+/* line 216, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gform_column_three .gfield { clear: none; display: inline-block; float: left; width: calc(33.2% - 13px); margin-right: 20px; }
+/* line 222, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gform_column_three .gfield:nth-last-child(2) { margin-right: 0; }
+/* line 228, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gform_column_two .gfield { clear: none; display: inline-block; float: left; width: calc(49.9% - 10px); margin-right: 20px; }
+/* line 234, sass/_forms.scss */
+#page .gform_wrapper .gform_body .gform_column_two .gfield:nth-last-child(2) { margin-right: 0; }
+/* line 242, sass/_forms.scss */
+#page .gform_footer .gform_button { border: none; }
+
+/* line 252, sass/_forms.scss */
+.gform_wrapper div.validation_error { border: 1px solid #790000 !important; background: #ffdfe0 !important; width: 100% !important; text-align: center; }
+/* line 258, sass/_forms.scss */
+.gform_wrapper li.gfield_error { background: none !important; border: none !important; width: inherit !important; }
+/* line 262, sass/_forms.scss */
+.gform_wrapper li.gfield_error input, .gform_wrapper li.gfield_error textarea { background: #ffdfe0 !important; width: inherit !important; }
+/* line 263, sass/_forms.scss */
+.gform_wrapper li.gfield_error div.gfield_description, .gform_wrapper li.gfield_error .ginput_container { margin: 0 !important; }
+/* line 267, sass/_forms.scss */
+.gform_wrapper li.gfield_error ::-webkit-input-placeholder { color: red; }
+/* line 268, sass/_forms.scss */
+.gform_wrapper li.gfield_error :-moz-placeholder { color: red; }
+/* line 269, sass/_forms.scss */
+.gform_wrapper li.gfield_error ::-moz-placeholder { color: red; }
+/* line 270, sass/_forms.scss */
+.gform_wrapper li.gfield_error :-ms-input-placeholder { color: red; }
+/* line 273, sass/_forms.scss */
+.gform_wrapper .gform_column_three li.gfield_error { width: calc(33.2% - 13px) !important; }
+
+/* line 280, sass/_forms.scss */
+#page .gform_confirmation_wrapper { background: #000000; border: 1px solid #e9eaeb; color: #ffffff; margin-bottom: 1.25em; padding: 1.25em 1.875em; text-align: center; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Reusable Theme Elements
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Seach Form
+2.0 - Social Nav
+3.0 - Social Share
+*/
+/* line 18, sass/_elements.scss */
+.tb-searchform { float: left; height: 3em; position: relative; width: 100%; }
+/* line 23, sass/_elements.scss */
+.tb-searchform input { float: left; width: calc(100% - 3em); }
+/* line 27, sass/_elements.scss */
+.tb-searchform .tb-searchsubmit { -webkit-appearance: none; background: #000000; border: 0; cursor: pointer; float: left; height: 3em; text-indent: -9999px; width: 3em; }
+/* line 37, sass/_elements.scss */
+.tb-searchform i { color: #ffffff; display: block; font-size: 1.25em; height: 2.375em; line-height: 2.375em; pointer-events: none; position: absolute; right: 0; text-align: center; top: 0; width: 2.375em; }
+
+/* line 53, sass/_elements.scss */
+.social-nav { list-style: none; margin: 0; padding: 0; }
+/* line 57, sass/_elements.scss */
+.social-nav li { display: inline; margin: 0 .25em; }
+
+/* line 65, sass/_elements.scss */
+.social-share { list-style: none; margin: 0; padding: 0; }
+/* line 69, sass/_elements.scss */
+.social-share li { display: inline; margin: 0 .25em; }
+/* line 72, sass/_elements.scss */
+.social-share li a { cursor: pointer; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Mobile Navigation Styles
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Mobile Nav Trigger
+2.0 - Default Sidr Styles
+3.0 - Mobile Navigation
+4.0 - Mobile Search
+5.0 - Mobile Social
+*/
+/* line 21, sass/_mobile_nav.scss */
+body#body { left: 0 !important; }
+@media (max-width: 479px) { /* line 21, sass/_mobile_nav.scss */
+  body#body { overflow-x: hidden; } }
+
+/* line 28, sass/_mobile_nav.scss */
+#mobile-nav.burger { cursor: pointer; position: relative; float: right; height: 4em; width: 5em; }
+/* line 281, sass/_global.scss */
+#mobile-nav.burger span { background: #ffffff; display: block; height: 2px; left: 50%; position: absolute; top: 50%; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; transition: all .2s ease-in-out; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 25px; }
+/* line 294, sass/_global.scss */
+#mobile-nav.burger span:before, #mobile-nav.burger span:after { background: #ffffff; content: ''; height: 2px; position: absolute; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; transition: all .2s ease-in-out; width: 25px; }
+/* line 305, sass/_global.scss */
+#mobile-nav.burger span:before { top: -8px; }
+/* line 306, sass/_global.scss */
+#mobile-nav.burger span:after { top: 8px; }
+/* line 309, sass/_global.scss */
+#mobile-nav.burger.active span { background: transparent; }
+/* line 311, sass/_global.scss */
+#mobile-nav.burger.active span:before { -webkit-transform: rotate(45deg) translate(5px, 6px); -moz-transform: rotate(45deg) translate(5px, 6px); -ms-transform: rotate(45deg) translate(5px, 6px); -o-transform: rotate(45deg) translate(5px, 6px); transform: rotate(45deg) translate(5px, 6px); }
+/* line 314, sass/_global.scss */
+#mobile-nav.burger.active span:after { -webkit-transform: rotate(-45deg) translate(5px, -6px); -moz-transform: rotate(-45deg) translate(5px, -6px); -ms-transform: rotate(-45deg) translate(5px, -6px); -o-transform: rotate(-45deg) translate(5px, -6px); transform: rotate(-45deg) translate(5px, -6px); }
+/* line 34, sass/_mobile_nav.scss */
+.mobile-navigation-open #mobile-nav.burger span { background: transparent !important; }
+/* line 36, sass/_mobile_nav.scss */
+.mobile-navigation-open #mobile-nav.burger span:before { -webkit-transform: rotate(45deg) translate(5px, 6px); -moz-transform: rotate(45deg) translate(5px, 6px); -ms-transform: rotate(45deg) translate(5px, 6px); -o-transform: rotate(45deg) translate(5px, 6px); transform: rotate(45deg) translate(5px, 6px); }
+/* line 39, sass/_mobile_nav.scss */
+.mobile-navigation-open #mobile-nav.burger span:after { -webkit-transform: rotate(-45deg) translate(5px, -6px); -moz-transform: rotate(-45deg) translate(5px, -6px); -ms-transform: rotate(-45deg) translate(5px, -6px); -o-transform: rotate(-45deg) translate(5px, -6px); transform: rotate(-45deg) translate(5px, -6px); }
+
+/* line 49, sass/_mobile_nav.scss */
+.sidr { display: none; position: absolute; position: fixed; top: 0; height: 100%; z-index: 999999; width: 260px; overflow-x: none; overflow-y: auto; /* Theme Settings */ font-family: sans-serif; font-size: 15px; background: #333333; color: white; }
+
+/* line 65, sass/_mobile_nav.scss */
+.sidr.right { left: auto; right: -260px; }
+
+/* line 69, sass/_mobile_nav.scss */
+.sidr.left { left: -260px; right: auto; }
+
+/* line 76, sass/_mobile_nav.scss */
+#mobile-navigation.sidr { background: #000000; }
+@media (min-width: 768px) and (max-width: 959px) { /* line 76, sass/_mobile_nav.scss */
+  #mobile-navigation.sidr { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 0 20px; } }
+/* line 82, sass/_mobile_nav.scss */
+#mobile-navigation.sidr #mobile-logo { -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; display: block; margin: 20px 10px 10px; padding: 10px 0 5px; text-align: center; -webkit-transition: background 0.2s linear 0s; -moz-transition: background 0.2s linear 0s; -ms-transition: background 0.2s linear 0s; transition: background 0.2s linear 0s; }
+/* line 89, sass/_mobile_nav.scss */
+#mobile-navigation.sidr #mobile-logo svg { display: inline-block; height: 5em; width: auto; }
+/* line 93, sass/_mobile_nav.scss */
+#mobile-navigation.sidr #mobile-logo svg path, #mobile-navigation.sidr #mobile-logo svg polygon { fill: white; }
+/* line 95, sass/_mobile_nav.scss */
+#mobile-navigation.sidr #mobile-logo:hover { background: black; }
+/* line 97, sass/_mobile_nav.scss */
+#mobile-navigation.sidr #mobile-logo:hover svg path, #mobile-navigation.sidr #mobile-logo:hover svg polygon { fill: #ffffff; }
+/* line 100, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu { border-bottom: 1px #808080; list-style: none; margin: 20px 0; padding: 0; }
+/* line 105, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li { font-size: 1.1rem; }
+@media (max-width: 479px) { /* line 105, sass/_mobile_nav.scss */
+  #mobile-navigation.sidr ul.menu li { font-size: .9rem; } }
+/* line 108, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li a { -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; color: #ffffff; display: block; font-size: 1em; line-height: 1.5em; margin: 0 10px; padding: 10px 15px 6px; text-transform: uppercase; -webkit-transition: background 0.2s linear 0s; -moz-transition: background 0.2s linear 0s; -ms-transition: background 0.2s linear 0s; transition: background 0.2s linear 0s; }
+/* line 118, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li a:hover { background: black; text-decoration: none; }
+/* line 123, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li ul.sub-menu { display: none; list-style: none; margin: 0; padding: 0; }
+/* line 128, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li ul.sub-menu li { font-size: .9rem; }
+@media (max-width: 479px) { /* line 128, sass/_mobile_nav.scss */
+  #mobile-navigation.sidr ul.menu li ul.sub-menu li { font-size: .8rem; } }
+/* line 131, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li ul.sub-menu li a { display: block; padding: 8px 45px; }
+@media (max-width: 479px) { /* line 131, sass/_mobile_nav.scss */
+  #mobile-navigation.sidr ul.menu li ul.sub-menu li a { padding: 8px 30px; } }
+/* line 136, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li ul.sub-menu li ul.sub-menu { display: none; }
+/* line 138, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li ul.sub-menu li ul.sub-menu a { display: block; padding: 8px 60px; }
+@media (max-width: 479px) { /* line 138, sass/_mobile_nav.scss */
+  #mobile-navigation.sidr ul.menu li ul.sub-menu li ul.sub-menu a { padding: 8px 40px; } }
+/* line 146, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li:hover ul.sub-menu { display: block; }
+/* line 148, sass/_mobile_nav.scss */
+#mobile-navigation.sidr ul.menu li:hover ul.sub-menu li:hover ul.sub-menu { display: block; }
+
+/* line 158, sass/_mobile_nav.scss */
+#mobile-search { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; float: left; padding: 0 1em; width: 100%; }
+/* line 163, sass/_mobile_nav.scss */
+#mobile-search .tb-searchform { border-bottom: solid #ffffff 1px; width: 100%; }
+/* line 166, sass/_mobile_nav.scss */
+#mobile-search .tb-searchform input[type="text"] { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; background: transparent; color: #ffffff; width: calc(100% - 3em); }
+
+/* line 177, sass/_mobile_nav.scss */
+#mobile-social { float: left; margin: 1.5em 0 3em; text-align: center; width: 100%; }
+/* line 183, sass/_mobile_nav.scss */
+#mobile-social li a { color: #ffffff; display: inline-block; height: 2em; font-size: 1.25em; line-height: 2em; width: 1.25em; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Magnific Popup Styles
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Default Magnific Popup Styles
+*/
+/* line 17, sass/_popup.scss */
+.mfp-bg { top: 0; left: 0; width: 100%; height: 100%; z-index: 1042; overflow: hidden; position: fixed; background: black; opacity: 0.8; filter: alpha(opacity=80); }
+
+/* line 29, sass/_popup.scss */
+.mfp-wrap { top: 0; left: 0; width: 100%; height: 100%; z-index: 1043; position: fixed; outline: none !important; -webkit-backface-visibility: hidden; }
+
+/* line 39, sass/_popup.scss */
+.mfp-container { text-align: center; position: absolute; width: 100%; height: 100%; left: 0; top: 0; padding: 0 8px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* line 51, sass/_popup.scss */
+.mfp-container:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; }
+
+/* line 57, sass/_popup.scss */
+.mfp-align-top .mfp-container:before { display: none; }
+
+/* line 60, sass/_popup.scss */
+.mfp-content { position: relative; display: inline-block; vertical-align: middle; margin: 0 auto; text-align: left; z-index: 1045; }
+
+/* line 68, sass/_popup.scss */
+.mfp-inline-holder .mfp-content, .mfp-ajax-holder .mfp-content { width: 100%; cursor: auto; }
+
+/* line 72, sass/_popup.scss */
+.mfp-ajax-cur { cursor: progress; }
+
+/* line 75, sass/_popup.scss */
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close { cursor: -moz-zoom-out; cursor: -webkit-zoom-out; cursor: zoom-out; }
+
+/* line 80, sass/_popup.scss */
+.mfp-zoom { cursor: pointer; cursor: -webkit-zoom-in; cursor: -moz-zoom-in; cursor: zoom-in; }
+
+/* line 86, sass/_popup.scss */
+.mfp-auto-cursor .mfp-content { cursor: auto; }
+
+/* line 89, sass/_popup.scss */
+.mfp-close, .mfp-arrow, .mfp-preloader, .mfp-counter { -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+
+/* line 94, sass/_popup.scss */
+.mfp-loading.mfp-figure { display: none; }
+
+/* line 97, sass/_popup.scss */
+.mfp-hide { display: none !important; }
+
+/* line 100, sass/_popup.scss */
+.mfp-preloader { color: #CCC; position: absolute; top: 50%; width: auto; text-align: center; margin-top: -0.8em; left: 8px; right: 8px; z-index: 1044; }
+
+/* line 110, sass/_popup.scss */
+.mfp-preloader a { color: #CCC; }
+
+/* line 112, sass/_popup.scss */
+.mfp-preloader a:hover { color: #FFF; }
+
+/* line 115, sass/_popup.scss */
+.mfp-s-ready .mfp-preloader { display: none; }
+
+/* line 118, sass/_popup.scss */
+.mfp-s-error .mfp-content { display: none; }
+
+/* line 121, sass/_popup.scss */
+button.mfp-close, button.mfp-arrow { overflow: visible; cursor: pointer; background: transparent; border: 0; -webkit-appearance: none; display: block; outline: none; padding: 0; z-index: 1046; -webkit-box-shadow: none; box-shadow: none; }
+
+/* line 133, sass/_popup.scss */
+button::-moz-focus-inner { padding: 0; border: 0; }
+
+/* line 137, sass/_popup.scss */
+.mfp-close { width: 44px; height: 44px; line-height: 44px; position: absolute; right: 0; top: 0; text-decoration: none; text-align: center; opacity: 0.65; filter: alpha(opacity=65); padding: 0 0 18px 10px; color: #FFF; font-style: normal; font-size: 28px; font-family: Arial, Baskerville, monospace; }
+
+/* line 153, sass/_popup.scss */
+.mfp-close:hover, .mfp-close:focus { opacity: 1; filter: alpha(opacity=100); }
+
+/* line 156, sass/_popup.scss */
+.mfp-close:active { top: 1px; }
+
+/* line 159, sass/_popup.scss */
+.mfp-close-btn-in .mfp-close { color: #333; }
+
+/* line 162, sass/_popup.scss */
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close { color: #FFF; right: -6px; text-align: right; padding-right: 6px; width: 100%; }
+
+/* line 169, sass/_popup.scss */
+.mfp-counter { position: absolute; top: 0; right: 0; color: #CCC; font-size: 12px; line-height: 18px; white-space: nowrap; }
+
+/* line 178, sass/_popup.scss */
+.mfp-arrow { position: absolute; opacity: 0.65; filter: alpha(opacity=65); margin: 0; top: 50%; margin-top: -55px; padding: 0; width: 90px; height: 110px; -webkit-tap-highlight-color: transparent; }
+
+/* line 189, sass/_popup.scss */
+.mfp-arrow:active { margin-top: -54px; }
+
+/* line 191, sass/_popup.scss */
+.mfp-arrow:hover, .mfp-arrow:focus { opacity: 1; filter: alpha(opacity=100); }
+
+/* line 194, sass/_popup.scss */
+.mfp-arrow:before, .mfp-arrow:after, .mfp-arrow .mfp-b, .mfp-arrow .mfp-a { content: ''; display: block; width: 0; height: 0; position: absolute; left: 0; top: 0; margin-top: 35px; margin-left: 35px; border: medium inset transparent; }
+
+/* line 205, sass/_popup.scss */
+.mfp-arrow:after, .mfp-arrow .mfp-a { border-top-width: 13px; border-bottom-width: 13px; top: 8px; }
+
+/* line 209, sass/_popup.scss */
+.mfp-arrow:before, .mfp-arrow .mfp-b { border-top-width: 21px; border-bottom-width: 21px; opacity: 0.7; }
+
+/* line 214, sass/_popup.scss */
+.mfp-arrow-left { left: 0; }
+
+/* line 216, sass/_popup.scss */
+.mfp-arrow-left:after, .mfp-arrow-left .mfp-a { border-right: 17px solid #FFF; margin-left: 31px; }
+
+/* line 219, sass/_popup.scss */
+.mfp-arrow-left:before, .mfp-arrow-left .mfp-b { margin-left: 25px; border-right: 27px solid #3F3F3F; }
+
+/* line 223, sass/_popup.scss */
+.mfp-arrow-right { right: 0; }
+
+/* line 225, sass/_popup.scss */
+.mfp-arrow-right:after, .mfp-arrow-right .mfp-a { border-left: 17px solid #FFF; margin-left: 39px; }
+
+/* line 228, sass/_popup.scss */
+.mfp-arrow-right:before, .mfp-arrow-right .mfp-b { border-left: 27px solid #3F3F3F; }
+
+/* line 231, sass/_popup.scss */
+.mfp-iframe-holder { padding-top: 40px; padding-bottom: 40px; }
+
+/* line 234, sass/_popup.scss */
+.mfp-iframe-holder .mfp-content { line-height: 0; width: 100%; max-width: 900px; }
+
+/* line 238, sass/_popup.scss */
+.mfp-iframe-holder .mfp-close { top: -40px; }
+
+/* line 241, sass/_popup.scss */
+.mfp-iframe-scaler { width: 100%; height: 0; overflow: hidden; padding-top: 56.25%; }
+
+/* line 246, sass/_popup.scss */
+.mfp-iframe-scaler iframe { position: absolute; display: block; top: 0; left: 0; width: 100%; height: 100%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); background: #000; }
+
+/* Main image in popup */
+/* line 257, sass/_popup.scss */
+img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-height: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 40px 0 40px; margin: 0 auto; }
+
+/* The shadow behind the image */
+/* line 270, sass/_popup.scss */
+.mfp-figure { line-height: 0; }
+
+/* line 272, sass/_popup.scss */
+.mfp-figure:after { content: ''; position: absolute; left: 0; top: 40px; bottom: 40px; display: block; right: 0; width: auto; height: auto; z-index: -1; box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); background: #444; }
+
+/* line 285, sass/_popup.scss */
+.mfp-figure small { color: #BDBDBD; display: block; font-size: 12px; line-height: 14px; }
+
+/* line 290, sass/_popup.scss */
+.mfp-figure figure { margin: 0; }
+
+/* line 293, sass/_popup.scss */
+.mfp-bottom-bar { margin-top: -36px; position: absolute; top: 100%; left: 0; width: 100%; cursor: auto; }
+
+/* line 301, sass/_popup.scss */
+.mfp-title { text-align: left; line-height: 18px; color: #F3F3F3; word-wrap: break-word; padding-right: 36px; }
+
+/* line 308, sass/_popup.scss */
+.mfp-image-holder .mfp-content { max-width: 100%; }
+
+/* line 311, sass/_popup.scss */
+.mfp-gallery .mfp-image-holder .mfp-figure { cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) { /** Remove all paddings around the image on small screen */
+  /* line 318, sass/_popup.scss */
+  .mfp-img-mobile .mfp-image-holder { padding-left: 0; padding-right: 0; }
+  /* line 321, sass/_popup.scss */
+  .mfp-img-mobile img.mfp-img { padding: 0; }
+  /* line 323, sass/_popup.scss */
+  .mfp-img-mobile .mfp-figure:after { top: 0; bottom: 0; }
+  /* line 326, sass/_popup.scss */
+  .mfp-img-mobile .mfp-figure small { display: inline; margin-left: 5px; }
+  /* line 329, sass/_popup.scss */
+  .mfp-img-mobile .mfp-bottom-bar { background: rgba(0, 0, 0, 0.6); bottom: 0; margin: 0; top: auto; padding: 3px 5px; position: fixed; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+  /* line 339, sass/_popup.scss */
+  .mfp-img-mobile .mfp-bottom-bar:empty { padding: 0; }
+  /* line 341, sass/_popup.scss */
+  .mfp-img-mobile .mfp-counter { right: 5px; top: 3px; }
+  /* line 344, sass/_popup.scss */
+  .mfp-img-mobile .mfp-close { top: 0; right: 0; width: 35px; height: 35px; line-height: 35px; background: rgba(0, 0, 0, 0.6); position: fixed; text-align: center; padding: 0; } }
+@media all and (max-width: 900px) { /* line 357, sass/_popup.scss */
+  .mfp-arrow { -webkit-transform: scale(0.75); transform: scale(0.75); }
+  /* line 361, sass/_popup.scss */
+  .mfp-arrow-left { -webkit-transform-origin: 0; transform-origin: 0; }
+  /* line 365, sass/_popup.scss */
+  .mfp-arrow-right { -webkit-transform-origin: 100%; transform-origin: 100%; }
+  /* line 369, sass/_popup.scss */
+  .mfp-container { padding-left: 6px; padding-right: 6px; } }
+/* line 374, sass/_popup.scss */
+.mfp-ie7 .mfp-img { padding: 0; }
+
+/* line 376, sass/_popup.scss */
+.mfp-ie7 .mfp-bottom-bar { width: 600px; left: 50%; margin-left: -300px; margin-top: 5px; padding-bottom: 5px; }
+
+/* line 382, sass/_popup.scss */
+.mfp-ie7 .mfp-container { padding: 0; }
+
+/* line 384, sass/_popup.scss */
+.mfp-ie7 .mfp-content { padding-top: 44px; }
+
+/* line 386, sass/_popup.scss */
+.mfp-ie7 .mfp-close { top: 0; right: 0; padding-top: 0; }
+
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Slick Slider Styles
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Default Slick Slider Styles
+2.0 - Custom Slick Slider Styles
+	2.1 - Nav Arrows
+*/
+/* line 19, sass/_slider.scss */
+.slick-slider { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; position: relative; -webkit-touch-callout: none; -khtml-user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+/* line 33, sass/_slider.scss */
+.slick-list { display: block; margin: 0; overflow: hidden; padding: 0; position: relative; }
+
+/* line 40, sass/_slider.scss */
+.slick-list:focus { outline: none; }
+
+/* line 41, sass/_slider.scss */
+.slick-list.dragging { cursor: pointer; cursor: hand; }
+
+/* line 45, sass/_slider.scss */
+.slick-slider .slick-track, .slick-slider .slick-list { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+/* line 54, sass/_slider.scss */
+.slick-track { display: block; left: 0; position: relative; top: 0; }
+
+/* line 60, sass/_slider.scss */
+.slick-track:before, .slick-track:after { content: ''; display: table; }
+
+/* line 65, sass/_slider.scss */
+.slick-track:after { clear: both; }
+
+/* line 66, sass/_slider.scss */
+.slick-loading .slick-track { visibility: hidden; }
+
+/* line 67, sass/_slider.scss */
+.slick-slide { display: none; float: left; height: 100%; min-height: 1px; }
+
+/* line 73, sass/_slider.scss */
+[dir='rtl'] .slick-slide { float: right; }
+
+/* line 74, sass/_slider.scss */
+.slick-slide img { display: block; }
+
+/* line 75, sass/_slider.scss */
+.slick-slide.slick-loading img { display: none; }
+
+/* line 76, sass/_slider.scss */
+.slick-slide.dragging img { pointer-events: none; }
+
+/* line 77, sass/_slider.scss */
+.slick-initialized .slick-slide { display: block; }
+
+/* line 78, sass/_slider.scss */
+.slick-loading .slick-slide { visibility: hidden; }
+
+/* line 79, sass/_slider.scss */
+.slick-vertical .slick-slide { border: 1px solid transparent; display: block; height: auto; }
+
+/* line 84, sass/_slider.scss */
+.slick-arrow.slick-hidden { display: none; }
+
+/* line 91, sass/_slider.scss */
+.slick-arrow { background: none; border: none; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; box-shadow: none; color: transparent; cursor: pointer; height: 3.75em; left: 2.5%; outline: none; position: absolute; top: 50%; width: 3.75em; z-index: 9; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: background 0.2s linear 0s; -moz-transition: background 0.2s linear 0s; -ms-transition: background 0.2s linear 0s; transition: background 0.2s linear 0s; }
+@media (max-width: 767px) { /* line 91, sass/_slider.scss */
+  .slick-arrow { font-size: .75em; } }
+/* line 110, sass/_slider.scss */
+.slick-arrow:before { left: 50%; position: absolute; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); color: #ffffff; font-family: 'FontAwesome'; content: "\f104"; font-size: 2.25em; left: 47%; }
+/* line 117, sass/_slider.scss */
+.dark-nav .slick-arrow:before { color: #640d0d; }
+/* line 119, sass/_slider.scss */
+.slick-arrow:hover { background: #c1272d; }
+/* line 121, sass/_slider.scss */
+.slick-arrow:hover:before { color: #ffffff !important; }
+/* line 123, sass/_slider.scss */
+.slick-arrow.slick-next { left: auto; right: 2.5%; -webkit-transform: scaleX(-1) translateY(-50%); -moz-transform: scaleX(-1) translateY(-50%); -ms-transform: scaleX(-1) translateY(-50%); -o-transform: scaleX(-1) translateY(-50%); transform: scaleX(-1) translateY(-50%); }
+
+/* line 131, sass/_slider.scss */
+.slick-dots { position: absolute; list-style: none; left: 50%; bottom: 7.5%; margin: 0; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); }
+/* line 138, sass/_slider.scss */
+.slick-dots li { background: none; border: 2px #ffffff solid; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; cursor: pointer; display: inline-block; height: .75em; margin: 0 .5em 0 0; text-indent: -9999px; width: .75em; }
+/* line 148, sass/_slider.scss */
+.dark-nav .slick-dots li { border: 2px #640d0d solid; }
+/* line 149, sass/_slider.scss */
+.slick-dots li.slick-active { background: #ffffff; -webkit-transform: scale(0.9); -moz-transform: scale(0.9); -ms-transform: scale(0.9); -o-transform: scale(0.9); transform: scale(0.9); }
+/* line 152, sass/_slider.scss */
+.dark-nav .slick-dots li.slick-active { background: #640d0d; }

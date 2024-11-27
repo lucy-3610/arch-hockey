@@ -1,0 +1,117 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements of the site-wide footer
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Footer
+2.0 - Subfooter
+	2.1 - Copyright
+	2.1 - Site-Credit
+3.0 - Sitemap 
+*/
+
+
+//1.0 - Footer
+#footer-wrapper {
+	background: $secondary-1;
+}
+
+
+//2.0 - Subfooter
+#sub-footer-wrapper {
+	background: $black;
+	#sub-footer {
+		color: $white;
+		a { color: $white; }
+		#legal_links {
+			display: inline-block;
+			list-style: none;
+			margin: 0;
+			@include bp(allPh) { 
+				display: block; 
+				margin: em(10px);
+			}
+			li {
+				border-left: 1px solid $white;
+				display: inline-block;
+				margin-left: em(5px);
+				padding-left: em(10px);
+				@include bp(allPh) {  
+					&:first-child {
+						border: none;
+					}
+				}
+			}
+		}
+		#site-credit {
+			text-align: right;
+		}
+		#copyright,
+		#site-credit {
+			font-size: 1em;
+			@include bp(allPh) { 
+				text-align: center;
+				margin-bottom: em(5px);
+			}
+		}
+	}
+}
+
+
+//3.0 - Sitemap 
+#sitemap-wrapper {
+	background: $black;
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+	#sitemap {
+		padding: em(60px) 0 em(20px) ;
+		.sitemap-column { 
+			@include box-sizing();
+			float: left;
+			padding: 0 em(20px);
+			margin-bottom: em(40px);
+			width: 33.333%;
+			a { 
+				color: $font-color-light;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				&:hover { color: $primary-1; }
+			}
+			h5 { 
+				font-size: em(16px);
+				font-weight: $bold;
+			}
+			.sm-links {
+				font-weight: $semi;
+				margin-bottom: em(8px);
+				a { 
+					font-size: em(13px); 
+					line-height: 1em;
+				}
+			}
+		}
+		&.sm-cols-4 .sitemap-column { width: 25%; }
+		&.sm-cols-5 .sitemap-column { width: 20%; }
+		&.sm-cols-5 .sitemap-column,
+		&.sm-cols-4 .sitemap-column,
+	  .sitemap-column {
+			@include bp(tablet) { 
+				width: 33.333%; 
+				&:nth-child(4) {clear: both;}
+			}
+			@include bp(horzPh) { 
+				width: 50%; 
+				&:nth-child(3),
+				&:nth-child(5) {clear: both;}
+			}
+			@include bp(vertPh) { width: 100%; }
+		} 
+	}
+}

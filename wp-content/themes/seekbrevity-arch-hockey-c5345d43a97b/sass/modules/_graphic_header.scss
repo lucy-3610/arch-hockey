@@ -1,0 +1,103 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Graphic Header
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Default Styles
+2.0 - Placement
+3.0 - Coloe Schemes
+	3.1 - White Styles
+	3.2 - Light Styles
+	3.3 - Medium Styles
+	3.4 - Dark Styles
+4.0 - Mobile Styles
+*/
+
+// 1.0 - Default Styles
+.graphic-header-wrapper {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include box-sizing();
+	color: $font-color-light;
+	padding: em(500px) 0 em(120px);
+//2.O - Placement
+	&.content-placement-center { 
+		text-align: center;
+		.graphic-header-content { margin-left: 25.222%; }
+	}
+	&.content-placement-right { 
+		.graphic-header-content { float: right; }
+	}
+	@include bp(tablet) { padding: em(450px) 0 em(100px);  }
+	@include bp(allPh) { padding: em(180px) em(20px) em(60px); }
+//3.0 - Coloe Schemes
+	// 3.1 - White Styles
+	&.color-scheme-white { 
+		background-color: $mod-white;
+		color: $font-color-default;
+		@include overlay($mod-white, .25);
+		&.content-placement-left { @include gradient-overlay(left, $mod-white); }
+		&.content-placement-center { @include gradient-overlay(bottom, $mod-white); }
+		&.content-placement-right { @include gradient-overlay(right, $mod-white); }
+	}
+	// 3.2 - Light Styles
+	&.color-scheme-light { 
+		background-color: $mod-light;
+		color: $font-color-dark;
+		@include overlay($mod-light, .25);
+		&.content-placement-left { @include gradient-overlay(left, $mod-light); }
+		&.content-placement-center { @include gradient-overlay(bottom, $mod-light); }
+		&.content-placement-right { @include gradient-overlay(right, $mod-light); }
+	}
+	// 3.3 - Medium Styles
+	&.color-scheme-medium { 
+		background-color: $mod-medium;
+		color: $font-color-light;
+		@include overlay($mod-medium, .25);
+		&.content-placement-left { @include gradient-overlay(left, $mod-medium); }
+		&.content-placement-center { @include gradient-overlay(bottom, $mod-medium); }
+		&.content-placement-right { @include gradient-overlay(right, $mod-medium); }
+		.button {
+			background: $mod-dark;
+			&:hover {
+				background: darken($mod-dark, 10%);
+			}
+		}
+	}
+	// 3.4 - Dark Styles
+	&.color-scheme-dark { 
+		background-color: $mod-dark; 
+		color: $font-color-light;
+		@include overlay($mod-dark, .25);
+		&.content-placement-left { @include gradient-overlay(left, $mod-dark); }
+		&.content-placement-center { @include gradient-overlay(bottom, $mod-dark); }
+		&.content-placement-right { @include gradient-overlay(right, $mod-dark); } 
+	}
+//4.0 - Mobile Styles
+	@include bp(allPh) {  
+		&.content-placement-left,
+		&.content-placement-center,
+		&.content-placement-right { 
+			text-align: left;
+			&.color-scheme-white { @include gradient-overlay(bottom, $mod-white); }
+			&.color-scheme-light { @include gradient-overlay(bottom, $mod-light); }
+			&.color-scheme-medium { @include gradient-overlay(bottom, $mod-medium); }
+			&.color-scheme-dark { @include gradient-overlay(bottom, $mod-dark); }
+			.graphic-header-content { 
+				left: left;
+				margin-left: 0; 
+			}
+		}
+	}
+	.graphic-header-container {
+		position: relative;
+		z-index: 2;
+	}
+}

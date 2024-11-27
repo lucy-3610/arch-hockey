@@ -1,0 +1,147 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Full Width Module
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Full Width Base
+2.0 - Full Width Image
+3.0 - Full Width Video
+4.0 - Full Width Slider
+5.0 - Full Width Content
+6.0 - Full Width Color Schemes
+*/
+
+
+//1.0 - Full Width Base
+.module-full-wrapper {
+	padding: 0;
+}
+
+
+//2.0 - Full Width Image
+.module-full-wrapper {
+	.full-width-img {
+		position: relative;
+		z-index: 2; 
+		img {
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+	}
+}
+
+
+//3.0 - Full Width Video
+.module-full-wrapper {
+	.full-width-video {
+		background-position: center center;
+		background-size: cover;
+		padding-top: 40%;
+		position: relative;
+		@include bp(allPh) {  
+			min-height: em(220px) !important;
+		}
+		.video-link {
+			color: $font-color-light;
+			left: 50%;
+			outline: none;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			@include transform(translate(-50%, -50%));
+			width: 100%;
+			z-index: 9;
+		}
+	}
+}
+
+
+//4.0 - Full Width Slider
+.module-full-wrapper {
+	.full-width-slider {
+		overflow: hidden;
+		position: relative;
+		.full-width-slide {
+			background-position: center center;
+			background-size: cover;
+			color: $font-color-light;
+			position: relative;
+			 .full-width-slide-content {
+				 position: relative;
+				 z-index: 99;
+				 margin: 15% 5%;
+				 text-align: left;
+				 width: 50%;
+				 @include bp(tablet) { width: 60%; }
+				 @include bp(allPh) {
+					 margin: 15% 5% 20% !important;
+					 text-align: center;  
+					 width: 90% !important;
+				 }
+			}
+			&.slide-content-center .full-width-slide-content {
+				margin: 15% 20%;
+				text-align: center;
+				width: 60%;
+			}
+			&.slide-content-right .full-width-slide-content {
+				float: right;
+			}
+		}
+	}
+}
+
+
+//5.0 - Full Width Content
+.module-full-wrapper {
+	.full-width-content-container {
+		padding: 8% 0 6%;
+		position: relative;
+		z-index: 2;
+	}
+}
+
+
+//6.0 - Full Width Color Schemes
+.module-full-wrapper {
+	&.color-scheme-white,
+	.full-width-slider .slide-color-scheme-white { 
+		background-color: $mod-white;
+		color: $font-color-default;
+		@include overlay($mod-white, .45);
+	}
+	&.color-scheme-light, 
+	.full-width-slider .slide-color-scheme-light { 
+		background-color: $mod-light;
+		color: $font-color-dark;
+		@include overlay($mod-light, .45);
+		.video-link .button {
+			background: $mod-dark;
+			&:hover { background: darken($mod-dark, 10%); }
+		}
+	}
+	&.color-scheme-medium,
+	.full-width-slider .slide-color-scheme-medium {
+		background-color: $mod-medium; 
+		color: $font-color-light;
+		@include overlay($mod-medium, .45);
+		.full-width-slide-content .button,
+		.video-link .button {
+			background: $mod-dark;
+			&:hover { background: darken($mod-dark, 10%); }
+		}
+	}
+	&.color-scheme-dark, 
+	.full-width-slider .slide-color-scheme-dark { 
+		background-color: $mod-dark;
+		color: $font-color-light;
+		@include overlay($mod-dark, .45);
+	}
+}

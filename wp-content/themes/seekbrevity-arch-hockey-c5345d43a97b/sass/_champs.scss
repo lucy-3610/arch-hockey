@@ -1,0 +1,50 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the Champions Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - Champs Index
+*/
+
+
+//1.0 - Champs Index
+.archive {
+	.champ-archive {
+		background: $secondary-1;
+		@include border-radius(3px);
+		float: left;
+		margin: 2% 1.5%;
+		overflow: hidden;
+		width: 30.333%;
+		@include bp(horzPh) {  
+			margin: 3%;
+			width: 44%;
+		}
+		@include bp(vertPh) {  
+			margin: 3% 0;
+			width: 100%;
+		}
+		.champ-img { display: block; } 
+		.champ-details {	
+			padding: em(15px);
+			.champ-name {
+				font-size: em(18px);
+				font-weight: 900;
+			}
+			.champ-meta {
+				font-size: em(14px);
+				font-style: italic;
+				a { 
+					color: $font-color-default; 
+					&:hover { text-decoration: underline; }
+				}
+			}
+		}
+	}
+}

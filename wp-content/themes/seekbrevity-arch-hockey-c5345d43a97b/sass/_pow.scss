@@ -1,0 +1,79 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+All elements unique to the POW Post type
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+1.0 - POW Index
+*/
+
+
+//1.0 - POW Index
+.archive {
+	.pow-archive {
+		background: $secondary-1;
+		@include border-radius(3px);
+		float: left;
+		margin: 2% 1.5%;
+		overflow: hidden;
+		width: 30.333%;
+		@include bp(horzPh) {  
+			margin: 3%;
+			width: 44%;
+		}
+		@include bp(vertPh) {  
+			margin: 3% 0;
+			width: 100%;
+		}
+		.pow-img { display: block; } 
+		.pow-meta {
+			background: $primary-1;
+			color: $font-color-light;
+			font-size: em(14px);
+			font-style: italic;
+			padding: em(10px);
+			text-align: center;
+			span {
+				display: inline-block;
+				letter-spacing: 1px;
+				a { 
+					color: $font-color-light; 
+					&:hover {
+						text-decoration: underline;
+					}
+				} 
+			}
+		}
+		.pow-details {	
+			padding: em(5px) 0 em(10px);
+			float: left;
+			width: 100%;
+			.pow-number {
+				float: left;
+				font-size: em(42px);
+				font-weight: 900;
+				text-align: center;
+				width: 25%;
+			}
+			.pow-name-team {
+				float: left;
+				width: 75%;
+				.pow-name {
+					font-size: em(16px);
+					font-weight: 800;
+					margin-top: .65em;
+				}
+				.pow-team {
+					font-size: em(14px);
+					font-weight: 500;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}

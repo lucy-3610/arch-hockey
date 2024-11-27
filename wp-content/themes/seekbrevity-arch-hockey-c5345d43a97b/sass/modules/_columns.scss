@@ -1,0 +1,104 @@
+/*
+Thunder Bolt 2 - Scss Files
+Copyright 2016, Ben Gathard of Brevity
+Author URI: http://seekbrevity.com/
+08/15/2016
+
+Page Modules - Columns
+@package Thunder_Bolt_2
+Updated Version: 1.0
+
+TABLE OF CONTENTS:
+
+1.0 - Columns Base  
+2.0 - Columns Color Schemes  
+*/
+
+//1.0 - Columns Base  
+.module-columns-wrapper {
+	padding: em(40px) 0;
+	@include bp(allPh) { padding: em(40px) 0;  }
+	.module-columns-container {
+		max-width: none;
+		padding: 0 3%;
+		width: 100%;
+		@include bp(allPh) {  
+			padding: 0;
+		}
+		h2.module-columns-title { 
+			margin: .75em 0 .5em;
+			text-align: center;
+			@include bp(allPh) { 
+				font-size: 2.5em;
+				padding: 0 5%; 
+				margin: 0 0 1.5em; 
+			}
+		}
+		.column {
+			@include box-sizing();
+			padding: 3%;
+			@include bp(allPh) { 
+				margin-bottom: em(50px);
+				padding: 0 7.5%; 
+			}
+			.column-img {
+				display: block; 
+				margin-bottom: 1.5em;
+				img { display: block; }
+			}
+			h3 {
+				margin: 0 0 .35em; 
+				text-transform: uppercase;
+			}
+			p { 
+				margin: 1em 0 1.75em; 
+			}
+			&.cl4 {
+				padding: 1.5%;
+				
+				@include bp(tablet) { 
+					margin: 0  0.25%; 
+					padding: 4%;
+					width: 49%;
+					&:nth-child(odd) {
+						clear: left;
+					}
+				}
+				@include bp(allPh) {  
+					padding: 0 7.5%;
+				}
+			}
+		}
+	}
+}
+
+//2.0 - Columns Color Schemes
+
+.module-columns-wrapper {
+	&.color-scheme-white {
+		background-color: $mod-white; 
+		color: $font-color-default;
+		.column-hl, p a { color: $font-color-default; }
+	}
+	&.color-scheme-light {
+		background-color: $mod-light;
+		color: $font-color-dark;
+		a.column-hl, p a { color: $font-color-dark; }
+	}
+	&.color-scheme-medium {
+		background-color: $mod-medium;
+		color: $font-color-light;
+		.column-hl, p a { color: $font-color-light; }
+		.button {
+			background: $mod-dark;
+			&:hover {
+				background: darken($mod-dark, 10%);
+			}
+		}
+	}
+	&.color-scheme-dark {
+		background-color: $mod-dark;
+		color: $font-color-light;
+		.column-hl, p a { color: $font-color-light; }
+	}
+}

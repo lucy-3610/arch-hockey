@@ -1,0 +1,339 @@
+{
+    "key": "group_5cc88eef82cd0",
+    "title": "Clone: Button",
+    "fields": [
+        {
+            "key": "field_5cc88eef874d0",
+            "label": "Add a Button?",
+            "name": "add_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef872ec",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d51a8e18b919",
+            "label": "Button Style",
+            "name": "button_style",
+            "type": "select",
+            "instructions": "Select the button color.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "tertiary": "Tertiary",
+                "quaternary": "Quaternary",
+                "white": "White",
+                "dark": "Dark"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ebeda1652714",
+            "label": "Button Hover",
+            "name": "button_hover",
+            "type": "select",
+            "instructions": "Select the hover color for the button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "tertiary": "Tertiary",
+                "quaternary": "Quaternary",
+                "white": "White",
+                "dark": "Dark"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5df00a5d8f6a1",
+            "label": "Button Position",
+            "name": "button_position",
+            "type": "select",
+            "instructions": "Select the position for this button, the default is left aligned.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "center": "Center",
+                "right": "Right"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cc88eef87551",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "Add the button title here.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cc88eef875c9",
+            "label": "Button Link Type",
+            "name": "button_link_type",
+            "type": "select",
+            "instructions": "Select the type of link to use for your button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Select Link": "Select Link",
+                "Custom Link": "Custom Link",
+                "No Link": "No Link"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cc88eef87641",
+            "label": "Button Select Link",
+            "name": "button_select_link",
+            "type": "page_link",
+            "instructions": "Select the page or post you would like to link to.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5cc88eef875c9",
+                        "operator": "==",
+                        "value": "Select Link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "post",
+                "communities"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5cc88eef876ba",
+            "label": "Button Custom Link",
+            "name": "button_custom_link",
+            "type": "text",
+            "instructions": "Enter your custom URL here.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5cc88eef875c9",
+                        "operator": "==",
+                        "value": "Custom Link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cc88eef87733",
+            "label": "Open in new window?",
+            "name": "new_window",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5cc88eef875c9",
+                        "operator": "==",
+                        "value": "Select Link"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5cc88eef874d0",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5cc88eef875c9",
+                        "operator": "==",
+                        "value": "Custom Link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1636403001
+}

@@ -1,0 +1,388 @@
+/* ======== RESPONSIVE CSS ========= */
+
+
+/* ===================================================
+		MIN WIDTH 
+=================================================== */
+/* ------------------------------ 
+	1600px EXTRA EXTRA LARGE
+------------------------------ */
+@media (min-width: 1600px) {}
+
+
+
+
+/* ------------------------------ 
+	1440px EXTRA LARGE
+------------------------------ */
+@media (min-width: 1441px) {}
+
+
+
+
+/* ------------------------------ 
+	1200px LARGE
+------------------------------ */
+@media (min-width: 1200px) {}
+
+
+
+
+/* ------------------------------ 
+	992px MEDIUM
+------------------------------ */
+@media (min-width: 992px) {}
+
+
+
+
+/* ------------------------------ 
+	768px SMALL
+------------------------------ */
+@media (min-width: 768px) {
+	.footer .form .gform_wrapper.gravity-theme form {
+		text-align: left;
+	}
+
+	.footer .form .gform_wrapper.gravity-theme .gform_footer {
+		margin-top: 6px;
+		justify-content: start;
+	}
+}
+
+
+
+
+@media (min-width: 576px) {}
+
+
+
+
+/* ===================================================
+		MIN - MAX WIDTH 
+=================================================== */
+/* ------------------------------ 
+	768px - 1440px LARGE
+------------------------------ */
+@media (min-width: 768px) and (max-width: 1440px) {}
+
+
+
+
+/* ------------------------------ 
+	992px - 1199px LARGE
+------------------------------ */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* ------------------------------ 
+	768px - 991px MEDIUM
+------------------------------ */
+@media (max-width: 1106px) {}
+
+@media (max-width: 966px) {}
+
+
+/* ------------------------------ 
+	768px - 991px MEDIUM
+------------------------------ */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+
+
+
+/* ------------------------------ 
+	768px - 991px MEDIUM
+------------------------------ */
+@media (min-width: 641px) and (max-width: 767px) {}
+
+
+
+
+/* ----------------------------------------
+	414px - 767px SMALL iPhone 6/7/8 Plus
+---------------------------------------- */
+@media (min-width: 414px) and (max-width: 767px) {}
+
+
+
+
+/* ----------------------------------------
+	375px - 413px X-SMALL iPhone 6/7/8
+---------------------------------------- */
+@media (min-width: 375px) and (max-width: 413px) {}
+
+
+
+
+/* ---------------------------------------- 
+	320px - 374px XX-SMALL iPhone 5
+---------------------------------------- */
+@media (min-width: 320px) and (max-width: 374px) {}
+
+
+
+
+/* ===================================================
+		MAX WIDTH 
+=================================================== */
+/* ------------------------------ 
+	1599px EXTRA LARGE
+------------------------------ */
+@media (max-width: 1599px) {}
+
+
+
+
+/* ------------------------------ 
+	1199px LARGE
+------------------------------ */
+@media (max-width: 1199px) {
+
+	h1,
+	.h1 {
+		font-size: 3.25em;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-half {
+		-ms-grid-column-span: 12 !important;
+		grid-column: span 12 !important;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-quarter {
+		-ms-grid-column-span: 6 !important;
+		grid-column: span 6 !important;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-half,
+	.hats {
+		display: block;
+	}
+
+	.shirt-size {
+		text-align: center;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-quarter .ginput_container {
+		width: 100%;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	991px MEDIUM
+------------------------------ */
+@media (max-width: 991px) {
+	.overlay {
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+	}
+
+	.seniors::before,
+	.seniors::after {
+		display: none;
+	}
+
+	.page-template-page-contact .splash::before {
+		display: none;
+	}
+
+	.page-template-page-contact .text-container {
+		max-width: none;
+	}
+
+	.tribe-events-widget-events-list__event-row {
+		flex-direction: column;
+		margin: 1rem auto !important;
+	}
+
+	.tribe-events-widget .tribe-events-widget-events-list__event-date-tag {
+		width: 100% !important;
+	}
+
+	.tribe-events-widget-events-list__event-header {
+		text-align: center;
+		margin-top: 0.25rem !important;
+	}
+
+	.tribe-events-widget-events-list__view-more {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	767px - SMALL
+------------------------------ */
+@media (max-width: 767px) {
+
+	h1,
+	.h1 {
+		font-size: 2.5em !important;
+	}
+
+	h2,
+	.h2 {
+		font-size: 1.75em !important;
+	}
+
+	h3,
+	.h3 {
+		font-size: 1.25em !important;
+	}
+
+	.circle {
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.circle:after {
+		width: 50%;
+	}
+
+	.circle h1 {
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.slick-dots {
+		width: 100% !important;
+	}
+
+	.hero .circle {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.hero .circle:after {
+		width: 100%;
+	}
+
+	.tabs {
+		flex-direction: column;
+	}
+
+	.tab {
+		width: 100%;
+	}
+
+	.class-tab-selector {
+		border-left: none;
+		border-right: none;
+		border-top: 4px solid #005677;
+		border-bottom: 4px solid #005677;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	640px - EXTRA SMALL
+------------------------------ */
+@media (max-width: 641px) {
+	.slide img {
+		object-position: 28%;
+	}
+
+	.form .gform_wrapper.gravity-theme input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+		line-height: normal;
+	}
+
+	.gform_wrapper.gravity-theme .ginput_container_address span.ginput_address_zip:not(.ginput_full),
+	.gform_wrapper.gravity-theme .ginput_container_address span:not(.ginput_full) {
+		flex: 0 0 100% !important;
+	}
+
+	.gform_wrapper.gravity-theme .ginput_container_address .ginput_right,
+	.ginput_address_zip {
+		padding: 0 !important;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	575px - CUSTOM SIZE
+------------------------------ */
+@media (max-width: 575px) {
+	#content {
+		padding-top: 75px;
+	}
+
+	.filter h3 {
+		width: fit-content;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-quarter {
+		-ms-grid-column-span: 12 !important;
+		grid-column: span 12 !important;
+	}
+
+	.gform_wrapper.gravity-theme .gfield.gfield--width-quarter {
+		display: block;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	479px - CUSTOM SIZE
+------------------------------ */
+@media (max-width: 479px) {
+	.circle {
+		width: 75%;
+	}
+
+	.circle:after {
+		width: 75%;
+	}
+
+	.circle h1 {
+		font-size: 24px;
+	}
+}
+
+
+
+
+/* ------------------------------ 
+	440px - CUSTOM SIZE
+------------------------------ */
+@media (max-width: 440px) {}
+
+
+
+
+/* ------------------------------ 
+	379px - CUSTOM SIZE
+------------------------------ */
+@media (max-width: 379px) {
+	.circle {
+		width: 100%;
+	}
+
+	.circle:after {
+		width: 100%;
+	}
+
+	.circle h1 {
+		font-size: 18px;
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 500px) {}
+
+@media screen and (max-width: 450px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 350px) {}
+
+@media screen and (max-width: 300px) {}
