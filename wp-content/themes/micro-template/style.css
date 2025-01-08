@@ -31,7 +31,8 @@
 
 :root {
     --primary: rgb(37 53 70);
-    --primary-light: rgb(37 53 70 / 0.8);
+    --primary-50: rgb(37 53 70 / 0.5);
+    --primary-80: rgb(37 53 70 / 0.8);
     --secondary: #e7502f;
     --secondary-light: rgb(231 80 47 / 0.9);
     --tertiary: #979FA6;
@@ -217,6 +218,10 @@ body {
     background: var(--secondary);
 }
 
+.bg-theme-tertiary {
+    background: var(--tertiary);
+}
+
 .bg-tertiary-hover:focus,
 .bg-tertiary-hover:hover {
     background: var(--tertiary);
@@ -274,7 +279,7 @@ img {
     width: 100%;
 }
 
-.gform_button,
+/* .gform_button,
 button {
     font-family: adelle, serif;
     font-weight: 700;
@@ -284,7 +289,7 @@ button {
     border-radius: 50px;
     margin-left: 12px;
     padding: 5px 18px;
-}
+} */
 
 button:hover,
 button:focus {
@@ -380,6 +385,10 @@ nav .current-menu-item a {
 }
 
 .slick-dots {
+    bottom: 25px;
+}
+
+.recent-champions .slick-dots {
     bottom: -3px;
 }
 
@@ -406,6 +415,7 @@ nav .current-menu-item a {
 .slick-arrow:focus,
 .slick-arrow:hover {
     background: var(--secondary);
+    border-radius: 50px;
 }
 
 .slick-arrow:before {
@@ -531,6 +541,13 @@ form {
 /* ------------------------------ 
     5. End Privacy Policy
 ------------------------------ */
+.upcoming-matches-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #home-upcoming-games-wrapper {
     background: var(--secondary);
     /* position: absolute;
@@ -541,7 +558,7 @@ form {
 }
 
 /* .hero-slider {
-    height: 610px;
+    height: 747px;
     overflow: hidden;
 } */
 
@@ -564,6 +581,20 @@ form {
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 50px;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus,
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem var(--primary-50);
+}
+
+.btn-primary:focus-visible {
+    outline-color: var(--primary-50);
 }
 
 table {
@@ -605,4 +636,25 @@ table {
     height: 172px;
     object-fit: cover;
     object-position: center;
+}
+
+.
+
+.accordion-button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: var(--secondary);
+    color: white;
+    border: none;
+}
+
+.accordion-header,
+.accordion-collapse {
+    border: 1px solid white;
+}
+
+.single-division .league-table tr:first-child {
+    background: var(--primary);
+    color: white;
 }

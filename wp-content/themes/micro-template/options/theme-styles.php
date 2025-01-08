@@ -116,7 +116,7 @@ $tertiary_rgba = hex2rgba($tertiary_color, 0.7);
     }
 
     .gform_button,
-    button,
+    /* button, */
     .bg-theme-secondary {
         background: <?php echo $theme_secondary_color; ?> !important;
     }
@@ -132,8 +132,8 @@ $tertiary_rgba = hex2rgba($tertiary_color, 0.7);
     /* Background Hovers */
     .gform_button:hover,
     .gform_button:focus,
-    button:hover,
-    button:focus,
+    /* button:hover,
+    button:focus, */
     .bg-primary-hover:hover {
         background: <?php echo $theme_primary_color; ?> !important;
     }

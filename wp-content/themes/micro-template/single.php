@@ -18,11 +18,12 @@ get_header();
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php
-				while ( have_posts() ) :
-					the_post();
+			while (have_posts()) :
+				the_post();
+				echo 'hi';
 
-					get_template_part( 'template-parts/content/post', 'router' );
-				endwhile;
+				get_template_part('template-parts/content/post', 'router');
+			endwhile;
 			?>
 		</article><!-- #post-<?php the_ID(); ?> -->
 

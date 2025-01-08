@@ -5,8 +5,7 @@
 */
 
 get_header(); ?>
-
-<section class="splash">
+<section class="splash position-relative">
     <div class="hero-slider">
         <div><img src="/wp-content/uploads/2018/09/27545584_2446995665525685_3665367027745732862_n.jpg" alt=""></div>
         <div><img src="/wp-content/uploads/2018/09/40624290_2630712717153978_5930805302642343936_n.jpg" alt=""></div>
@@ -14,10 +13,12 @@ get_header(); ?>
         <div><img src="/wp-content/uploads/2018/09/33678090_2524586497766601_6019851931877376_n.jpg" alt=""></div>
         <div><img src="/wp-content/uploads/2018/09/36539174_2558407994384451_1112458652070969344_n.jpg" alt=""></div>
     </div>
+    <div class="container upcoming-matches-container">
     <?php
     get_template_part('template-parts/upcoming-games');
     // include(TEMPLATEPATH . '/template-parts/upcoming-games.php'); 
     ?>
+    </div>
     <!-- <div class="container">
         <div class="row">
             <?php $url = 'https://www.ahl-manager.com/AHL/admin/location-list'; // Replace with your API URL
@@ -43,33 +44,26 @@ get_header(); ?>
 
     <div class="container py-5">
         <div class="row">
+        <div class="col-lg-6">
+                <?php
+                get_template_part('template-parts/home-standings');
+                // include(TEMPLATEPATH . '/template-parts/upcoming-games.php'); 
+                ?>
+            </div>
             <div class="col-lg-6">
-                <p>Hello Hockey Players,</p>
-
-                <p>Winter/Spring session is starting up, so get those skates sharpened and sticks taped. It’s time to compete for the Arch Cup!</p>
-
-                <p>Arch Hockey is a friendly, fun, and competitive hockey league in the metro St. Louis area. $220 gets you 9-10 games of ice hockey overseen by our team of trained officials.</p>
+                <h5>Interested in joining Arch Hockey?</h5>
 
                 <p>We offer skate sharpening at the rink for $8. Please see Joe Robichaud in the score keepers booth and he’ll get you set up.</p>
 
-                <h5>Interested in joining Arch Hockey?</h5>
+                
                 <p>Please fill out the evaluation form found in our menu or you can access it <a href="/player-evaluation">here</a>. You can also go <a href="/registration">here</a> to find the registration/liability form.
                 </p>
                 <div class="d-flex flex-column flex-xl-row my-3 mx-auto">
                     <a class="btn-primary bg-tertiary-hover mr-2 mb-3 mb-xl-0" href="/player-evaluation">Player Evaluation Form</a>
                     <a class="btn-primary bg-tertiary-hover" href="/registration">Registration Form</a>
                 </div>
-
-                <h6>League Jersey:</h6>
-
-                <p>If you happen to have a league jersey from a previous season with Arch Hockey; please notify either Tom or Bob – We will make arrangements to come and collect. Thanks for your help!</p>
             </div>
-            <div class="col-lg-6">
-                <?php
-                get_template_part('template-parts/home-standings');
-                // include(TEMPLATEPATH . '/template-parts/upcoming-games.php'); 
-                ?>
-            </div>
+            
         </div>
         <div class="row pt-5 pb-4">
             <div class="col">

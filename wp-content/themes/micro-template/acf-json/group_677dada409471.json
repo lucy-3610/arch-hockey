@@ -1,0 +1,92 @@
+{
+    "key": "group_677dada409471",
+    "title": "Divisions",
+    "fields": [
+        {
+            "key": "field_677dada4972b8",
+            "label": "Season ID",
+            "name": "season_id",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_677dadb8972b9",
+            "label": "League ID",
+            "name": "league_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_677e060b06cef",
+            "label": "Stat Type",
+            "name": "stat_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Players": "Players",
+                "Goalies": "Goalies"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "division"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1736312502
+}

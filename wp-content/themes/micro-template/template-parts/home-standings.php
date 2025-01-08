@@ -7,7 +7,7 @@
     <div id="home-output-standings"></div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
-    <script id="leagueStatisticsList">
+    <script id="leagueStatisticsList" class="blah">
     {{#leagueStatistics}}
         <h4 class="mb-2">{{leagueName}}</h4>
         <table class="standings-table league-table">

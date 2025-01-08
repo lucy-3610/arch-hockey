@@ -4,9 +4,17 @@ $(document).ready(function(){
     $('.hero-slider').slick({
         dots: false,
         arrows: false,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+            {
+              breakpoint: 576,
+              settings: {
+                dots: false
+              }
+            }
+          ]
     });
     $('.recent-champions').slick({
         dots: false,

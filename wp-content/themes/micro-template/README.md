@@ -1,4 +1,4 @@
-# Markentum Starter Theme
+# Starter Theme
 
 ###### Table of Contents:
 

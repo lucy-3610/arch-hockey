@@ -11,7 +11,7 @@ Updated Version: 1.0
 */
 ?>
 
-<section id="home-upcoming-games-wrapper" class="wrapper py-4">
+<section id="home-upcoming-games-wrapper" class="wrapper p-4">
     <h2 class="color-white text-center py-3">Upcoming Matches</h2>
     <div id="output-home-schedule"></div><!-- #output -->
     <div class="container">

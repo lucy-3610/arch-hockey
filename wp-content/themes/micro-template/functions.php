@@ -80,3 +80,20 @@ function bplate_scripts()
     wp_enqueue_style('bplate-fontawesome', "https://use.fontawesome.com/releases/v5.0.10/css/all.css");
 }
 add_action('wp_enqueue_scripts', 'bplate_scripts');
+
+function my_enqueue_scripts() {
+    // Enqueue your script
+    // wp_enqueue_script( 'my-custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true );
+    wp_enqueue_script( 'my-custom-js', '/wp-content/themes/micro-template/assets/js/custom.js', array('jquery'), null, true );
+
+    // Get ACF fields
+    $season_id = get_field('season_id'); // ACF field for season_id
+    $league_id = get_field('league_id'); // ACF field for league_id
+
+    // Pass data to JavaScript
+    wp_localize_script( 'my-custom-js', 'acfData', array(
+        'season_id' => $season_id,
+        'league_id' => $league_id,
+    ));
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );

@@ -57,7 +57,7 @@ $page_id = get_field('page_id');
 
         <!-- HEADER/NAV
 		======================================== -->
-        <div class="toast mb-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+        <!-- <div class="toast mb-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
             <div class="toast-header">
                 <strong class="mx-auto">The winter session has begun at Florissant Ice Rink.</strong>
                 <button type="button" data-bs-dismiss="toast" class="ml-2 mb-1 close btn-close" aria-label="Close">
@@ -68,7 +68,7 @@ $page_id = get_field('page_id');
                     </span>
                 </button>
             </div>
-        </div>
+        </div> -->
         <header id="masthead" class="site-header">
             <div class="container-fluid">
                 <div class="row justify-content-center justify-content-lg-between py-4">
